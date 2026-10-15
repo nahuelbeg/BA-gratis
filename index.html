@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fbf7ef">
+    <meta name="description" content="Agenda cultural para compartir en familia en la Ciudad de Buenos Aires.">
+    <title>Planazo — Cultura en familia, Buenos Aires</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Planazo, inicio">
+        <span class="brand-mark" aria-hidden="true">p.</span>
+        <span>planazo<span class="brand-dot">.</span></span>
+      </a>
+      <div class="header-note"><span class="city-dot" aria-hidden="true"></span> Buenos Aires, en familia</div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">CULTURA PARA COMPARTIR</p>
+          <h1 id="page-title">Un plan lindo<br>para <span>cada día.</span></h1>
+          <p class="hero-description">Encontrá propuestas culturales para disfrutar Buenos Aires con chicos. Todo en un solo lugar, con fuentes a la vista.</p>
+          <div class="hero-stamp"><span aria-hidden="true">✳</span> Planes que nos encuentran</div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="sun"></div>
+          <div class="art-card art-card-yellow">¿Salimos?<span>☀</span></div>
+          <div class="art-card art-card-pink">un plan<br>en familia<span>↗</span></div>
+          <div class="art-ticket"><span>BA</span><span>✳</span><span>★</span></div>
+          <div class="art-squiggle">〰</div>
+        </div>
+      </section>
+
+      <section class="discover" aria-label="Buscar y filtrar actividades">
+        <div class="discover-heading">
+          <div>
+            <p class="eyebrow">TU PRÓXIMA SALIDA</p>
+            <h2>¿Qué tienen ganas de hacer?</h2>
+          </div>
+          <p class="trust-note"><span aria-hidden="true">✓</span> Teatro infantil desde la cartelera de Alternativa</p>
+        </div>
+        <div class="filters">
+          <label class="search-field">
+            <span class="sr-only">Buscar actividad, lugar o barrio</span>
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input id="search-input" type="search" placeholder="Buscá un plan, lugar o barrio..." autocomplete="off">
+            <kbd>/</kbd>
+          </label>
+          <label class="select-field">
+            <span class="filter-icon" aria-hidden="true">◷</span>
+            <span class="sr-only">Filtrar por edad</span>
+            <select id="age-filter">
+              <option value="">Todas las edades</option>
+              <option value="0-3">0 a 3 años</option>
+              <option value="4-7">4 a 7 años</option>
+              <option value="8-12">8 a 12 años</option>
+            </select>
+          </label>
+          <label class="select-field">
+            <span class="filter-icon" aria-hidden="true">⌖</span>
+            <span class="sr-only">Filtrar por barrio</span>
+            <select id="neighborhood-filter">
+              <option value="">Todos los barrios</option>
+              <option value="Abasto">Abasto</option>
+              <option value="La Boca">La Boca</option>
+              <option value="Palermo">Palermo</option>
+              <option value="Recoleta">Recoleta</option>
+              <option value="San Telmo">San Telmo</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <section class="explore" aria-label="Explorar agenda">
+        <div class="tabs-wrap">
+          <div class="tabs" role="tablist" aria-label="Vistas de la agenda">
+            <button class="tab-button is-active" id="tab-categories" role="tab" aria-selected="true" aria-controls="panel-categories" tabindex="0" data-tab="categories"><span aria-hidden="true">▦</span> Por categorías</button>
+            <button class="tab-button" id="tab-agenda" role="tab" aria-selected="false" aria-controls="panel-agenda" tabindex="-1" data-tab="agenda"><span aria-hidden="true">▤</span> Día por día</button>
+            <button class="tab-button" id="tab-map" role="tab" aria-selected="false" aria-controls="panel-map" tabindex="-1" data-tab="map"><span aria-hidden="true">⌖</span> Mapa cultural</button>
+          </div>
+          <span class="results-count" id="results-count" aria-live="polite"></span>
+        </div>
+
+        <div class="category-shortcuts" aria-label="Filtrar por categoría">
+          <button class="category-chip is-selected" type="button" data-category="">Todo</button>
+          <button class="category-chip" type="button" data-category="Teatro"><span class="chip-icon chip-theater">✳</span> Teatro</button>
+          <button class="category-chip" type="button" data-category="Música"><span class="chip-icon chip-music">♫</span> Música</button>
+          <button class="category-chip" type="button" data-category="Cine"><span class="chip-icon chip-cinema">▶</span> Cine</button>
+          <button class="category-chip" type="button" data-category="Recreación"><span class="chip-icon chip-play">⌁</span> Recreación</button>
+          <button class="category-chip" type="button" data-category="Museos"><span class="chip-icon chip-museum">▧</span> Museos</button>
+        </div>
+
+        <section class="tab-panel" id="panel-categories" role="tabpanel" aria-labelledby="tab-categories">
+          <div id="category-events" class="event-grid"></div>
+        </section>
+
+        <section class="tab-panel" id="panel-agenda" role="tabpanel" aria-labelledby="tab-agenda" hidden>
+          <div id="agenda-events" class="agenda-list"></div>
+        </section>
+
+        <section class="tab-panel map-panel" id="panel-map" role="tabpanel" aria-labelledby="tab-map" hidden>
+          <div class="map-heading">
+            <div>
+              <h2>La cultura, cerca tuyo</h2>
+              <p>Elegí un pin para ver los detalles y cómo llegar.</p>
+            </div>
+            <span class="map-key"><i aria-hidden="true"></i> Ubicaciones con coordenadas precisas</span>
+          </div>
+          <div id="map" aria-label="Mapa interactivo de actividades culturales en Buenos Aires"></div>
+          <p id="map-status" class="map-status" role="status"></p>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand"><span class="brand-mark" aria-hidden="true">p.</span> planazo.</div>
+      <p>Hecho para disfrutar la ciudad en compañía.</p>
+      <div class="footer-sources">
+        <span>Fuentes de curaduría</span>
+        <a href="https://bairessecreta.com/" target="_blank" rel="noopener noreferrer">Baires Secreta</a>
+        <a href="https://linda.buenosaires.gob.ar/" target="_blank" rel="noopener noreferrer">LINDA BA</a>
+        <a href="https://www.alternativateatral.com.ar/" target="_blank" rel="noopener noreferrer">Alternativa Teatral</a>
+      </div>
+      <small>Cartelera infantil de Alternativa consultada el 14/10/2026. Las funciones pueden cambiar; verificá detalles en la ficha original antes de salir.</small>
+    </footer>
+  </body>
+</html>

@@ -1,6 +1,16 @@
 {
-  "generated_at": "2026-10-15T17:45:31-03:00",
+  "generated_at": "2026-10-15T20:17:52-03:00",
   "theater_source": "https://www.alternativateatral.com.ar/obras.asp?cat=9-infantiles",
+  "source_urls": {
+    "Baires Secreta": "https://bairessecreta.com/?s=infantil",
+    "Alternativa Teatral": "https://www.alternativateatral.com.ar/obras.asp?cat=9-infantiles",
+    "Museos de Buenos Aires": "https://buenosaires.gob.ar/gcaba_historico/cultura/museos",
+    "Centro Cultural Recoleta": "http://www.centroculturalrecoleta.org/",
+    "Usina del Arte": "https://buenosaires.gob.ar/gcaba_historico/cultura/usina-del-arte",
+    "Complejo Teatral de Buenos Aires": "https://complejoteatral.gob.ar/",
+    "Centro Cultural 25 de Mayo": "https://buenosaires.gob.ar/gcaba_historico/cultura/centro-cultural-25-de-mayo",
+    "LA NACION": "https://www.lanacion.com.ar/cartelera-de-cine"
+  },
   "upcoming_days": null,
   "catalog_infantile_count": 43,
   "theater_events": [
@@ -1404,14 +1414,20 @@
     "publishing_rule": "unión de eventos infantiles; la coincidencia entre fuentes no es requisito para incluirlos",
     "source_counts": {
       "baires_secreta_infantil_candidates": 1,
-      "alternativa_infantiles_in_range": 43
+      "alternativa_infantiles_in_range": 43,
+      "Museos de Buenos Aires": 0,
+      "Centro Cultural Recoleta": 0,
+      "Usina del Arte": 0,
+      "Complejo Teatral de Buenos Aires": 0,
+      "Centro Cultural 25 de Mayo": 0,
+      "LA NACION": 3
     },
     "title_distribution": {
-      "events_in_one_source": 44,
+      "events_in_one_source": 47,
       "events_in_multiple_sources": 0,
       "events_in_all_sources": 0
     },
-    "titles_in_multiple_sources_but_not_all": 44,
+    "titles_in_multiple_sources_but_not_all": 47,
     "titles_found_in_all_sources": 0
   },
   "events": [
@@ -1592,6 +1608,31 @@
       }
     },
     {
+      "title": "Cars",
+      "normalized_title": "cars",
+      "sources": [
+        "LA NACION"
+      ],
+      "source_details": {
+        "LA NACION": {
+          "title": "Cars",
+          "normalized_title": "cars",
+          "category": "Cine",
+          "description": "El aspirante a campeón de carreras Rayo McQueen parece que está a punto de conseguir el éxito, la fama y todo lo que había soñado, hasta que por error toma un desvío inesperado en la polvorienta y solitaria Ruta 66. Su actitud arrogante se ",
+          "genre": "Animación",
+          "genres": [
+            "Animación"
+          ],
+          "date": "",
+          "time": "",
+          "schedule": "En cartelera · consultá funciones en la fuente",
+          "url": "https://www.lanacion.com.ar/cartelera-de-cine/pelicula/cars-pe20420",
+          "source": "LA NACION",
+          "content_rating": "Sin calificación"
+        }
+      }
+    },
+    {
       "title": "Chakana",
       "normalized_title": "chakana",
       "sources": [
@@ -1699,6 +1740,31 @@
           "genres": [],
           "url": "https://www.alternativateatral.com.ar/obra75438-club-de-cine-internacional-para-chicos-la-linterna-magica",
           "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "Coyote vs. Acme",
+      "normalized_title": "coyote vs acme",
+      "sources": [
+        "LA NACION"
+      ],
+      "source_details": {
+        "LA NACION": {
+          "title": "Coyote vs. Acme",
+          "normalized_title": "coyote vs acme",
+          "category": "Cine",
+          "description": "Una historia ambientada en el almacén de ACME, el fabricante de todo lo que utilizan los personajes de los Looney Tunes",
+          "genre": "Animación",
+          "genres": [
+            "Animación"
+          ],
+          "date": "",
+          "time": "",
+          "schedule": "En cartelera · consultá funciones en la fuente",
+          "url": "https://www.lanacion.com.ar/cartelera-de-cine/pelicula/coyote-vs-acme-pe20317",
+          "source": "LA NACION",
+          "content_rating": "Sin calificación"
         }
       }
     },
@@ -1819,6 +1885,31 @@
           ],
           "url": "https://www.alternativateatral.com.ar/obra101678-el-salpicon",
           "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "Escuela de monstruos",
+      "normalized_title": "escuela de monstruos",
+      "sources": [
+        "LA NACION"
+      ],
+      "source_details": {
+        "LA NACION": {
+          "title": "Escuela de monstruos",
+          "normalized_title": "escuela de monstruos",
+          "category": "Cine",
+          "description": "Tras ser expulsada del colegio, Mía y su mascota Quentin llegan a la Escuela Bosque Muerto, donde ella es la única humana entre sus compañeros monstruosos. Debido al odio del director Van Vlad hacia los humanos, Mía deberá aliarse con los m",
+          "genre": "Animación",
+          "genres": [
+            "Animación"
+          ],
+          "date": "",
+          "time": "",
+          "schedule": "En cartelera · consultá funciones en la fuente",
+          "url": "https://www.lanacion.com.ar/cartelera-de-cine/pelicula/escuela-de-monstruos-pe20432",
+          "source": "LA NACION",
+          "content_rating": "Sin calificación"
         }
       }
     },

@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-15T12:42:50-03:00",
+  "generated_at": "2026-10-15T17:45:31-03:00",
   "theater_source": "https://www.alternativateatral.com.ar/obras.asp?cat=9-infantiles",
   "upcoming_days": null,
-  "catalog_infantile_count": 40,
+  "catalog_infantile_count": 43,
   "theater_events": [
     {
       "title": "Jazz Cartoons. Por Paris Jazz Club",
@@ -619,6 +619,34 @@
       "source": "Alternativa Teatral"
     },
     {
+      "title": "Historias de acá nomás",
+      "normalized_title": "historias de aca nomas",
+      "category": "Teatro",
+      "venue": "BIBLIOTECA DE SAN FERNANDO",
+      "neighborhood": "San fernando",
+      "province": "Buenos Aires",
+      "address": "Constitucion 622",
+      "latitude": -34.438119,
+      "longitude": -58.560189,
+      "date": "2026-10-24",
+      "time": "20:30",
+      "schedule": "SÁBADO 20:30 · 2026-10-24",
+      "functions": [
+        {
+          "date": "2026-10-24",
+          "time": "20:30",
+          "weekday": "sábado",
+          "venue": "BIBLIOTECA DE SAN FERNANDO",
+          "neighborhood": "San fernando"
+        }
+      ],
+      "genres": [
+        "Teatro"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra103686-historias-de-aca-nomas",
+      "source": "Alternativa Teatral"
+    },
+    {
       "title": "VayVen",
       "normalized_title": "vayven",
       "category": "Teatro",
@@ -1097,6 +1125,111 @@
       "source": "Alternativa Teatral"
     },
     {
+      "title": "¿Quién Se Llevó La Navidad?",
+      "normalized_title": "quien se llevo la navidad",
+      "category": "Teatro",
+      "venue": "MUY TEATRO",
+      "neighborhood": "Almagro",
+      "province": "CABA",
+      "address": "Humahuaca 4310",
+      "latitude": -34.601435505941,
+      "longitude": -58.425598053307,
+      "date": "2026-11-14",
+      "time": "16:00",
+      "schedule": "SÁBADO 16:00 · 2026-11-14",
+      "functions": [
+        {
+          "date": "2026-11-14",
+          "time": "16:00",
+          "weekday": "sábado",
+          "venue": "MUY TEATRO",
+          "neighborhood": "Almagro"
+        },
+        {
+          "date": "2026-11-15",
+          "time": "16:00",
+          "weekday": "domingo",
+          "venue": "MUY TEATRO",
+          "neighborhood": "Almagro"
+        },
+        {
+          "date": "2026-11-21",
+          "time": "16:00",
+          "weekday": "sábado",
+          "venue": "MUY TEATRO",
+          "neighborhood": "Almagro"
+        },
+        {
+          "date": "2026-11-22",
+          "time": "16:00",
+          "weekday": "domingo",
+          "venue": "MUY TEATRO",
+          "neighborhood": "Almagro"
+        },
+        {
+          "date": "2026-11-28",
+          "time": "16:00",
+          "weekday": "sábado",
+          "venue": "MUY TEATRO",
+          "neighborhood": "Almagro"
+        },
+        {
+          "date": "2026-11-29",
+          "time": "16:00",
+          "weekday": "domingo",
+          "venue": "MUY TEATRO",
+          "neighborhood": "Almagro"
+        },
+        {
+          "date": "2026-12-05",
+          "time": "16:00",
+          "weekday": "sábado",
+          "venue": "MUY TEATRO",
+          "neighborhood": "Almagro"
+        },
+        {
+          "date": "2026-12-06",
+          "time": "16:00",
+          "weekday": "domingo",
+          "venue": "MUY TEATRO",
+          "neighborhood": "Almagro"
+        },
+        {
+          "date": "2026-12-07",
+          "time": "16:00",
+          "weekday": "lunes",
+          "venue": "MUY TEATRO",
+          "neighborhood": "Almagro"
+        },
+        {
+          "date": "2026-12-08",
+          "time": "15:00",
+          "weekday": "martes",
+          "venue": "MUY TEATRO",
+          "neighborhood": "Almagro"
+        },
+        {
+          "date": "2026-12-12",
+          "time": "16:00",
+          "weekday": "sábado",
+          "venue": "MUY TEATRO",
+          "neighborhood": "Almagro"
+        },
+        {
+          "date": "2026-12-13",
+          "time": "15:00",
+          "weekday": "domingo",
+          "venue": "MUY TEATRO",
+          "neighborhood": "Almagro"
+        }
+      ],
+      "genres": [
+        "Teatro"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra103687-quien-se-llevo-la-navidad",
+      "source": "Alternativa Teatral"
+    },
+    {
       "title": "Tatán",
       "normalized_title": "tatan",
       "category": "Teatro",
@@ -1235,6 +1368,35 @@
       ],
       "url": "https://www.alternativateatral.com.ar/obra101459-migue-y-lucy-una-historia-de-rock",
       "source": "Alternativa Teatral"
+    },
+    {
+      "title": "Melocotón Pajarito cumple 10 años",
+      "normalized_title": "melocoton pajarito cumple 10 anos",
+      "category": "Teatro",
+      "venue": "TEATRO HASTA TRILCE",
+      "neighborhood": "Almagro",
+      "province": "CABA",
+      "address": "Maza 177",
+      "latitude": -34.6132296,
+      "longitude": -58.4163427,
+      "date": "2026-12-05",
+      "time": "16:00",
+      "schedule": "SÁBADO 16:00 · 2026-12-05",
+      "functions": [
+        {
+          "date": "2026-12-05",
+          "time": "16:00",
+          "weekday": "sábado",
+          "venue": "TEATRO HASTA TRILCE",
+          "neighborhood": "Almagro"
+        }
+      ],
+      "genres": [
+        "Musical",
+        "Teatro"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra103679-melocoton-pajarito-cumple-10-anos",
+      "source": "Alternativa Teatral"
     }
   ],
   "cross_validation": {
@@ -1242,64 +1404,17 @@
     "publishing_rule": "unión de eventos infantiles; la coincidencia entre fuentes no es requisito para incluirlos",
     "source_counts": {
       "baires_secreta_infantil_candidates": 1,
-      "linda_ba_infantil_candidates": 24,
-      "alternativa_infantiles_in_range": 40
+      "alternativa_infantiles_in_range": 43
     },
     "title_distribution": {
-      "events_in_one_source": 53,
+      "events_in_one_source": 44,
       "events_in_multiple_sources": 0,
       "events_in_all_sources": 0
     },
-    "titles_in_multiple_sources_but_not_all": 53,
+    "titles_in_multiple_sources_but_not_all": 44,
     "titles_found_in_all_sources": 0
   },
   "events": [
-    {
-      "title": "1, 2, 3… Sol",
-      "normalized_title": "1 2 3 sol",
-      "sources": [
-        "LINDA BA"
-      ],
-      "source_details": {
-        "LINDA BA": {
-          "title": "1, 2, 3… Sol",
-          "normalized_title": "1 2 3 sol",
-          "category": "Infantil",
-          "venue": "Centro Cultural Recoleta",
-          "neighborhood": "Recoleta",
-          "address": "Junín 1930",
-          "latitude": -34.5862881,
-          "longitude": -58.39152887,
-          "date": "2026-10-17",
-          "time": "16:00",
-          "schedule": "2026-10-17 · 16:00",
-          "functions": [
-            {
-              "date": "2026-10-17",
-              "time": "16:00"
-            },
-            {
-              "date": "2026-10-24",
-              "time": "16:00"
-            },
-            {
-              "date": "2026-11-07",
-              "time": "16:00"
-            },
-            {
-              "date": "2026-11-14",
-              "time": "16:00"
-            }
-          ],
-          "genres": [
-            "Arte y cultura"
-          ],
-          "description": "Niños y niñas piensan sobre la muerte y la fantasía transforma la realidad creando otro mundo regido por nuevas leyes y sensaciones.",
-          "url": "https://linda.buenosaires.gob.ar/descubrir/1-2-3-sol",
-          "source": "LINDA BA"
-        }
-      }
-    },
     {
       "title": "3obras3",
       "normalized_title": "3obras3",
@@ -1334,44 +1449,6 @@
           ],
           "url": "https://www.alternativateatral.com.ar/obra42355-3obras3",
           "source": "Alternativa Teatral"
-        }
-      }
-    },
-    {
-      "title": "Alerta Espacial: noticias bajo la lupa",
-      "normalized_title": "alerta espacial noticias bajo la lupa",
-      "sources": [
-        "LINDA BA"
-      ],
-      "source_details": {
-        "LINDA BA": {
-          "title": "Alerta Espacial: noticias bajo la lupa",
-          "normalized_title": "alerta espacial noticias bajo la lupa",
-          "category": "Infantil",
-          "venue": "Planetario Galileo Galilei",
-          "neighborhood": "Palermo",
-          "address": "Av. Sarmiento s/n, C1425 Cdad. Autónoma de Buenos Aires",
-          "latitude": -34.579375,
-          "longitude": -58.419183,
-          "date": "2026-10-17",
-          "time": "14:30",
-          "schedule": "2026-10-17 · 14:30",
-          "functions": [
-            {
-              "date": "2026-10-17",
-              "time": "14:30"
-            },
-            {
-              "date": "2026-10-18",
-              "time": "14:30"
-            }
-          ],
-          "genres": [
-            "Entretenimiento"
-          ],
-          "description": "Espectáculo para niños y adolescentes en el Planetario. ¿Un asteroide podría chocar con la Tierra? ¿Los planetas realmente se alinean? ¿Qué hay detrás de las impactantes imágenes de agujeros negros que recorren el mundo?",
-          "url": "https://linda.buenosaires.gob.ar/descubrir/alerta-espacial-noticias-bajo-la-lupa",
-          "source": "LINDA BA"
         }
       }
     },
@@ -1515,86 +1592,6 @@
       }
     },
     {
-      "title": "Caleidoscopio",
-      "normalized_title": "caleidoscopio",
-      "sources": [
-        "LINDA BA"
-      ],
-      "source_details": {
-        "LINDA BA": {
-          "title": "Caleidoscopio",
-          "normalized_title": "caleidoscopio",
-          "category": "Infantil",
-          "venue": "Museo Moderno",
-          "neighborhood": "San Telmo",
-          "address": "Av. San Juan 350",
-          "latitude": -34.62191438,
-          "longitude": -58.37052119,
-          "date": "2026-10-17",
-          "time": "16:00",
-          "schedule": "2026-10-17 · 16:00",
-          "functions": [
-            {
-              "date": "2026-10-17",
-              "time": "16:00"
-            },
-            {
-              "date": "2026-10-24",
-              "time": "16:00"
-            },
-            {
-              "date": "2026-10-31",
-              "time": "16:00"
-            }
-          ],
-          "genres": [
-            "Arte y cultura"
-          ],
-          "description": "Taller anual de arte para familias en el Museo Moderno.",
-          "url": "https://linda.buenosaires.gob.ar/descubrir/caleidoscopio",
-          "source": "LINDA BA"
-        }
-      }
-    },
-    {
-      "title": "Catálogo familiar de flores y plantas",
-      "normalized_title": "catalogo familiar de flores y plantas",
-      "sources": [
-        "LINDA BA"
-      ],
-      "source_details": {
-        "LINDA BA": {
-          "title": "Catálogo familiar de flores y plantas",
-          "normalized_title": "catalogo familiar de flores y plantas",
-          "category": "Infantil",
-          "venue": "Museo Larreta",
-          "neighborhood": "Belgrano",
-          "address": "Avenida Juramento 2291, C1428DNK Buenos Aires AR, Argentina",
-          "latitude": -34.56110797,
-          "longitude": -58.45529268,
-          "date": "2026-10-22",
-          "time": "16:30",
-          "schedule": "2026-10-22 · 16:30",
-          "functions": [
-            {
-              "date": "2026-10-22",
-              "time": "16:30"
-            },
-            {
-              "date": "2026-11-12",
-              "time": "16:30"
-            }
-          ],
-          "genres": [
-            "Arte y cultura"
-          ],
-          "description": "Un encuentro afectivo con las especies del jardín hispanoárabe del Museo de Arte Español Enrique Larreta.",
-          "url": "https://linda.buenosaires.gob.ar/descubrir/catalogo-familiar-de-flores-y-plantas-0",
-          "source": "LINDA BA"
-        }
-      }
-    },
-    {
       "title": "Chakana",
       "normalized_title": "chakana",
       "sources": [
@@ -1702,53 +1699,6 @@
           "genres": [],
           "url": "https://www.alternativateatral.com.ar/obra75438-club-de-cine-internacional-para-chicos-la-linterna-magica",
           "source": "Alternativa Teatral"
-        }
-      }
-    },
-    {
-      "title": "Concierto entre almohadones",
-      "normalized_title": "concierto entre almohadones",
-      "sources": [
-        "LINDA BA"
-      ],
-      "source_details": {
-        "LINDA BA": {
-          "title": "Concierto entre almohadones",
-          "normalized_title": "concierto entre almohadones",
-          "category": "Música",
-          "venue": "Teatro Colón",
-          "neighborhood": "San Nicolas",
-          "address": "Tucumán 1171, C1049AAW Cdad. Autónoma de Buenos Aires",
-          "latitude": -34.601354,
-          "longitude": -58.383413,
-          "date": "2026-10-25",
-          "time": "11:00",
-          "schedule": "2026-10-25 · 11:00",
-          "functions": [
-            {
-              "date": "2026-10-25",
-              "time": "11:00"
-            },
-            {
-              "date": "2026-11-15",
-              "time": "11:00"
-            },
-            {
-              "date": "2026-11-29",
-              "time": "11:00"
-            },
-            {
-              "date": "2026-12-13",
-              "time": "11:00"
-            }
-          ],
-          "genres": [
-            "Música y Shows",
-            "Arte y cultura"
-          ],
-          "description": "\"Concierto entre almohadones: Cartas que cantan, aventuras líricas en el altillo\". Espectáculo musical para toda la familia en el Teatro Colón (edad sugerida a partir de los 5 años).",
-          "url": "https://linda.buenosaires.gob.ar/descubrir/concierto-entre-almohadones",
-          "source": "LINDA BA"
         }
       }
     },
@@ -1873,83 +1823,6 @@
       }
     },
     {
-      "title": "Ensayo infinito",
-      "normalized_title": "ensayo infinito",
-      "sources": [
-        "LINDA BA"
-      ],
-      "source_details": {
-        "LINDA BA": {
-          "title": "Ensayo infinito",
-          "normalized_title": "ensayo infinito",
-          "category": "Infantil",
-          "venue": "Museo Moderno",
-          "neighborhood": "San Telmo",
-          "address": "Av. San Juan 350",
-          "latitude": -34.62191438,
-          "longitude": -58.37052119,
-          "date": "2026-10-17",
-          "time": "17:30",
-          "schedule": "2026-10-17 · 17:30",
-          "functions": [
-            {
-              "date": "2026-10-17",
-              "time": "17:30"
-            },
-            {
-              "date": "2026-10-24",
-              "time": "17:30"
-            },
-            {
-              "date": "2026-10-31",
-              "time": "17:30"
-            }
-          ],
-          "genres": [
-            "Arte y cultura"
-          ],
-          "description": "Taller anual de experimentación artística para adolescentes.",
-          "url": "https://linda.buenosaires.gob.ar/descubrir/ensayo-infinito",
-          "source": "LINDA BA"
-        }
-      }
-    },
-    {
-      "title": "Feria Valor BA | Parque Centenario",
-      "normalized_title": "feria valor ba parque centenario",
-      "sources": [
-        "LINDA BA"
-      ],
-      "source_details": {
-        "LINDA BA": {
-          "title": "Feria Valor BA | Parque Centenario",
-          "normalized_title": "feria valor ba parque centenario",
-          "category": "Infantil",
-          "venue": "Parque Centenario",
-          "neighborhood": "Caballito",
-          "address": "Av. Diaz Velez y Finochietto",
-          "latitude": -34.608365,
-          "longitude": -58.436055,
-          "date": "2026-10-17",
-          "time": "11:00",
-          "schedule": "2026-10-17 · 11:00",
-          "functions": [
-            {
-              "date": "2026-10-17",
-              "time": "11:00"
-            }
-          ],
-          "genres": [
-            "Ferias y exposiciones",
-            "Gastronomía"
-          ],
-          "description": "Una feria itinerante de economía social llega al Parque Centenario con productos artesanales, emprendimientos locales y consumo consciente para disfrutar en familia un sábado al aire libre en Caballito.",
-          "url": "https://linda.buenosaires.gob.ar/descubrir/feria-valor-ba-parque-centenario",
-          "source": "LINDA BA"
-        }
-      }
-    },
-    {
       "title": "Hansel y Gretel",
       "normalized_title": "hansel y gretel",
       "sources": [
@@ -1992,36 +1865,39 @@
       }
     },
     {
-      "title": "Historias de Circo: Visita guiada lúdica para toda la familia",
-      "normalized_title": "historias de circo visita guiada ludica para toda la familia",
+      "title": "Historias de acá nomás",
+      "normalized_title": "historias de aca nomas",
       "sources": [
-        "LINDA BA"
+        "Alternativa Teatral"
       ],
       "source_details": {
-        "LINDA BA": {
-          "title": "Historias de Circo: Visita guiada lúdica para toda la familia",
-          "normalized_title": "historias de circo visita guiada ludica para toda la familia",
-          "category": "Infantil",
-          "venue": "Usina del Arte",
-          "neighborhood": "La Boca",
-          "address": "Agustín R. Caffarena 1",
-          "latitude": -34.62888027,
-          "longitude": -58.35631387,
-          "date": "2026-10-18",
-          "time": "15:30",
-          "schedule": "2026-10-18 · 15:30",
+        "Alternativa Teatral": {
+          "title": "Historias de acá nomás",
+          "normalized_title": "historias de aca nomas",
+          "category": "Teatro",
+          "venue": "BIBLIOTECA DE SAN FERNANDO",
+          "neighborhood": "San fernando",
+          "province": "Buenos Aires",
+          "address": "Constitucion 622",
+          "latitude": -34.438119,
+          "longitude": -58.560189,
+          "date": "2026-10-24",
+          "time": "20:30",
+          "schedule": "SÁBADO 20:30 · 2026-10-24",
           "functions": [
             {
-              "date": "2026-10-18",
-              "time": "15:30"
+              "date": "2026-10-24",
+              "time": "20:30",
+              "weekday": "sábado",
+              "venue": "BIBLIOTECA DE SAN FERNANDO",
+              "neighborhood": "San fernando"
             }
           ],
           "genres": [
-            "​Recorridos y visitas guiadas"
+            "Teatro"
           ],
-          "description": "Una visita guiada lúdica donde chicos y chicas desde los 6 años se convierten en protagonistas de su propia función de Circo y el cuál promete un final espectacular.",
-          "url": "https://linda.buenosaires.gob.ar/descubrir/historias-de-circo-visita-guiada-ludica-para-toda-la-familia",
-          "source": "LINDA BA"
+          "url": "https://www.alternativateatral.com.ar/obra103686-historias-de-aca-nomas",
+          "source": "Alternativa Teatral"
         }
       }
     },
@@ -2466,6 +2342,44 @@
       }
     },
     {
+      "title": "Melocotón Pajarito cumple 10 años",
+      "normalized_title": "melocoton pajarito cumple 10 anos",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "Melocotón Pajarito cumple 10 años",
+          "normalized_title": "melocoton pajarito cumple 10 anos",
+          "category": "Teatro",
+          "venue": "TEATRO HASTA TRILCE",
+          "neighborhood": "Almagro",
+          "province": "CABA",
+          "address": "Maza 177",
+          "latitude": -34.6132296,
+          "longitude": -58.4163427,
+          "date": "2026-12-05",
+          "time": "16:00",
+          "schedule": "SÁBADO 16:00 · 2026-12-05",
+          "functions": [
+            {
+              "date": "2026-12-05",
+              "time": "16:00",
+              "weekday": "sábado",
+              "venue": "TEATRO HASTA TRILCE",
+              "neighborhood": "Almagro"
+            }
+          ],
+          "genres": [
+            "Musical",
+            "Teatro"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra103679-melocoton-pajarito-cumple-10-anos",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
       "title": "Mi amiga la oscuridad",
       "normalized_title": "mi amiga la oscuridad",
       "sources": [
@@ -2883,6 +2797,120 @@
       }
     },
     {
+      "title": "¿Quién Se Llevó La Navidad?",
+      "normalized_title": "quien se llevo la navidad",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "¿Quién Se Llevó La Navidad?",
+          "normalized_title": "quien se llevo la navidad",
+          "category": "Teatro",
+          "venue": "MUY TEATRO",
+          "neighborhood": "Almagro",
+          "province": "CABA",
+          "address": "Humahuaca 4310",
+          "latitude": -34.601435505941,
+          "longitude": -58.425598053307,
+          "date": "2026-11-14",
+          "time": "16:00",
+          "schedule": "SÁBADO 16:00 · 2026-11-14",
+          "functions": [
+            {
+              "date": "2026-11-14",
+              "time": "16:00",
+              "weekday": "sábado",
+              "venue": "MUY TEATRO",
+              "neighborhood": "Almagro"
+            },
+            {
+              "date": "2026-11-15",
+              "time": "16:00",
+              "weekday": "domingo",
+              "venue": "MUY TEATRO",
+              "neighborhood": "Almagro"
+            },
+            {
+              "date": "2026-11-21",
+              "time": "16:00",
+              "weekday": "sábado",
+              "venue": "MUY TEATRO",
+              "neighborhood": "Almagro"
+            },
+            {
+              "date": "2026-11-22",
+              "time": "16:00",
+              "weekday": "domingo",
+              "venue": "MUY TEATRO",
+              "neighborhood": "Almagro"
+            },
+            {
+              "date": "2026-11-28",
+              "time": "16:00",
+              "weekday": "sábado",
+              "venue": "MUY TEATRO",
+              "neighborhood": "Almagro"
+            },
+            {
+              "date": "2026-11-29",
+              "time": "16:00",
+              "weekday": "domingo",
+              "venue": "MUY TEATRO",
+              "neighborhood": "Almagro"
+            },
+            {
+              "date": "2026-12-05",
+              "time": "16:00",
+              "weekday": "sábado",
+              "venue": "MUY TEATRO",
+              "neighborhood": "Almagro"
+            },
+            {
+              "date": "2026-12-06",
+              "time": "16:00",
+              "weekday": "domingo",
+              "venue": "MUY TEATRO",
+              "neighborhood": "Almagro"
+            },
+            {
+              "date": "2026-12-07",
+              "time": "16:00",
+              "weekday": "lunes",
+              "venue": "MUY TEATRO",
+              "neighborhood": "Almagro"
+            },
+            {
+              "date": "2026-12-08",
+              "time": "15:00",
+              "weekday": "martes",
+              "venue": "MUY TEATRO",
+              "neighborhood": "Almagro"
+            },
+            {
+              "date": "2026-12-12",
+              "time": "16:00",
+              "weekday": "sábado",
+              "venue": "MUY TEATRO",
+              "neighborhood": "Almagro"
+            },
+            {
+              "date": "2026-12-13",
+              "time": "15:00",
+              "weekday": "domingo",
+              "venue": "MUY TEATRO",
+              "neighborhood": "Almagro"
+            }
+          ],
+          "genres": [
+            "Teatro"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra103687-quien-se-llevo-la-navidad",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
       "title": "Sembrar la Tierra",
       "normalized_title": "sembrar la tierra",
       "sources": [
@@ -2988,124 +3016,6 @@
           ],
           "url": "https://www.alternativateatral.com.ar/obra42986-tatan",
           "source": "Alternativa Teatral"
-        }
-      }
-    },
-    {
-      "title": "Te quiero, desde el mar hasta el cielo",
-      "normalized_title": "te quiero desde el mar hasta el cielo",
-      "sources": [
-        "LINDA BA"
-      ],
-      "source_details": {
-        "LINDA BA": {
-          "title": "Te quiero, desde el mar hasta el cielo",
-          "normalized_title": "te quiero desde el mar hasta el cielo",
-          "category": "Cine",
-          "venue": "Planetario Galileo Galilei",
-          "neighborhood": "Palermo",
-          "address": "Av. Sarmiento s/n, C1425 Cdad. Autónoma de Buenos Aires",
-          "latitude": -34.579375,
-          "longitude": -58.419183,
-          "date": "2026-10-17",
-          "time": "13:00",
-          "schedule": "2026-10-17 · 13:00",
-          "functions": [
-            {
-              "date": "2026-10-17",
-              "time": "13:00"
-            },
-            {
-              "date": "2026-10-18",
-              "time": "13:00"
-            }
-          ],
-          "genres": [
-            "Cine"
-          ],
-          "description": "Espectáculo de divulgación científica para niños y niñas en el Planetario. Este documental infantil revela los lazos invisibles que conectan la inmensidad del universo con las profundidades del océano.",
-          "url": "https://linda.buenosaires.gob.ar/descubrir/te-quiero-desde-el-mar-hasta-el-cielo",
-          "source": "LINDA BA"
-        }
-      }
-    },
-    {
-      "title": "Top 5 del Universo: el espectáculo que invita a viajar por el espacio",
-      "normalized_title": "top 5 del universo el espectaculo que invita a viajar por el espacio",
-      "sources": [
-        "LINDA BA"
-      ],
-      "source_details": {
-        "LINDA BA": {
-          "title": "Top 5 del Universo: el espectáculo que invita a viajar por el espacio",
-          "normalized_title": "top 5 del universo el espectaculo que invita a viajar por el espacio",
-          "category": "Infantil",
-          "venue": "Planetario Galileo Galilei",
-          "neighborhood": "Palermo",
-          "address": "Av. Sarmiento s/n, C1425",
-          "latitude": -34.579375,
-          "longitude": -58.419183,
-          "date": "2026-10-24",
-          "time": "17:30",
-          "schedule": "2026-10-24 · 17:30",
-          "functions": [
-            {
-              "date": "2026-10-24",
-              "time": "17:30"
-            },
-            {
-              "date": "2026-10-25",
-              "time": "17:30"
-            }
-          ],
-          "genres": [
-            "Entretenimiento"
-          ],
-          "description": "Una experiencia inmersiva para chicos curiosos (y adultos que también)",
-          "url": "https://linda.buenosaires.gob.ar/descubrir/top-5-del-universo-el-espectaculo-que-invita-viajar-por-el-espacio",
-          "source": "LINDA BA"
-        }
-      }
-    },
-    {
-      "title": "Un plan para jugar en familia: llega el Ludo-Espacio",
-      "normalized_title": "un plan para jugar en familia llega el ludo espacio",
-      "sources": [
-        "LINDA BA"
-      ],
-      "source_details": {
-        "LINDA BA": {
-          "title": "Un plan para jugar en familia: llega el Ludo-Espacio",
-          "normalized_title": "un plan para jugar en familia llega el ludo espacio",
-          "category": "Infantil",
-          "venue": "Usina del Arte",
-          "neighborhood": "La Boca",
-          "address": "Agustín R. Caffarena 1",
-          "latitude": -34.62888027,
-          "longitude": -58.35631387,
-          "date": "2026-10-16",
-          "time": "16:00",
-          "schedule": "2026-10-16 · 16:00",
-          "functions": [
-            {
-              "date": "2026-10-16",
-              "time": "16:00"
-            },
-            {
-              "date": "2026-10-17",
-              "time": "14:00"
-            },
-            {
-              "date": "2026-10-18",
-              "time": "14:00"
-            }
-          ],
-          "genres": [
-            "Arte y cultura"
-          ],
-          "description": "Un rincón pensado para las infancias con juegos didácticos y propuestas para compartir.",
-          "url": "https://linda.buenosaires.gob.ar/descubrir/un-plan-para-jugar-en-familia-llega-el-ludo-espacio",
-          "source": "LINDA BA"
         }
       }
     },
@@ -3261,44 +3171,6 @@
           ],
           "url": "https://www.alternativateatral.com.ar/obra66202-vayven",
           "source": "Alternativa Teatral"
-        }
-      }
-    },
-    {
-      "title": "“Veo Veo”: experiencia inmersiva para infancias en el Planetario",
-      "normalized_title": "veo veo experiencia inmersiva para infancias en el planetario",
-      "sources": [
-        "LINDA BA"
-      ],
-      "source_details": {
-        "LINDA BA": {
-          "title": "“Veo Veo”: experiencia inmersiva para infancias en el Planetario",
-          "normalized_title": "veo veo experiencia inmersiva para infancias en el planetario",
-          "category": "Infantil",
-          "venue": "Planetario Galileo Galilei",
-          "neighborhood": "Palermo",
-          "address": "Av. Sarmiento s/n, C1425 Cdad. Autónoma de Buenos Aires",
-          "latitude": -34.579375,
-          "longitude": -58.419183,
-          "date": "2026-10-17",
-          "time": "16:00",
-          "schedule": "2026-10-17 · 16:00",
-          "functions": [
-            {
-              "date": "2026-10-17",
-              "time": "16:00"
-            },
-            {
-              "date": "2026-10-18",
-              "time": "16:00"
-            }
-          ],
-          "genres": [
-            "Entretenimiento"
-          ],
-          "description": "Un espectáculo sensorial para niñas y niños de 3 a 6 años que introduce conceptos del universo a través del juego, el color y la estética inmersiva.",
-          "url": "https://linda.buenosaires.gob.ar/descubrir/veo-veo-experiencia-inmersiva-para-infancias-en-el-planetario",
-          "source": "LINDA BA"
         }
       }
     },

@@ -2,7 +2,6 @@
 
 const SOURCES = [
   { id: "baires", name: "Baires Secreta", url: "https://bairessecreta.com/" },
-  { id: "linda", name: "LINDA BA", url: "https://linda.buenosaires.gob.ar/" },
   { id: "alternativa", name: "Alternativa Teatral", url: "https://www.alternativateatral.com.ar/obras.asp?cat=9-infantiles" }
 ];
 
@@ -45,7 +44,6 @@ const CATEGORY_COLORS = {
 };
 const SOURCE_HOSTS = {
   baires: "bairessecreta.com",
-  linda: "buenosaires.gob.ar",
   alternativa: "alternativateatral.com.ar"
 };
 const SOURCE_BY_NAME = Object.fromEntries(SOURCES.map((source) => [source.name, source]));
@@ -172,8 +170,8 @@ async function loadScrapedEvents() {
         dataStatus.textContent = `Agenda actualizada desde ${EVENTS.length} eventos extraídos.`;
       } else if (Array.isArray(report.theater_events)) {
         EVENTS = report.theater_events.map(eventFromLegacyTheaterRecord).filter(Boolean);
-        dataStatus.textContent = "El JSON es de una versión anterior: contiene teatro, pero no la unión de las tres fuentes. Volvé a ejecutar scraper.py.";
-        console.warn("eventos_extraidos.json usa el formato anterior; faltan eventos de Baires Secreta y LINDA BA.");
+        dataStatus.textContent = "El JSON es de una versión anterior: contiene teatro, pero no la unión de las fuentes actuales. Volvé a ejecutar scraper.py.";
+        console.warn("eventos_extraidos.json usa el formato anterior; faltan eventos de las fuentes actuales.");
       } else {
         throw new Error("El JSON no contiene el arreglo events.");
       }
@@ -222,7 +220,7 @@ function isVerifiedEvent(event) {
   }
 
   const linkedSources = new Set(event.sources.map((source) => source.id));
-  const hasThreeSourceLinks = SOURCES.every((source) => {
+  const hasSourceLinks = SOURCES.every((source) => {
     const link = event.sources.find((item) => item.id === source.id);
     if (!link || typeof link.url !== "string") return false;
     try {
@@ -233,7 +231,7 @@ function isVerifiedEvent(event) {
     }
   });
   return linkedSources.size === SOURCES.length
-    && hasThreeSourceLinks
+    && hasSourceLinks
     && Number.isFinite(event.latitude)
     && Number.isFinite(event.longitude)
     && event.latitude >= -90

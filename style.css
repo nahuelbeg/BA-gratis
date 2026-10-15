@@ -226,6 +226,8 @@ kbd { display: grid; width: 19px; height: 20px; flex: 0 0 auto; place-items: cen
 .tab-button.is-active::after { position: absolute; right: 0; bottom: -1px; left: 0; height: 2px; background: var(--green); content: ""; }
 .tab-button:focus-visible, .category-chip:focus-visible, a:focus-visible { outline: 3px solid rgba(40, 93, 73, .35); outline-offset: 3px; }
 .results-count { color: var(--muted); font-size: 11px; }
+.data-status { min-height: 0; margin: 7px 0 0; color: var(--muted); font-size: 10px; }
+.data-status:empty { display: none; }
 .category-shortcuts { display: flex; gap: 8px; padding: 20px 0 18px; overflow-x: auto; scrollbar-width: none; }
 .category-shortcuts::-webkit-scrollbar { display: none; }
 .category-chip {

@@ -6,7 +6,7 @@ const SOURCES = [
   { id: "alternativa", name: "Alternativa Teatral", url: "https://www.alternativateatral.com.ar/obras.asp?cat=9-infantiles" }
 ];
 
-const EVENTS = [
+const FALLBACK_EVENTS = [
   { title: "Jazz Cartoons. Por Paris Jazz Club", category: "Teatro", genre: "Jazz", venue: "ND ATENEO", neighborhood: "Retiro", date: "2026-10-16", schedule: "VIE 21:00 · el 16/10", sourcePath: "obra68679-jazz-cartoons-por-paris-jazz-club" },
   { title: "Nicte", category: "Teatro", genre: "Teatro", venue: "MUY TEATRO", neighborhood: "Almagro", date: "2026-10-17", schedule: "SÁB 15:00 · hasta el 24/10", sourcePath: "obra91606-nicte" },
   { title: "ODISEA: Bajo el Mar", category: "Teatro", genre: "Teatro · Títeres", venue: "CENTRO CULTURAL 25 DE MAYO", neighborhood: "Villa Urquiza", date: "2026-10-17", schedule: "SÁB 15:00 · hasta el 28/11", sourcePath: "obra96700-odisea-bajo-el-mar" },
@@ -33,19 +33,22 @@ const EVENTS = [
     url: `https://www.alternativateatral.com/${event.sourcePath}`
   }]
 }));
+let EVENTS = [...FALLBACK_EVENTS];
 
 const CATEGORY_COLORS = {
   Teatro: "#d98468",
   Música: "#8877ba",
   Cine: "#ce9c34",
   Recreación: "#4e9a8f",
-  Museos: "#6689a6"
+  Museos: "#6689a6",
+  Infantil: "#678c75"
 };
 const SOURCE_HOSTS = {
   baires: "bairessecreta.com",
   linda: "buenosaires.gob.ar",
   alternativa: "alternativateatral.com.ar"
 };
+const SOURCE_BY_NAME = Object.fromEntries(SOURCES.map((source) => [source.name, source]));
 const CATEGORIES = new Set(Object.keys(CATEGORY_COLORS));
 const AGE_RANGES = new Set(["0-3", "4-7", "8-12"]);
 
@@ -64,12 +67,13 @@ const searchInput = document.querySelector("#search-input");
 const ageFilter = document.querySelector("#age-filter");
 const neighborhoodFilter = document.querySelector("#neighborhood-filter");
 const mapStatus = document.querySelector("#map-status");
+const dataStatus = document.querySelector("#data-status");
 let map;
 let markers;
 
 function populateNeighborhoodFilter() {
   const existing = new Set([...neighborhoodFilter.options].map((option) => option.value));
-  [...new Set(EVENTS.map((event) => event.neighborhood))]
+  [...new Set(EVENTS.map((event) => event.neighborhood).filter(Boolean))]
     .sort((a, b) => a.localeCompare(b, "es"))
     .forEach((neighborhood) => {
       if (existing.has(neighborhood)) return;
@@ -77,8 +81,119 @@ function populateNeighborhoodFilter() {
     });
 }
 
+function isAllowedSourceUrl(source, url) {
+    if (!source || typeof url !== "string") return false;
+    try {
+      const hostname = new URL(url).hostname;
+      return hostname === SOURCE_HOSTS[source.id]
+        || hostname.endsWith(`.${SOURCE_HOSTS[source.id]}`);
+    } catch {
+      return false;
+    }
+}
+
+function eventFromScraperRecord(record) {
+    if (
+      !record
+      || typeof record.title !== "string"
+      || !record.source_details
+      || !Array.isArray(record.sources)
+    ) return null;
+    const sources = record.sources.flatMap((sourceName) => {
+      const source = SOURCE_BY_NAME[sourceName];
+      const detail = record.source_details[sourceName];
+      if (!source || !detail || !isAllowedSourceUrl(source, detail.url)) return [];
+      return [{ id: source.id, name: source.name, url: detail.url }];
+    });
+    if (!sources.length) return null;
+
+    const theater = record.source_details["Alternativa Teatral"];
+    const details = Object.values(record.source_details);
+    const description = details
+      .map((detail) => detail.description)
+      .filter((text) => typeof text === "string" && text.trim())
+      .join(" · ");
+    return {
+      title: theater?.title || record.title,
+      category: theater ? "Teatro" : "Infantil",
+      genre: theater?.genres?.join(" · ") || "",
+      venue: theater?.venue || "",
+      neighborhood: theater?.neighborhood || "",
+      address: theater?.address || "",
+      latitude: theater?.latitude,
+      longitude: theater?.longitude,
+      date: theater?.date || "",
+      time: theater?.time || "",
+      schedule: theater?.schedule || "",
+      age: [],
+      ageLabel: "Infantil · edad no especificada",
+      description: description || "Actividad infantil publicada en una fuente cultural.",
+      sources,
+      importedFromScraper: true
+    };
+}
+
+function eventFromLegacyTheaterRecord(record) {
+    if (
+      !record
+      || typeof record.title !== "string"
+      || typeof record.url !== "string"
+      || !isAllowedSourceUrl(SOURCE_BY_NAME["Alternativa Teatral"], record.url)
+    ) return null;
+    return {
+      ...record,
+      category: "Teatro",
+      age: [],
+      ageLabel: "Infantil · edad no especificada",
+      description: `${(record.genres || []).join(" · ") || "Teatro"}, en cartelera infantil de Alternativa Teatral.`,
+      sources: [{
+        id: "alternativa",
+        name: "Alternativa Teatral",
+        url: record.url
+      }],
+      importedFromScraper: true
+    };
+}
+
+async function loadScrapedEvents() {
+    if (window.location.protocol === "file:") {
+      dataStatus.textContent = "Usando agenda local. Serví el sitio por HTTP para cargar eventos_extraidos.json.";
+      return;
+    }
+    try {
+      const response = await fetch("./eventos_extraidos.json", { cache: "no-store" });
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status} al leer eventos_extraidos.json`);
+      }
+      const report = await response.json();
+      if (Array.isArray(report.events)) {
+        EVENTS = report.events.map(eventFromScraperRecord).filter(Boolean);
+        dataStatus.textContent = `Agenda actualizada desde ${EVENTS.length} eventos extraídos.`;
+      } else if (Array.isArray(report.theater_events)) {
+        EVENTS = report.theater_events.map(eventFromLegacyTheaterRecord).filter(Boolean);
+        dataStatus.textContent = "El JSON es de una versión anterior: contiene teatro, pero no la unión de las tres fuentes. Volvé a ejecutar scraper.py.";
+        console.warn("eventos_extraidos.json usa el formato anterior; faltan eventos de Baires Secreta y LINDA BA.");
+      } else {
+        throw new Error("El JSON no contiene el arreglo events.");
+      }
+      populateNeighborhoodFilter();
+      render();
+    } catch (error) {
+      dataStatus.textContent = "No se pudo cargar el JSON del scraper; se muestra la agenda de respaldo.";
+      console.warn("No se pudo cargar eventos_extraidos.json.", error);
+    }
+}
+
 function isVerifiedEvent(event) {
-  if (!Array.isArray(event.sources) || !Array.isArray(event.age)) return false;
+    if (!Array.isArray(event.sources) || !Array.isArray(event.age)) return false;
+    if (event.importedFromScraper) {
+      return typeof event.title === "string"
+        && CATEGORIES.has(event.category)
+        && event.sources.length > 0
+        && event.sources.every((source) =>
+          isAllowedSourceUrl(SOURCE_BY_NAME[source.name], source.url)
+        );
+    }
   const validDate = typeof event.date === "string"
     && /^\d{4}-\d{2}-\d{2}$/.test(event.date)
     && !Number.isNaN(new Date(`${event.date}T00:00:00Z`).getTime())
@@ -144,10 +259,17 @@ function getVisibleEvents() {
       && (!state.age || event.age.includes(state.age))
       && (!state.neighborhood || event.neighborhood === state.neighborhood)
       && (!query || searchable.includes(query));
-  }).sort((a, b) => new Date(a.date) - new Date(b.date));
+  }).sort((a, b) => {
+    if (!a.date) return b.date ? 1 : 0;
+    if (!b.date) return -1;
+    return new Date(a.date) - new Date(b.date);
+  });
 }
 
 function formatDate(date, options = { weekday: "long", day: "numeric", month: "long" }) {
+  if (!date || Number.isNaN(new Date(`${date}T12:00:00`).getTime())) {
+    return "Fecha a confirmar";
+  }
   return new Intl.DateTimeFormat("es-AR", options).format(new Date(`${date}T12:00:00`));
 }
 
@@ -180,9 +302,13 @@ function sourceLinks(event) {
 }
 
 function renderEventCard(event) {
-  const directions = Number.isFinite(event.latitude) && Number.isFinite(event.longitude)
+  const hasCoordinates = Number.isFinite(event.latitude) && Number.isFinite(event.longitude);
+  const hasVenue = Boolean(event.address || event.venue || event.neighborhood);
+  const directions = hasCoordinates
     ? `https://www.google.com/maps/dir/?api=1&destination=${event.latitude},${event.longitude}`
-    : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${event.venue}, ${event.neighborhood}, Buenos Aires`)}`;
+    : hasVenue
+      ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${event.address || ""} ${event.venue || ""} ${event.neighborhood || ""} Buenos Aires`)}`
+      : event.sources[0].url;
   const ageLabel = event.ageLabel || `${event.age.join(" · ")} años`;
   return `
     <article class="event-card">
@@ -195,12 +321,12 @@ function renderEventCard(event) {
         <p class="event-description">${escapeHtml(event.description)}</p>
         <dl class="event-details">
           <div><dt aria-label="Fecha">◷</dt><dd>${escapeHtml(event.schedule || `${formatDate(event.date)}${event.time ? ` · ${event.time}` : ""}`)}</dd></div>
-          <div><dt aria-label="Lugar">⌖</dt><dd>${escapeHtml(event.venue)} · ${escapeHtml(event.neighborhood)}</dd></div>
+          <div><dt aria-label="Lugar">⌖</dt><dd>${escapeHtml(event.venue || "Lugar a confirmar")}${event.neighborhood ? ` · ${escapeHtml(event.neighborhood)}` : ""}</dd></div>
         </dl>
       </div>
       <div class="event-card-footer">
         <div class="card-sources">${sourceLinks(event)}</div>
-        <a class="directions-link" href="${directions}" target="_blank" rel="noopener noreferrer">${event.sources.length === 1 ? "Cómo llegar ↗" : "Detalles ↗"}</a>
+        <a class="directions-link" href="${escapeHtml(directions)}" target="_blank" rel="noopener noreferrer">${hasVenue ? "Cómo llegar ↗" : "Ver fuente ↗"}</a>
       </div>
     </article>`;
 }
@@ -233,8 +359,9 @@ function renderAgenda(events) {
 
   const days = new Map();
   events.forEach((event) => {
-    if (!days.has(event.date)) days.set(event.date, []);
-    days.get(event.date).push(event);
+    const date = event.date || "";
+    if (!days.has(date)) days.set(date, []);
+    days.get(date).push(event);
   });
   agendaEvents.innerHTML = [...days.entries()].map(([date, dayEvents]) => `
     <section class="agenda-day">
@@ -243,7 +370,7 @@ function renderAgenda(events) {
         ${dayEvents.map((event) => `
           <article class="agenda-entry">
             <h3><a href="${escapeHtml(event.sources[0].url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(event.title)}</a></h3>
-            <p>${escapeHtml(event.schedule || event.time || "Horario a confirmar")} · ${escapeHtml(event.venue)} · ${escapeHtml(event.neighborhood)} · ${escapeHtml(event.category)}</p>
+            <p>${escapeHtml(event.schedule || `${event.time || "Horario a confirmar"} · ${event.venue || "Lugar a confirmar"}${event.neighborhood ? ` · ${event.neighborhood}` : ""} · ${event.category}`)}</p>
           </article>`).join("")}
       </div>
     </section>`).join("");
@@ -290,9 +417,9 @@ function renderMap(events) {
     L.marker([event.latitude, event.longitude], { icon }).bindPopup(popup).addTo(markers);
   });
   mapStatus.textContent = mappableEvents.length
-    ? `${mappableEvents.length} ${mappableEvents.length === 1 ? "actividad" : "actividades"} con ubicación precisa en el mapa.${mappableEvents.length < events.length ? " Las obras de teatro no incluyen coordenadas en la cartelera; no se muestran pines aproximados." : ""}`
+    ? `${mappableEvents.length} ${mappableEvents.length === 1 ? "actividad" : "actividades"} con ubicación precisa en el mapa.${mappableEvents.length < events.length ? " El resto de las fuentes no aporta coordenadas; no se muestran pines aproximados." : ""}`
     : events.length
-      ? "La cartelera de teatro informa sala y barrio, pero no coordenadas precisas. No mostramos pines aproximados; usá «Cómo llegar» en cada ficha."
+      ? "Las fuentes no aportan coordenadas precisas para estas actividades; no mostramos pines aproximados."
       : "El mapa mostrará ubicaciones cuando haya actividades con coordenadas precisas.";
   if (mappableEvents.length) {
     const bounds = markers.getBounds();
@@ -367,3 +494,4 @@ document.addEventListener("keydown", (event) => {
 
 populateNeighborhoodFilter();
 render();
+loadScrapedEvents();

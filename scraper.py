@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+mejora del scraper!/usr/bin/env python3
 """Extrae la cartelera infantil de Alternativa y compara títulos entre fuentes."""
 
 from __future__ import annotations
@@ -235,17 +235,17 @@ def es_categoria_infantil(classifications: object) -> bool:
 
 
 def extraer_cartelera_alternativa(
-    payload: object, dias: int, hoy: date | None = None
+    payload: object, dias: int | None, hoy: date | None = None
 ) -> tuple[list[dict[str, object]], int]:
-    """Extrae obras infantiles con funciones en el rango visible de la cartelera."""
+    """Extrae obras infantiles con funciones próximas del catálogo."""
     if not isinstance(payload, dict) or not isinstance(payload.get("espectaculos"), dict):
         raise ValueError("El catálogo JSON de Alternativa no tiene la estructura esperada.")
 
     catalog = payload["espectaculos"]
     infantil_count = 0
     today = hoy or date.today()
-    now = datetime.now()
-    last_day = today + timedelta(days=dias)
+    now = datetime.now() if hoy is None else datetime.combine(today, datetime.min.time())
+    last_day = today + timedelta(days=dias) if dias is not None else None
     events: list[dict[str, object]] = []
 
     for show in catalog.values():
@@ -282,7 +282,9 @@ def extraer_cartelera_alternativa(
                     starts_at = datetime.strptime(function_date, "%Y-%m-%d %H:%M")
                 except ValueError:
                     continue
-                if not now <= starts_at <= datetime.combine(last_day, datetime.max.time()):
+                if starts_at < now:
+                    continue
+                if last_day is not None and starts_at.date() > last_day:
                     continue
                 upcoming.append((starts_at, venue, function))
 
@@ -347,7 +349,7 @@ def extraer_cartelera_alternativa(
 
 
 def descargar_cartelera_alternativa(
-    timeout: float, dias: int
+    timeout: float, dias: int | None
 ) -> tuple[list[dict[str, object]], int]:
     params = urlencode(
         {
@@ -364,6 +366,48 @@ def descargar_cartelera_alternativa(
         raise ValueError("Alternativa devolvió una respuesta JSONP inesperada.")
     payload = json.loads(match.group(1).lstrip("\ufeff"))
     return extraer_cartelera_alternativa(payload, dias)
+
+
+def consolidar_eventos(
+    eventos_por_fuente: dict[str, list[dict[str, object]]]
+) -> tuple[list[dict[str, object]], dict[str, int]]:
+    """Une los eventos de todas las fuentes y anota dónde apareció cada uno."""
+    eventos_unicos: dict[str, dict[str, object]] = {}
+    for fuente, eventos in eventos_por_fuente.items():
+        for evento in eventos:
+            titulo = evento.get("title")
+            if not isinstance(titulo, str) or not titulo.strip():
+                continue
+            titulo_normalizado = normalizar_texto(titulo)
+            if not titulo_normalizado:
+                continue
+
+            evento_unificado = eventos_unicos.setdefault(
+                titulo_normalizado,
+                {
+                    "title": titulo,
+                    "normalized_title": titulo_normalizado,
+                    "sources": [],
+                    "source_details": {},
+                },
+            )
+            if fuente not in evento_unificado["sources"]:
+                evento_unificado["sources"].append(fuente)
+                evento_unificado["source_details"][fuente] = evento
+
+    eventos = sorted(
+        eventos_unicos.values(),
+        key=lambda evento: (str(evento["normalized_title"]), str(evento["title"])),
+    )
+    return eventos, {
+        "events_in_one_source": sum(len(evento["sources"]) == 1 for evento in eventos),
+        "events_in_multiple_sources": sum(
+            len(evento["sources"]) > 1 for evento in eventos
+        ),
+        "events_in_all_sources": sum(
+            len(evento["sources"]) == len(eventos_por_fuente) for evento in eventos
+        ),
+    }
 
 
 def obtener_fuente(
@@ -387,7 +431,7 @@ def obtener_fuente(
 
 
 def ejecutar(
-    timeout: float, dias: int, baires_url: str, linda_url: str
+    timeout: float, dias: int | None, baires_url: str, linda_url: str
 ) -> dict[str, object]:
     print("Consultando fuentes culturales...", file=sys.stderr)
     baires, baires_error = obtener_fuente(
@@ -415,16 +459,20 @@ def ejecutar(
             "error": f"{type(error).__name__}: {error}",
         }
 
-    candidate_sets = [
-        {event["normalized_title"] for event in source_events}
-        for source_events in (baires, linda, alternativa)
-    ]
-    common_titles = set.intersection(*candidate_sets)
-    events_by_title = {
-        event["normalized_title"]: event
-        for event in alternativa
-        if event["normalized_title"] in common_titles
+    source_events = {
+        "Baires Secreta": [dict(event) for event in baires],
+        "LINDA BA": [dict(event) for event in linda],
+        "Alternativa Teatral": [dict(event) for event in alternativa],
     }
+    all_events, distribution = consolidar_eventos(source_events)
+    source_title_sets = {
+        source: {event["normalized_title"] for event in events}
+        for source, events in source_events.items()
+    }
+    triple_matches = set.intersection(*source_title_sets.values())
+    cross_source_matches = (
+        set.union(*source_title_sets.values()) - triple_matches
+    )
     errors = [
         error
         for error in (baires_error, linda_error, alternativa_error)
@@ -439,13 +487,20 @@ def ejecutar(
         "theater_events": alternativa,
         "cross_validation": {
             "method": "coincidencia exacta de títulos normalizados",
+            "publishing_rule": (
+                "unión de eventos infantiles; la coincidencia entre fuentes "
+                "no es requisito para incluirlos"
+            ),
             "source_counts": {
                 "baires_secreta_infantil_candidates": len(baires),
                 "linda_ba_infantil_candidates": len(linda),
                 "alternativa_infantiles_in_range": len(alternativa),
             },
-            "triple_source_matches": list(events_by_title.values()),
+            "title_distribution": distribution,
+            "titles_in_multiple_sources_but_not_all": len(cross_source_matches),
+            "titles_found_in_all_sources": len(triple_matches),
         },
+        "events": all_events,
         "errors": errors,
     }
 
@@ -473,8 +528,8 @@ def parsear_argumentos() -> argparse.Namespace:
     parser.add_argument(
         "--days",
         type=int,
-        default=7,
-        help="Días hacia adelante para incluir funciones (por defecto: 7).",
+        default=None,
+        help="Limita las funciones a los próximos N días (por defecto: sin límite).",
     )
     parser.add_argument(
         "--baires-url",
@@ -491,7 +546,7 @@ def parsear_argumentos() -> argparse.Namespace:
 
 def main() -> int:
     args = parsear_argumentos()
-    if args.timeout <= 0 or args.days < 0:
+    if args.timeout <= 0 or (args.days is not None and args.days < 0):
         print("El timeout debe ser positivo y los días no negativos.", file=sys.stderr)
         return 2
 
@@ -514,16 +569,26 @@ def main() -> int:
         return 1
 
     counts = report["cross_validation"]["source_counts"]
+    days_summary = (
+        "sin límite de días"
+        if report["upcoming_days"] is None
+        else f"en los próximos {report['upcoming_days']} días"
+    )
     print(
         "Cartelera infantil de Alternativa: "
-        f"{counts['alternativa_infantiles_in_range']} obras con función en "
-        f"los próximos {report['upcoming_days']} días "
+        f"{counts['alternativa_infantiles_in_range']} obras con función "
+        f"{days_summary} "
         f"({report['catalog_infantile_count']} infantiles en el catálogo).",
         file=sys.stderr,
     )
     print(
-        "Coincidencias exactas en las tres fuentes: "
-        f"{len(report['cross_validation']['triple_source_matches'])}.",
+        f"Eventos infantiles incluidos en la unión: {len(report['events'])} "
+        "(cada evento conserva las fuentes donde fue encontrado).",
+        file=sys.stderr,
+    )
+    print(
+        "Coincidencias en las tres fuentes (solo estadística): "
+        f"{report['cross_validation']['titles_found_in_all_sources']}.",
         file=sys.stderr,
     )
     print(f"Informe guardado en: {args.output}", file=sys.stderr)

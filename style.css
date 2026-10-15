@@ -54,29 +54,21 @@ a { color: inherit; }
 .brand, .footer-brand {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
+  gap: 10px;
   color: var(--ink);
   font-family: "Manrope", sans-serif;
-  font-size: 20px;
-  font-weight: 800;
   text-decoration: none;
-  letter-spacing: -1px;
 }
 
 .brand-mark {
-  display: inline-grid;
-  width: 31px;
-  height: 31px;
-  place-items: center;
-  border-radius: 11px 11px 11px 3px;
-  color: white;
-  background: var(--green);
-  font-family: "Manrope", sans-serif;
-  font-size: 19px;
-  font-weight: 800;
-  letter-spacing: -1px;
+  width: 39px;
+  height: 39px;
+  flex: 0 0 auto;
+  color: var(--green);
 }
-.brand-dot { color: var(--green); }
+.brand-name { display: grid; gap: 2px; line-height: 1.1; text-transform: uppercase; }
+.brand-name strong { font-size: 12px; font-weight: 800; letter-spacing: .45px; }
+.brand-name small { color: var(--green); font-size: 9px; font-weight: 700; letter-spacing: 2px; }
 .header-note { color: #5f655c; font-size: 13px; font-weight: 600; }
 .city-dot { display: inline-block; width: 8px; height: 8px; margin-right: 7px; border-radius: 50%; background: #78a184; }
 
@@ -107,7 +99,7 @@ h1 {
   letter-spacing: -3px;
 }
 h1 span { color: var(--green); }
-.hero-description { max-width: 430px; margin-bottom: 19px; color: #565c54; font-size: 14px; line-height: 1.65; }
+.hero-description { max-width: 390px; margin-bottom: 19px; color: #565c54; font-size: 14px; line-height: 1.65; }
 .hero-stamp { display: inline-flex; align-items: center; gap: 7px; color: var(--green); font-size: 11px; font-weight: 700; }
 .hero-stamp span { color: #d28264; font-size: 17px; }
 .hero-art { position: absolute; top: 0; right: 0; width: 44%; height: 100%; }
@@ -297,8 +289,10 @@ h1 span { color: var(--green); }
   margin: 0 auto;
   border-top: 1px solid var(--line);
 }
-.footer-brand { gap: 7px; font-size: 15px; }
-.footer-brand .brand-mark { width: 25px; height: 25px; border-radius: 9px 9px 9px 3px; font-size: 15px; }
+.footer-brand { gap: 8px; }
+.footer-brand .brand-mark { width: 30px; height: 30px; }
+.footer-brand .brand-name strong { font-size: 10px; }
+.footer-brand .brand-name small { font-size: 8px; }
 .site-footer > p { align-self: center; margin: 0; color: var(--muted); font-size: 10px; }
 .footer-sources { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 13px; padding-top: 8px; }
 .footer-sources span, .site-footer small { color: #868980; font-size: 9px; }
@@ -324,11 +318,11 @@ h1 span { color: var(--green); }
 
 @media (max-width: 520px) {
   .header-note { font-size: 11px; }
-  .hero { min-height: 350px; padding: 34px 23px; }
+  .hero { min-height: 455px; padding: 34px 23px; }
   .hero-copy { max-width: 100%; }
   h1 { font-size: 46px; }
   .hero-description { max-width: 290px; }
-  .hero-art { top: 177px; right: 0; width: 100%; height: 173px; opacity: .95; }
+  .hero-art { top: auto; right: 0; bottom: 0; width: 100%; height: 150px; opacity: .95; }
   .sun { top: 22px; right: 65px; width: 105px; height: 105px; }
   .art-card-yellow { top: 28px; right: 68px; width: 83px; height: 66px; }
   .art-card-pink { top: 64px; right: 183px; width: 80px; height: 72px; font-size: 10px; }

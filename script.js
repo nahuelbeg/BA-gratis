@@ -52,32 +52,16 @@ const AGE_RANGES = new Set(["0-3", "4-7", "8-12"]);
 
 const state = {
   tab: "categories",
-  category: "",
-  search: "",
-  age: "",
-  neighborhood: ""
+  category: ""
 };
 
 const categoryEvents = document.querySelector("#category-events");
 const agendaEvents = document.querySelector("#agenda-events");
 const resultsCount = document.querySelector("#results-count");
-const searchInput = document.querySelector("#search-input");
-const ageFilter = document.querySelector("#age-filter");
-const neighborhoodFilter = document.querySelector("#neighborhood-filter");
 const mapStatus = document.querySelector("#map-status");
 const dataStatus = document.querySelector("#data-status");
 let map;
 let markers;
-
-function populateNeighborhoodFilter() {
-  const existing = new Set([...neighborhoodFilter.options].map((option) => option.value));
-  [...new Set(EVENTS.map((event) => event.neighborhood).filter(Boolean))]
-    .sort((a, b) => a.localeCompare(b, "es"))
-    .forEach((neighborhood) => {
-      if (existing.has(neighborhood)) return;
-      neighborhoodFilter.add(new Option(neighborhood, neighborhood));
-    });
-}
 
 function isAllowedSourceUrl(source, url) {
     if (!source || typeof url !== "string") return false;
@@ -175,7 +159,6 @@ async function loadScrapedEvents() {
       } else {
         throw new Error("El JSON no contiene el arreglo events.");
       }
-      populateNeighborhoodFilter();
       render();
     } catch (error) {
       dataStatus.textContent = "No se pudo cargar el JSON del scraper; se muestra la agenda de respaldo.";
@@ -243,21 +226,8 @@ function isVerifiedEvent(event) {
 }
 
 function getVisibleEvents() {
-  const query = state.search.trim().toLocaleLowerCase("es");
   return EVENTS.filter(isVerifiedEvent).filter((event) => {
-    const searchable = [
-      event.title,
-      event.category,
-      event.venue,
-      event.neighborhood,
-      event.description,
-      event.address,
-      event.schedule
-    ].join(" ").toLocaleLowerCase("es");
-    return (!state.category || event.category === state.category)
-      && (!state.age || event.age.includes(state.age))
-      && (!state.neighborhood || event.neighborhood === state.neighborhood)
-      && (!query || searchable.includes(query));
+    return !state.category || event.category === state.category;
   }).sort((a, b) => {
     if (!a.date) return b.date ? 1 : 0;
     if (!b.date) return -1;
@@ -334,12 +304,12 @@ function renderCategories(events) {
   if (!events.length) {
     renderEmptyState(
       categoryEvents,
-      state.search || state.age || state.neighborhood || state.category
-        ? "No encontramos planes con esos filtros"
-        : state.category === "Teatro" ? "No hay funciones infantiles listadas" : "Estamos armando la agenda",
-      state.search || state.age || state.neighborhood || state.category
-        ? "Probá cambiar la búsqueda o combinar otros filtros. Las funciones de teatro se toman de la cartelera infantil de Alternativa Teatral."
-        : "No hay actividades disponibles en esta categoría con el criterio de fuentes que usamos."
+      state.category === "Teatro"
+        ? "No hay funciones infantiles listadas"
+        : state.category ? "No encontramos planes en esta categoría" : "Estamos armando la agenda",
+      state.category
+        ? "No hay actividades disponibles en esta categoría con el criterio de fuentes que usamos."
+        : "No hay actividades disponibles con el criterio de fuentes que usamos."
     );
     return;
   }
@@ -471,26 +441,5 @@ document.querySelectorAll(".category-chip").forEach((chip) => {
   });
 });
 
-searchInput.addEventListener("input", () => {
-  state.search = searchInput.value;
-  render();
-});
-ageFilter.addEventListener("change", () => {
-  state.age = ageFilter.value;
-  render();
-});
-neighborhoodFilter.addEventListener("change", () => {
-  state.neighborhood = neighborhoodFilter.value;
-  render();
-});
-
-document.addEventListener("keydown", (event) => {
-  if (event.key === "/" && !["INPUT", "SELECT", "TEXTAREA"].includes(document.activeElement.tagName)) {
-    event.preventDefault();
-    searchInput.focus();
-  }
-});
-
-populateNeighborhoodFilter();
 render();
 loadScrapedEvents();

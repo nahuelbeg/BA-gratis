@@ -1,14 +1,11 @@
-usr/bin/env python3
-"""Extrae la cartelera infantil de Alternativa y compara títulos entre fuentes."""
-from __future__ import annotations
-
+#!/usr/bin/env python3
 import argparse
 import json
 import re
 import sys
 import unicodedata
 from dataclasses import dataclass, field
-from datetime import date, datetime, timedelta
+from datetime import date, datetime, timedelta, timezone
 from html.parser import HTMLParser
 from pathlib import Path
 from typing import Iterable
@@ -18,8 +15,9 @@ from urllib.request import Request, urlopen
 from time import time as timestamp
 
 
-URL_BAIRES_SECRETA = "https://bairessecreta.com/"
-URL_LINDA_BA = "https://linda.buenosaires.gob.ar/"
+URL_BAIRES_SECRETA = "https://bairessecreta.com/?s=infantil"
+URL_LINDA_BA = "https://linda.buenosaires.gob.ar/agenda"
+URL_LINDA_API = "https://linda.buenosaires.gob.ar/api/frontend/events/filter"
 URL_ALTERNATIVA_INFANTILES = (
     "https://www.alternativateatral.com.ar/obras.asp?cat=9-infantiles"
 )
@@ -27,16 +25,8 @@ URL_ALTERNATIVA_CATALOG = "https://www.alternativateatral.com.ar/get-json.php"
 
 MAX_RESPONSE_BYTES = 8 * 1024 * 1024
 USER_AGENT = "PlanazoAgenda/1.0 (+https://www.alternativateatral.com.ar/)"
-KEYWORDS_INFANTILES = (
-    "nino",
-    "infantil",
-    "familia",
-    "familiar",
-    "chico",
-    "bebe",
-    "titere",
-    "infante",
-)
+BUENOS_AIRES_TZ = timezone(timedelta(hours=-3))
+LINDA_PAGE_SIZE = 200
 VOID_TAGS = {
     "area",
     "base",
@@ -145,11 +135,78 @@ def normalizar_texto(texto: str) -> str:
 
 
 def es_evento_infantil(titulo: str, descripcion: str = "") -> bool:
-    texto = f" {normalizar_texto(titulo)} {normalizar_texto(descripcion)} "
-    return any(
-        re.search(rf"\b{re.escape(keyword)}\w*\b", texto)
-        for keyword in KEYWORDS_INFANTILES
+    titulo_norm = normalizar_texto(titulo)
+    descripcion_norm = normalizar_texto(descripcion)
+    audiencia_explicita = (
+        r"\b(ninos|ninas|infantil\w*|chicos|chicas|bebes|infancias|"
+        r"adolescentes)\b"
     )
+    familia_explicita = (
+        r"\b(en familia|para familias|para la familia|para toda la familia|"
+        r"familiar)\b"
+    )
+    if re.search(audiencia_explicita, titulo_norm):
+        return True
+    if re.search(familia_explicita, titulo_norm):
+        return True
+    return bool(
+        re.search(audiencia_explicita, descripcion_norm)
+        or re.search(familia_explicita, descripcion_norm)
+    )
+
+
+class HTMLTextExtractor(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.parts: list[str] = []
+
+    def handle_data(self, data: str) -> None:
+        if data.strip():
+            self.parts.append(data.strip())
+
+
+def html_a_texto(value: object) -> str:
+    if not isinstance(value, str):
+        return ""
+    parser = HTMLTextExtractor()
+    parser.feed(value)
+    parser.close()
+    return re.sub(r"\s+", " ", " ".join(parser.parts)).strip()
+
+
+def menciona_dia_del_nino_pasado(titulo: str, descripcion: str) -> bool:
+    if "dia del nino" not in normalizar_texto(titulo):
+        return False
+    meses = {
+        "enero": 1,
+        "febrero": 2,
+        "marzo": 3,
+        "abril": 4,
+        "mayo": 5,
+        "junio": 6,
+        "julio": 7,
+        "agosto": 8,
+        "septiembre": 9,
+        "octubre": 10,
+        "noviembre": 11,
+        "diciembre": 12,
+    }
+    texto = normalizar_texto(descripcion)
+    match = re.search(
+        r"\b(\d{1,2})\s+de\s+("
+        + "|".join(meses)
+        + r")\s+de\s+(\d{4})\b",
+        texto,
+    )
+    if not match:
+        return False
+    try:
+        event_date = date(
+            int(match.group(3)), meses[match.group(2)], int(match.group(1))
+        )
+    except ValueError:
+        return False
+    return event_date < datetime.now(BUENOS_AIRES_TZ).date()
 
 
 def descargar_html(url: str, timeout: float) -> str:
@@ -176,7 +233,7 @@ def parsear_html(html: str) -> Node:
 def extraer_tarjetas_genericas(
     root: Node, nombre_fuente: str, url_fuente: str
 ) -> list[dict[str, str]]:
-    """Lee tarjetas editoriales para buscar coincidencias exactas de títulos."""
+    """Lee tarjetas editoriales de la fuente y filtra las infantiles."""
     containers = [
         node
         for node in descendants(root)
@@ -202,7 +259,11 @@ def extraer_tarjetas_genericas(
         title = text_content(title_node)
         description_node = first_node(container, tag="p")
         description = text_content(description_node) if description_node else ""
-        if not title or not es_evento_infantil(title, description):
+        if not title or not es_evento_infantil(title):
+            continue
+        if nombre_fuente == "Baires Secreta" and menciona_dia_del_nino_pasado(
+            title, description
+        ):
             continue
 
         link_node = first_node(heading, tag="a") if heading else None
@@ -226,6 +287,194 @@ def extraer_tarjetas_genericas(
     return results
 
 
+def parsear_fecha_linda(value: object) -> datetime | None:
+    if not isinstance(value, str):
+        return None
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=BUENOS_AIRES_TZ)
+    return parsed.astimezone(BUENOS_AIRES_TZ)
+
+
+def extraer_eventos_linda(
+    records: object,
+    dias: int | None,
+    now: datetime | None = None,
+) -> list[dict[str, object]]:
+    if not isinstance(records, list):
+        raise ValueError("La API de LINDA BA no devolvió una lista de eventos.")
+
+    current_time = now or datetime.now(BUENOS_AIRES_TZ)
+    if current_time.tzinfo is None:
+        current_time = current_time.replace(tzinfo=BUENOS_AIRES_TZ)
+    else:
+        current_time = current_time.astimezone(BUENOS_AIRES_TZ)
+    last_day = (
+        current_time.date() + timedelta(days=dias) if dias is not None else None
+    )
+    events: list[dict[str, object]] = []
+
+    for record in records:
+        if not isinstance(record, dict):
+            continue
+        title = record.get("title")
+        if not isinstance(title, str) or not title.strip():
+            continue
+        description = html_a_texto(record.get("description"))
+        if not es_evento_infantil(title, description):
+            continue
+
+        dates = record.get("fechasDelEvento")
+        schedules = record.get("horarios")
+        occurrences: list[tuple[datetime, str]] = []
+        if isinstance(dates, list):
+            for index, date_value in enumerate(dates):
+                starts_at = parsear_fecha_linda(date_value)
+                if starts_at is None:
+                    continue
+                schedule = (
+                    schedules[index]
+                    if isinstance(schedules, list) and index < len(schedules)
+                    else {}
+                )
+                time_text = (
+                    str(schedule.get("hora", ""))
+                    if isinstance(schedule, dict)
+                    else ""
+                )
+                occurrences.append((starts_at, time_text or starts_at.strftime("%H:%M")))
+        if not occurrences:
+            starts_at = parsear_fecha_linda(record.get("fechaInicio"))
+            if starts_at is not None:
+                occurrences.append((starts_at, starts_at.strftime("%H:%M")))
+
+        upcoming = [
+            occurrence
+            for occurrence in occurrences
+            if occurrence[0] >= current_time
+            and (last_day is None or occurrence[0].date() <= last_day)
+        ]
+        if not upcoming:
+            continue
+        upcoming.sort(key=lambda occurrence: occurrence[0])
+
+        venue_data = record.get("ubicacion")
+        venue = venue_data if isinstance(venue_data, dict) else {}
+        path = record.get("pathAlias")
+        event_url = (
+            urljoin("https://linda.buenosaires.gob.ar/", path.lstrip("/"))
+            if isinstance(path, str) and path
+            else "https://linda.buenosaires.gob.ar/agenda"
+        )
+        tags = record.get("etiquetas")
+        genres = [tag for tag in tags if isinstance(tag, str)] if isinstance(tags, list) else []
+        normalized_tags = {normalizar_texto(tag) for tag in genres}
+        category_by_tag = {
+            "cine": "Cine",
+            "musica y shows": "Música",
+            "museos": "Museos",
+            "recreacion": "Recreación",
+        }
+        category = next(
+            (
+                mapped
+                for tag, mapped in category_by_tag.items()
+                if tag in normalized_tags
+            ),
+            "Infantil",
+        )
+        next_start, next_time = upcoming[0]
+        neighborhood = record.get("barrio")
+        if not isinstance(neighborhood, str):
+            neighborhood = ""
+        neighborhood = neighborhood.replace("_", " ").title()
+        venue_name = venue.get("titulo")
+        address = venue.get("direccion") or record.get("direccion") or ""
+        latitude = venue.get("latitud")
+        longitude = venue.get("longitud")
+        functions = [
+            {
+                "date": starts_at.date().isoformat(),
+                "time": time_text,
+            }
+            for starts_at, time_text in upcoming
+        ]
+
+        events.append(
+            {
+                "title": title.strip(),
+                "normalized_title": normalizar_texto(title),
+                "category": category,
+                "venue": venue_name if isinstance(venue_name, str) else "",
+                "neighborhood": neighborhood,
+                "address": address if isinstance(address, str) else "",
+                "latitude": latitude,
+                "longitude": longitude,
+                "date": next_start.date().isoformat(),
+                "time": next_time,
+                "schedule": f"{next_start.date().isoformat()} · {next_time}",
+                "functions": functions,
+                "genres": genres,
+                "description": description,
+                "url": event_url,
+                "source": "LINDA BA",
+            }
+        )
+
+    events.sort(
+        key=lambda event: (
+            str(event["date"]),
+            str(event["time"]),
+            str(event["title"]),
+        )
+    )
+    return events
+
+
+def descargar_eventos_linda(
+    url: str, timeout: float, dias: int | None
+) -> tuple[list[dict[str, object]], dict[str, str] | None]:
+    api_url = (
+        url
+        if urlparse(url).path.rstrip("/").endswith("/api/frontend/events/filter")
+        else urljoin(url, "/api/frontend/events/filter")
+    )
+    all_records: list[object] = []
+    page = 1
+    try:
+        while True:
+            page_url = f"{api_url}?{urlencode({'limit': LINDA_PAGE_SIZE, 'page': page})}"
+            payload = json.loads(descargar_html(page_url, timeout))
+            if not isinstance(payload, dict) or not isinstance(payload.get("events"), list):
+                raise ValueError("La API de LINDA BA devolvió un JSON inesperado.")
+            all_records.extend(payload["events"])
+            pagination = payload.get("pagination")
+            total_pages = (
+                pagination.get("totalPages", page)
+                if isinstance(pagination, dict)
+                else page
+            )
+            if not isinstance(total_pages, int) or page >= total_pages:
+                break
+            page += 1
+        return extraer_eventos_linda(all_records, dias), None
+    except HTTPError as error:
+        return [], {
+            "source": "LINDA BA",
+            "url": api_url,
+            "error": f"HTTP {error.code}: {error.reason}",
+        }
+    except (URLError, TimeoutError, OSError, ValueError) as error:
+        return [], {
+            "source": "LINDA BA",
+            "url": api_url,
+            "error": f"{type(error).__name__}: {error}",
+        }
+
+
 def es_categoria_infantil(classifications: object) -> bool:
     if not isinstance(classifications, dict):
         return False
@@ -243,7 +492,11 @@ def extraer_cartelera_alternativa(
     catalog = payload["espectaculos"]
     infantil_count = 0
     today = hoy or date.today()
-    now = datetime.now() if hoy is None else datetime.combine(today, datetime.min.time())
+    now = (
+        datetime.now(BUENOS_AIRES_TZ).replace(tzinfo=None)
+        if hoy is None
+        else datetime.combine(today, datetime.min.time())
+    )
     last_day = today + timedelta(days=dias) if dias is not None else None
     events: list[dict[str, object]] = []
 
@@ -436,7 +689,7 @@ def ejecutar(
     baires, baires_error = obtener_fuente(
         "Baires Secreta", baires_url, timeout
     )
-    linda, linda_error = obtener_fuente("LINDA BA", linda_url, timeout)
+    linda, linda_error = descargar_eventos_linda(linda_url, timeout, dias)
 
     try:
         alternativa, catalog_count = descargar_cartelera_alternativa(timeout, dias)
@@ -479,7 +732,7 @@ def ejecutar(
     ]
 
     return {
-        "generated_at": datetime.now().astimezone().isoformat(timespec="seconds"),
+        "generated_at": datetime.now(BUENOS_AIRES_TZ).isoformat(timespec="seconds"),
         "theater_source": URL_ALTERNATIVA_INFANTILES,
         "upcoming_days": dias,
         "catalog_infantile_count": catalog_count,

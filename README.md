@@ -8,7 +8,7 @@ Abrí `index.html` en un navegador. El mapa usa Leaflet y teselas de OpenStreetM
 
 ## Extracción y validación de cartelera
 
-`scraper.py` requiere Python 3.10 o posterior y usa únicamente su biblioteca estándar. Alternativa carga la cartelera desde un endpoint JSONP público; el script consulta ese catálogo y extrae sus obras infantiles con funciones futuras, sin depender de ejecutar JavaScript ni de selectores visuales frágiles. Une los eventos infantiles detectados en **cualquiera** de las tres fuentes: no exige que el mismo título aparezca en todas. Consultá las páginas configuradas y guardá el informe de extracción y validación como JSON:
+`scraper.py` requiere Python 3.10 o posterior y usa únicamente su biblioteca estándar. Alternativa carga la cartelera desde un endpoint JSONP público; LINDA BA se consulta desde su API pública paginada y Baires Secreta desde su búsqueda de contenido infantil. El scraper extrae títulos con señales explícitas de público infantil/familiar, conserva solo funciones futuras de LINDA y Alternativa, y une los eventos detectados en **cualquiera** de las fuentes; no exige que el mismo título aparezca en todas. Consultá las fuentes y guardá el informe como JSON:
 
 ```bash
 python scraper.py
@@ -22,7 +22,7 @@ python scraper.py --output cartelera.json --timeout 30 --days 7 \
   --linda-url "https://linda.buenosaires.gob.ar/agenda"
 ```
 
-El arreglo `events` del JSON contiene la unión de eventos infantiles, deduplicada por título normalizado. Cada evento conserva `sources` y `source_details` para saber en qué fuente aparece y qué datos publica cada una. Los conteos de títulos presentes en varias fuentes o en las tres se informan únicamente como validación; nunca excluyen eventos de la unión. La cartelera de Alternativa incluye todas las funciones futuras del catálogo, sin límite predeterminado; podés limitarla con `--days 7`. Los errores HTTP, de red y de lectura quedan en el informe y producen un código de salida distinto de cero; una fuente sin candidatos también genera un aviso. Baires Secreta y LINDA BA se consultan como páginas HTML y pueden requerir URLs más específicas mediante sus opciones si la portada no publica tarjetas de eventos. Para mostrar la unión en el sitio, serví el proyecto por HTTP y dejá `eventos_extraidos.json` en la misma carpeta que `index.html`; la página lo carga y usa la agenda estática de respaldo si el archivo falta o no es válido. Abrir el HTML directamente con `file://` no permite esa carga.
+El arreglo `events` del JSON contiene la unión deduplicada por título normalizado. Cada evento conserva `sources` y `source_details`, incluidos enlaces, fechas, horarios y datos de ubicación publicados por las fuentes. Los conteos de títulos presentes en varias fuentes o en las tres se informan únicamente como validación; nunca excluyen eventos de la unión. Alternativa y LINDA BA incluyen funciones futuras sin límite predeterminado; podés limitar ambas con `--days 7`. Los errores HTTP, de red y de lectura quedan en el informe y producen un código de salida distinto de cero. Para mostrar la unión en el sitio, serví el proyecto por HTTP y dejá `eventos_extraidos.json` en la misma carpeta que `index.html`; la página lo carga y usa la agenda estática de respaldo si el archivo falta o no es válido. Abrir el HTML directamente con `file://` no permite esa carga.
 
 ## Curaduría y carga de actividades
 
@@ -30,12 +30,12 @@ Los eventos de teatro infantil se toman de la [cartelera infantil de Alternativa
 
 Para teatro, cada registro del arreglo `EVENTS` en `script.js` debe tener `category: "Teatro"`, el enlace a la ficha individual de Alternativa Teatral, título, sala, barrio, fecha de la próxima función mostrada y horario tal como aparecen en la cartelera. Cuando se actualice, revisá la página de origen y cambiá también `date` y `schedule`; no reutilices funciones ya pasadas.
 
-Para añadir contenido manual a las otras categorías, mantené la curaduría de triple fuente. Cada registro debe incluir los enlaces concretos de estas tres publicaciones:
+El scraper incluye las actividades infantiles detectadas en una o más de las fuentes. Cada tarjeta mantiene enlaces solo a las publicaciones donde se encontró el evento; no agregues fuentes no verificadas ni presentes la unión como verificación triple. Las fuentes son:
 
 - [Baires Secreta](https://bairessecreta.com/)
 - [LINDA BA](https://linda.buenosaires.gob.ar/)
 - [Alternativa Teatral](https://www.alternativateatral.com.ar/)
 
-En las categorías no teatrales se necesitan `title`, `category`, `venue`, `neighborhood`, `address`, `description`, `date` (formato `AAAA-MM-DD`), `time`, `age` (por ejemplo `["4-7"]`), `latitude`, `longitude` y `sources`. `sources` debe incluir un objeto por cada fuente, con su identificador (`baires`, `linda` o `alternativa`) y la URL que confirma el evento. La unión automática del scraper muestra las actividades infantiles publicadas en una fuente, sin exigir coincidencia con las otras dos; sus fuentes se presentan juntas cuando el título coincide.
+En el JSON, cada evento puede incluir `title`, `category`, `venue`, `neighborhood`, `address`, `description`, `date` (formato `AAAA-MM-DD`), `time`, `latitude`, `longitude`, `sources` y `source_details`. Los datos que no estén publicados por la fuente se dejan vacíos; no se inventan edades, ubicaciones ni horarios.
 
 Las vistas por categoría, agenda y mapa comparten la búsqueda y los filtros por edad y barrio.

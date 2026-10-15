@@ -107,24 +107,25 @@ function eventFromScraperRecord(record) {
     });
     if (!sources.length) return null;
 
-    const theater = record.source_details["Alternativa Teatral"];
     const details = Object.values(record.source_details);
+    const theater = record.source_details["Alternativa Teatral"];
+    const primary = theater || details.find((detail) => detail.date || detail.venue) || details[0];
     const description = details
       .map((detail) => detail.description)
       .filter((text) => typeof text === "string" && text.trim())
       .join(" · ");
     return {
-      title: theater?.title || record.title,
-      category: theater ? "Teatro" : "Infantil",
-      genre: theater?.genres?.join(" · ") || "",
-      venue: theater?.venue || "",
-      neighborhood: theater?.neighborhood || "",
-      address: theater?.address || "",
-      latitude: theater?.latitude,
-      longitude: theater?.longitude,
-      date: theater?.date || "",
-      time: theater?.time || "",
-      schedule: theater?.schedule || "",
+      title: primary?.title || record.title,
+      category: theater ? "Teatro" : CATEGORIES.has(primary?.category) ? primary.category : "Infantil",
+      genre: primary?.genres?.join(" · ") || "",
+      venue: primary?.venue || "",
+      neighborhood: primary?.neighborhood || "",
+      address: primary?.address || "",
+      latitude: primary?.latitude,
+      longitude: primary?.longitude,
+      date: primary?.date || "",
+      time: primary?.time || "",
+      schedule: primary?.schedule || "",
       age: [],
       ageLabel: "Infantil · edad no especificada",
       description: description || "Actividad infantil publicada en una fuente cultural.",
@@ -383,7 +384,7 @@ function initializeMap() {
     maxZoom: 19,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(map);
-  markers = L.layerGroup().addTo(map);
+  markers = L.featureGroup().addTo(map);
 }
 
 function renderMap(events) {

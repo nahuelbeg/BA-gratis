@@ -4,6 +4,26 @@ const SOURCES = [
   { id: "baires", name: "Baires Secreta", url: "https://bairessecreta.com/" },
   { id: "alternativa", name: "Alternativa Teatral", url: "https://www.alternativateatral.com.ar/obras.asp?cat=9-infantiles" }
 ];
+const CATEGORY_SOURCES = {
+  Museos: [
+    { name: "Museos de Buenos Aires", url: "https://buenosaires.gob.ar/gcaba_historico/cultura/museos" }
+  ],
+  Teatro: [
+    { name: "Centro Cultural Recoleta", url: "http://www.centroculturalrecoleta.org/" },
+    { name: "Usina del Arte", url: "https://buenosaires.gob.ar/gcaba_historico/cultura/usina-del-arte" },
+    { name: "Complejo Teatral de Buenos Aires", url: "https://complejoteatral.gob.ar/" },
+    { name: "Centro Cultural 25 de Mayo", url: "https://buenosaires.gob.ar/gcaba_historico/cultura/centro-cultural-25-de-mayo" }
+  ],
+  Música: [
+    { name: "Centro Cultural Recoleta", url: "http://www.centroculturalrecoleta.org/" },
+    { name: "Usina del Arte", url: "https://buenosaires.gob.ar/gcaba_historico/cultura/usina-del-arte" },
+    { name: "Complejo Teatral de Buenos Aires", url: "https://complejoteatral.gob.ar/" },
+    { name: "Centro Cultural 25 de Mayo", url: "https://buenosaires.gob.ar/gcaba_historico/cultura/centro-cultural-25-de-mayo" }
+  ],
+  Cine: [
+    { name: "Cartelera de cine de LA NACION", url: "https://www.lanacion.com.ar/cartelera-de-cine" }
+  ]
+};
 
 const FALLBACK_EVENTS = [
   { title: "Jazz Cartoons. Por Paris Jazz Club", category: "Teatro", genre: "Jazz", venue: "ND ATENEO", neighborhood: "Retiro", date: "2026-10-16", schedule: "VIE 21:00 · el 16/10", sourcePath: "obra68679-jazz-cartoons-por-paris-jazz-club" },
@@ -58,6 +78,7 @@ const state = {
 const categoryEvents = document.querySelector("#category-events");
 const agendaEvents = document.querySelector("#agenda-events");
 const resultsCount = document.querySelector("#results-count");
+const categorySources = document.querySelector("#category-sources");
 const mapStatus = document.querySelector("#map-status");
 const dataStatus = document.querySelector("#data-status");
 let map;
@@ -270,6 +291,30 @@ function sourceLinks(event) {
   ).join("");
 }
 
+function renderCategorySources() {
+  const sourceGroups = state.category
+    ? [[state.category, CATEGORY_SOURCES[state.category] || []]]
+    : [
+        ["Museos", CATEGORY_SOURCES.Museos],
+        ["Teatro y música", CATEGORY_SOURCES.Teatro],
+        ["Cine", CATEGORY_SOURCES.Cine]
+      ];
+  const sections = sourceGroups
+    .filter(([, sources]) => sources.length)
+    .map(([category, sources]) => `
+      <section class="source-group" aria-label="Fuentes de ${escapeHtml(category)}">
+        <h3>${escapeHtml(category)}</h3>
+        <ul>
+          ${sources.map((source) => `
+            <li><a href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.name)} <span aria-hidden="true">↗</span></a></li>
+          `).join("")}
+        </ul>
+      </section>`)
+    .join("");
+  categorySources.innerHTML = sections;
+  categorySources.hidden = !sections;
+}
+
 function renderEventCard(event) {
   const hasCoordinates = Number.isFinite(event.latitude) && Number.isFinite(event.longitude);
   const hasVenue = Boolean(event.address || event.venue || event.neighborhood);
@@ -402,6 +447,7 @@ function renderMap(events) {
 function render() {
   const events = getVisibleEvents();
   resultsCount.textContent = `${events.length} ${events.length === 1 ? "actividad" : "actividades"}`;
+  renderCategorySources();
   renderCategories(events);
   renderAgenda(events);
   if (state.tab === "map") renderMap(events);

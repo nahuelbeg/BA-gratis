@@ -35,6 +35,8 @@ El arreglo `events` del JSON contiene la unión deduplicada por título normaliz
 
 Los eventos de teatro infantil se toman de la [cartelera infantil de Alternativa Teatral](https://www.alternativateatral.com.ar/obras.asp?cat=9-infantiles). El listado codificado en `script.js` es un respaldo estático de la consulta del 14/10/2026; al cargar `eventos_extraidos.json` por HTTP, la página usa en su lugar la unión más reciente del scraper. Sus fichas originales enlazan desde cada tarjeta. El catálogo puede devolver sala, barrio, funciones, dirección y coordenadas; la edad recomendada no se inventa cuando la fuente no la especifica.
 
+La página también ofrece enlaces de referencia que cambian según la categoría seleccionada: [Museos de Buenos Aires](https://buenosaires.gob.ar/gcaba_historico/cultura/museos); para teatro y música, [Centro Cultural Recoleta](http://www.centroculturalrecoleta.org/), [Usina del Arte](https://buenosaires.gob.ar/gcaba_historico/cultura/usina-del-arte), [Complejo Teatral de Buenos Aires](https://complejoteatral.gob.ar/) y [Centro Cultural 25 de Mayo](https://buenosaires.gob.ar/gcaba_historico/cultura/centro-cultural-25-de-mayo); y para cine, la [cartelera de LA NACION](https://www.lanacion.com.ar/cartelera-de-cine). Son enlaces para consultar la programación original; estos sitios todavía no se procesan automáticamente ni se presentan como fuente de los eventos ya cargados.
+
 Para teatro, cada registro del arreglo `EVENTS` en `script.js` debe tener `category: "Teatro"`, el enlace a la ficha individual de Alternativa Teatral, título, sala, barrio, fecha de la próxima función mostrada y horario tal como aparecen en la cartelera. Cuando se actualice, revisá la página de origen y cambiá también `date` y `schedule`; no reutilices funciones ya pasadas.
 
 El scraper incluye las actividades infantiles detectadas en una o más de las fuentes. Cada tarjeta mantiene enlaces solo a las publicaciones donde se encontró el evento; no agregues fuentes no verificadas ni presentes la unión como verificación de todas las fuentes. Las fuentes son:
@@ -44,4 +46,4 @@ El scraper incluye las actividades infantiles detectadas en una o más de las fu
 
 En el JSON, cada evento puede incluir `title`, `category`, `venue`, `neighborhood`, `address`, `description`, `date` (formato `AAAA-MM-DD`), `time`, `latitude`, `longitude`, `sources` y `source_details`. Los datos que no estén publicados por la fuente se dejan vacíos; no se inventan edades, ubicaciones ni horarios.
 
-Las vistas por categoría, agenda y mapa comparten la búsqueda y los filtros por edad y barrio.
+Las vistas por categoría, agenda y mapa comparten el filtro por categoría. Los enlaces de referencia se muestran según la categoría elegida.

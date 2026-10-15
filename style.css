@@ -221,6 +221,19 @@ h1 span { color: var(--green); }
 .chip-play { color: #4e9a8f; }
 .chip-museum { color: #6689a6; }
 .category-chip.is-selected .chip-icon { color: white; }
+.category-source-directory { padding: 2px 0 22px; }
+.source-directory-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.source-directory-heading h2 { margin: 0; font-size: 15px; letter-spacing: -.3px; }
+.source-directory-heading p { margin: 0; color: var(--muted); font-size: 10px; }
+.category-sources { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.category-sources[hidden] { display: none; }
+.source-group { min-width: 0; padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; background: rgba(255, 255, 255, .55); }
+.source-group h3 { margin: 0 0 8px; color: var(--green); font-family: "Manrope", sans-serif; font-size: 11px; }
+.source-group ul { display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 0; list-style: none; }
+.source-group a { display: inline-flex; align-items: center; gap: 4px; padding: 6px 8px; border: 1px solid var(--line); border-radius: 16px; color: #555d54; background: white; font-size: 9px; font-weight: 600; text-decoration: none; }
+.source-group a:hover { border-color: #bccabc; color: var(--green); }
+.source-group a:focus-visible { outline: 3px solid rgba(40, 93, 73, .35); outline-offset: 2px; }
+.source-group a span { color: var(--green); }
 .tab-panel { min-height: 250px; padding: 1px 0 60px; }
 .event-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
 .empty-state {
@@ -313,6 +326,7 @@ h1 span { color: var(--green); }
   .art-ticket { top: 239px; right: 8px; width: 118px; height: 42px; }
   .art-squiggle { top: 39px; right: 10px; font-size: 43px; }
   .event-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .category-sources { grid-template-columns: 1fr; }
   .site-footer { padding-right: 20px; padding-left: 20px; }
 }
 
@@ -329,6 +343,7 @@ h1 span { color: var(--green); }
   .art-ticket { top: 108px; right: 41px; width: 103px; height: 37px; }
   .art-squiggle { top: 4px; right: 19px; }
   .tabs { width: 100%; justify-content: space-between; gap: 8px; }
+  .source-directory-heading { align-items: flex-start; flex-direction: column; gap: 5px; }
   .tab-button { gap: 5px; font-size: 10px; }
   .tab-button span { font-size: 14px; }
   .results-count { display: none; }

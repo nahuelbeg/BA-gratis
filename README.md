@@ -4,7 +4,13 @@ Agenda cultural familiar de la Ciudad de Buenos Aires, hecha con HTML, CSS y Jav
 
 ## Uso
 
-Abrí `index.html` en un navegador. El mapa usa Leaflet y teselas de OpenStreetMap; para cargarlos se necesita conexión a internet.
+Para ver los eventos del scraper, primero generá `eventos_extraidos.json` y serví la carpeta por HTTP desde la raíz del proyecto:
+
+```powershell
+py -m http.server 8000
+```
+
+Después abrí `http://localhost:8000` en el navegador. No abras `index.html` directamente: con `file://` el navegador bloquea la lectura del JSON y la página muestra la agenda estática de respaldo. El mapa usa Leaflet y teselas de OpenStreetMap, por lo que también necesita conexión a internet.
 
 ## Extracción y validación de cartelera
 
@@ -22,7 +28,7 @@ python scraper.py --output cartelera.json --timeout 30 --days 7 \
   --linda-url "https://linda.buenosaires.gob.ar/agenda"
 ```
 
-El arreglo `events` del JSON contiene la unión deduplicada por título normalizado. Cada evento conserva `sources` y `source_details`, incluidos enlaces, fechas, horarios y datos de ubicación publicados por las fuentes. Los conteos de títulos presentes en varias fuentes o en las tres se informan únicamente como validación; nunca excluyen eventos de la unión. Alternativa y LINDA BA incluyen funciones futuras sin límite predeterminado; podés limitar ambas con `--days 7`. Los errores HTTP, de red y de lectura quedan en el informe y producen un código de salida distinto de cero. Para mostrar la unión en el sitio, serví el proyecto por HTTP y dejá `eventos_extraidos.json` en la misma carpeta que `index.html`; la página lo carga y usa la agenda estática de respaldo si el archivo falta o no es válido. Abrir el HTML directamente con `file://` no permite esa carga.
+El arreglo `events` del JSON contiene la unión deduplicada por título normalizado. Cada evento conserva `sources` y `source_details`, incluidos enlaces, fechas, horarios y datos de ubicación publicados por las fuentes. Los conteos de títulos presentes en varias fuentes o en las tres se informan únicamente como validación; nunca excluyen eventos de la unión. Alternativa y LINDA BA incluyen funciones futuras sin límite predeterminado; podés limitar ambas con `--days 7`. Los errores HTTP, de red y de lectura quedan en el informe y producen un código de salida distinto de cero. El archivo está ignorado por Git: para publicar el sitio en hosting estático, asegurate de incluir `eventos_extraidos.json` junto a `index.html`; si falta, la página muestra la agenda estática de respaldo.
 
 ## Curaduría y carga de actividades
 

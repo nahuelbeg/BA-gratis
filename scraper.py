@@ -20,8 +20,47 @@ URL_ALTERNATIVA_INFANTILES = (
     "https://www.alternativateatral.com.ar/obras.asp?cat=9-infantiles"
 )
 URL_ALTERNATIVA_CATALOG = "https://www.alternativateatral.com.ar/get-json.php"
+SOURCE_URLS = {
+    "Museos de Buenos Aires": (
+        "https://buenosaires.gob.ar/gcaba_historico/cultura/museos"
+    ),
+    "Centro Cultural Recoleta": "http://www.centroculturalrecoleta.org/",
+    "Usina del Arte": (
+        "https://buenosaires.gob.ar/gcaba_historico/cultura/usina-del-arte"
+    ),
+    "Complejo Teatral de Buenos Aires": "https://complejoteatral.gob.ar/",
+    "Centro Cultural 25 de Mayo": (
+        "https://buenosaires.gob.ar/gcaba_historico/cultura/"
+        "centro-cultural-25-de-mayo"
+    ),
+    "LA NACION": "https://www.lanacion.com.ar/cartelera-de-cine",
+}
+SOURCE_CATEGORIES = {
+    "Museos de Buenos Aires": ("Museos",),
+    "Centro Cultural Recoleta": ("Teatro", "Música"),
+    "Usina del Arte": ("Teatro", "Música"),
+    "Complejo Teatral de Buenos Aires": ("Teatro", "Música"),
+    "Centro Cultural 25 de Mayo": ("Teatro", "Música"),
+    "LA NACION": ("Cine",),
+}
+MONTHS = {
+    "enero": 1,
+    "febrero": 2,
+    "marzo": 3,
+    "abril": 4,
+    "mayo": 5,
+    "junio": 6,
+    "julio": 7,
+    "agosto": 8,
+    "septiembre": 9,
+    "setiembre": 9,
+    "octubre": 10,
+    "noviembre": 11,
+    "diciembre": 12,
+}
 
 MAX_RESPONSE_BYTES = 8 * 1024 * 1024
+MAX_MOVIE_DETAILS = 40
 USER_AGENT = "PlanazoAgenda/1.0 (+https://www.alternativateatral.com.ar/)"
 BUENOS_AIRES_TZ = timezone(timedelta(hours=-3))
 VOID_TAGS = {
@@ -135,8 +174,8 @@ def es_evento_infantil(titulo: str, descripcion: str = "") -> bool:
     titulo_norm = normalizar_texto(titulo)
     descripcion_norm = normalizar_texto(descripcion)
     audiencia_explicita = (
-        r"\b(ninos|ninas|infantil\w*|chicos|chicas|bebes|infancias|"
-        r"adolescentes)\b"
+        r"\b(ninos|ninas|nines|nenes|nenas|infantil\w*|chicos|chicas|"
+        r"bebes|infancias|adolescentes|escolar\w*)\b"
     )
     familia_explicita = (
         r"\b(en familia|para familias|para la familia|para toda la familia|"
@@ -282,6 +321,325 @@ def extraer_tarjetas_genericas(
             }
         )
     return results
+
+
+def extraer_fecha_evento(
+    texto: str, hoy: date | None = None
+) -> tuple[str, bool]:
+    """Devuelve la próxima fecha mencionada y si el texto contenía fechas."""
+    today = hoy or datetime.now(BUENOS_AIRES_TZ).date()
+    text = re.sub(
+        r"fecha\s+de\s+publicaci[oó]n\s*:\s*\d{1,2}/\d{1,2}/\d{2,4}",
+        "",
+        texto,
+        flags=re.IGNORECASE,
+    )
+    candidates: list[date] = []
+    found_date = False
+
+    for match in re.finditer(r"\b(20\d{2})-(\d{1,2})-(\d{1,2})\b", text):
+        found_date = True
+        try:
+            candidates.append(date(*(int(part) for part in match.groups())))
+        except ValueError:
+            continue
+
+    for match in re.finditer(
+        r"\b(\d{1,2})[º°]?\s*/\s*(\d{1,2})"
+        r"(?:\s*/\s*(\d{2,4}))?\b",
+        text,
+    ):
+        found_date = True
+        day, month, year = match.groups()
+        event_year = int(year) if year else today.year
+        if event_year < 100:
+            event_year += 2000
+        try:
+            candidates.append(date(event_year, int(month), int(day)))
+        except ValueError:
+            continue
+
+    month_pattern = "|".join(MONTHS)
+    for match in re.finditer(
+        rf"\b(?P<days>\d{{1,2}}(?:\s*(?:,|y|al)\s*\d{{1,2}})*)"
+        rf"\s+de\s+(?P<month>{month_pattern})"
+        rf"(?:\s+de\s+(?P<year>20\d{{2}}))?\b",
+        normalizar_texto(text),
+    ):
+        found_date = True
+        year = int(match.group("year") or today.year)
+        days = re.findall(r"\d{1,2}", match.group("days"))
+        for day in days:
+            try:
+                candidates.append(
+                    date(year, MONTHS[match.group("month")], int(day))
+                )
+            except ValueError:
+                continue
+
+    upcoming = sorted(candidate for candidate in candidates if candidate >= today)
+    return (upcoming[0].isoformat() if upcoming else ""), found_date
+
+
+def extraer_hora_evento(texto: str) -> str:
+    match = re.search(
+        r"\b(?:a\s+las\s+)?([01]?\d|2[0-3])(?::([0-5]\d))\s*"
+        r"(?:h(?:s|oras?)?)?\b",
+        texto,
+        flags=re.IGNORECASE,
+    )
+    if match:
+        return f"{int(match.group(1)):02d}:{match.group(2)}"
+    match = re.search(
+        r"\b(?:a\s+las\s+)?([01]?\d|2[0-3])\s*h(?:s|oras?)?\b",
+        texto,
+        flags=re.IGNORECASE,
+    )
+    return f"{int(match.group(1)):02d}:00" if match else ""
+
+
+def categorizar_evento_fuente(
+    texto: str, categorias: tuple[str, ...]
+) -> str | None:
+    if len(categorias) == 1:
+        return categorias[0]
+    normalized = normalizar_texto(texto)
+    if re.search(r"\b(musica|concierto|recital|orquesta|banda)\b", normalized):
+        return "Música" if "Música" in categorias else None
+    if re.search(
+        r"\b(teatro|teatral|titeres|obra|escenica|musical)\b", normalized
+    ):
+        return "Teatro" if "Teatro" in categorias else None
+    return None
+
+
+def extraer_eventos_fuente(
+    root: Node,
+    nombre_fuente: str,
+    url_fuente: str,
+    categorias: tuple[str, ...],
+    *,
+    hoy: date | None = None,
+) -> list[dict[str, object]]:
+    """Extrae tarjetas enlazadas y con público infantil/familiar explícito."""
+    card_classes = {
+        "agenda-item",
+        "card-simple",
+        "event-card",
+        "small-box",
+        "medium-box",
+        "swiper-slide",
+        "views-row",
+    }
+    containers = [
+        node
+        for node in descendants(root)
+        if node.tag == "article" or node.classes.intersection(card_classes)
+    ]
+    containers = [
+        node
+        for node in containers
+        if not any(
+            child.tag == "article" or child.classes.intersection(card_classes)
+            for child in descendants(node)
+        )
+    ]
+    events: list[dict[str, object]] = []
+    seen: set[str] = set()
+    for container in containers:
+        heading = next(
+            (
+                node
+                for node in descendants(container)
+                if node.tag in {"h1", "h2", "h3", "h4"}
+            ),
+            None,
+        )
+        if heading is None:
+            continue
+        title = text_content(heading)
+        paragraphs = [
+            text_content(node)
+            for node in descendants(container)
+            if node.tag == "p" and text_content(node)
+        ]
+        description = " ".join(paragraphs)
+        card_text = text_content(container)
+        normalized_title = normalizar_texto(title)
+        if normalized_title == normalizar_texto(nombre_fuente):
+            continue
+        category = categorizar_evento_fuente(card_text, categorias)
+        if category is None or not es_evento_infantil(title, f"{description} {card_text}"):
+            continue
+
+        if not normalized_title or normalized_title in seen:
+            continue
+        event_date, found_date = extraer_fecha_evento(card_text, hoy)
+        if found_date and not event_date:
+            continue
+
+        links = [
+            node
+            for node in descendants(container)
+            if node.tag == "a"
+            and node.attrs.get("href")
+            and not node.attrs["href"].startswith(("#", "javascript:", "mailto:"))
+        ]
+        source_host = urlparse(url_fuente).hostname
+        link = next(
+            (
+                node
+                for node in links
+                if urlparse(urljoin(url_fuente, node.attrs["href"])).hostname
+                == source_host
+            ),
+            links[0] if links else None,
+        )
+        if container.parent and container.parent.tag == "a":
+            link_url = urljoin(
+                url_fuente, container.parent.attrs.get("href", url_fuente)
+            )
+        else:
+            link_url = urljoin(
+                url_fuente,
+                link.attrs["href"] if link else url_fuente,
+            )
+        time = extraer_hora_evento(card_text)
+        clean_description = re.sub(r"\s+", " ", description).strip()[:240]
+        events.append(
+            {
+                "title": title,
+                "normalized_title": normalized_title,
+                "category": category,
+                "description": clean_description,
+                "date": event_date,
+                "time": time,
+                "schedule": f"{event_date} · {time}".strip(" ·") if event_date else "",
+                "url": link_url,
+                "source": nombre_fuente,
+            }
+        )
+        seen.add(normalized_title)
+    return events
+
+
+def extraer_pelicula_jsonld(html: str) -> dict[str, object] | None:
+    root = parsear_html(html)
+    for node in descendants(root):
+        if node.tag != "script" or "ld+json" not in node.attrs.get("type", ""):
+            continue
+        try:
+            payload = json.loads(text_content(node))
+        except json.JSONDecodeError:
+            continue
+        records = payload if isinstance(payload, list) else [payload]
+        for record in records:
+            if not isinstance(record, dict):
+                continue
+            graph = record.get("@graph")
+            if isinstance(graph, list):
+                records.extend(item for item in graph if isinstance(item, dict))
+            types = record.get("@type", [])
+            if isinstance(types, str):
+                types = [types]
+            if "Movie" in types:
+                return record
+    return None
+
+
+def extraer_eventos_cine_lanacion(
+    html: str, timeout: float
+) -> tuple[list[dict[str, object]], list[dict[str, str]]]:
+    root = parsear_html(html)
+    source_name = "LA NACION"
+    source_url = SOURCE_URLS[source_name]
+    movie_links: dict[str, tuple[str, str]] = {}
+    for anchor in descendants(root):
+        href = anchor.attrs.get("href", "")
+        if anchor.tag != "a" or "/cartelera-de-cine/pelicula/" not in href:
+            continue
+        title = next(
+            (
+                text_content(node)
+                for node in descendants(anchor)
+                if node.tag in {"h2", "h3", "h4"}
+            ),
+            "",
+        )
+        normalized_title = normalizar_texto(title)
+        if title and normalized_title:
+            movie_links.setdefault(
+                normalized_title, (title, urljoin(source_url, href))
+            )
+    if len(movie_links) > MAX_MOVIE_DETAILS:
+        raise ValueError(
+            f"LA NACION publicó {len(movie_links)} películas; se supera el "
+            f"límite de {MAX_MOVIE_DETAILS} fichas por ejecución."
+        )
+
+    events: list[dict[str, object]] = []
+    errors: list[dict[str, str]] = []
+    for title, movie_url in movie_links.values():
+        try:
+            movie_html = descargar_html(movie_url, timeout)
+        except (HTTPError, URLError, TimeoutError, OSError, ValueError) as error:
+            status = f"HTTP {error.code}: {error.reason}" if isinstance(error, HTTPError) else f"{type(error).__name__}: {error}"
+            errors.append(
+                {"source": f"{source_name} — {title}", "url": movie_url, "error": status}
+            )
+            continue
+        movie = extraer_pelicula_jsonld(movie_html)
+        if not movie:
+            continue
+        description = movie.get("description")
+        description = description if isinstance(description, str) else ""
+        genre = movie.get("genre", [])
+        genres = [genre] if isinstance(genre, str) else [
+            item for item in genre if isinstance(item, str)
+        ] if isinstance(genre, list) else []
+        rating = movie.get("contentRating", "")
+        rating_text = " ".join(rating) if isinstance(rating, list) else str(rating)
+        normalized_rating = normalizar_texto(rating_text)
+        suitable_rating = bool(
+            re.search(
+                r"\b(atp|apta\s+para\s+todo\s+p[uú]blico|todo\s+p[uú]blico)\b",
+                normalized_rating,
+            )
+        )
+        explicitly_infantile = bool(
+            re.search(r"\binfantil\w*\b", normalizar_texto(" ".join(genres)))
+        )
+        animated = bool(
+            re.search(r"\b(animacion)\b", normalizar_texto(" ".join(genres)))
+        )
+        age_restricted = bool(
+            re.search(r"\b(13|16|18)\s*(?:anos|años)?\b", normalized_rating)
+        )
+        if not (
+            suitable_rating
+            or explicitly_infantile
+            or es_evento_infantil(title, description)
+            or (animated and not age_restricted)
+        ):
+            continue
+        short_description = re.sub(r"\s+", " ", description).strip()[:240]
+        events.append(
+            {
+                "title": str(movie.get("name") or title),
+                "normalized_title": normalizar_texto(title),
+                "category": "Cine",
+                "description": short_description,
+                "genre": " · ".join(genres),
+                "genres": genres,
+                "date": "",
+                "time": "",
+                "schedule": "En cartelera · consultá funciones en la fuente",
+                "url": movie_url,
+                "source": source_name,
+                "content_rating": rating_text,
+            }
+        )
+    return events, errors
 
 
 def es_categoria_infantil(classifications: object) -> bool:
@@ -491,6 +849,45 @@ def obtener_fuente(
     return extraer_tarjetas_genericas(parsear_html(html), nombre, url), None
 
 
+def obtener_fuente_cultural(
+    nombre: str, timeout: float
+) -> tuple[list[dict[str, object]], list[dict[str, str]]]:
+    url = SOURCE_URLS[nombre]
+    try:
+        html = descargar_html(url, timeout)
+    except HTTPError as error:
+        return [], [{
+            "source": nombre,
+            "url": url,
+            "error": f"HTTP {error.code}: {error.reason}",
+        }]
+    except (URLError, TimeoutError, OSError, ValueError) as error:
+        return [], [{
+            "source": nombre,
+            "url": url,
+            "error": f"{type(error).__name__}: {error}",
+        }]
+    if nombre == "LA NACION":
+        try:
+            events, errors = extraer_eventos_cine_lanacion(html, timeout)
+        except (OSError, ValueError) as error:
+            return [], [{
+                "source": nombre,
+                "url": url,
+                "error": f"{type(error).__name__}: {error}",
+            }]
+        return events, errors
+    return (
+        extraer_eventos_fuente(
+            parsear_html(html),
+            nombre,
+            url,
+            SOURCE_CATEGORIES[nombre],
+        ),
+        [],
+    )
+
+
 def ejecutar(
     timeout: float, dias: int | None, baires_url: str
 ) -> dict[str, object]:
@@ -518,9 +915,17 @@ def ejecutar(
             "error": f"{type(error).__name__}: {error}",
         }
 
+    cultural_events: dict[str, list[dict[str, object]]] = {}
+    cultural_errors: list[dict[str, str]] = []
+    for source_name in SOURCE_URLS:
+        events, source_errors = obtener_fuente_cultural(source_name, timeout)
+        cultural_events[source_name] = events
+        cultural_errors.extend(source_errors)
+
     source_events = {
         "Baires Secreta": [dict(event) for event in baires],
         "Alternativa Teatral": [dict(event) for event in alternativa],
+        **cultural_events,
     }
     all_events, distribution = consolidar_eventos(source_events)
     source_title_sets = {
@@ -535,11 +940,16 @@ def ejecutar(
         error
         for error in (baires_error, alternativa_error)
         if error is not None
-    ]
+    ] + cultural_errors
 
     return {
         "generated_at": datetime.now(BUENOS_AIRES_TZ).isoformat(timespec="seconds"),
         "theater_source": URL_ALTERNATIVA_INFANTILES,
+        "source_urls": {
+            "Baires Secreta": baires_url,
+            "Alternativa Teatral": URL_ALTERNATIVA_INFANTILES,
+            **SOURCE_URLS,
+        },
         "upcoming_days": dias,
         "catalog_infantile_count": catalog_count,
         "theater_events": alternativa,
@@ -552,6 +962,10 @@ def ejecutar(
             "source_counts": {
                 "baires_secreta_infantil_candidates": len(baires),
                 "alternativa_infantiles_in_range": len(alternativa),
+                **{
+                    source: len(events)
+                    for source, events in cultural_events.items()
+                },
             },
             "title_distribution": distribution,
             "titles_in_multiple_sources_but_not_all": len(cross_source_matches),
@@ -565,8 +979,8 @@ def ejecutar(
 def parsear_argumentos() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
-            "Extrae la cartelera infantil de Alternativa Teatral y compara "
-            "títulos infantiles detectados en las fuentes."
+            "Extrae propuestas infantiles de Alternativa Teatral, Baires "
+            "Secreta y fuentes culturales de Buenos Aires."
         )
     )
     parser.add_argument(
@@ -648,7 +1062,13 @@ def main() -> int:
             file=sys.stderr,
         )
     if (
-        any(count == 0 for count in counts.values())
+        any(
+            counts[key] == 0
+            for key in (
+                "baires_secreta_infantil_candidates",
+                "alternativa_infantiles_in_range",
+            )
+        )
         and not report["errors"]
     ):
         print(

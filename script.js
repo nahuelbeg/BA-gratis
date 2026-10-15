@@ -4,6 +4,17 @@ const SOURCES = [
   { id: "baires", name: "Baires Secreta", url: "https://bairessecreta.com/" },
   { id: "alternativa", name: "Alternativa Teatral", url: "https://www.alternativateatral.com.ar/obras.asp?cat=9-infantiles" }
 ];
+const SCRAPER_SOURCES = [
+  { id: "museos-ba", name: "Museos de Buenos Aires", url: "https://buenosaires.gob.ar/gcaba_historico/cultura/museos" },
+  { id: "recoleta", name: "Centro Cultural Recoleta", url: "http://www.centroculturalrecoleta.org/" },
+  { id: "usina", name: "Usina del Arte", url: "https://buenosaires.gob.ar/gcaba_historico/cultura/usina-del-arte" },
+  { id: "complejo-teatral", name: "Complejo Teatral de Buenos Aires", url: "https://complejoteatral.gob.ar/" },
+  { id: "cc25", name: "Centro Cultural 25 de Mayo", url: "https://buenosaires.gob.ar/gcaba_historico/cultura/centro-cultural-25-de-mayo" },
+  { id: "lanacion", name: "LA NACION", url: "https://www.lanacion.com.ar/cartelera-de-cine" }
+];
+const SOURCE_BY_NAME = Object.fromEntries(
+  [...SOURCES, ...SCRAPER_SOURCES].map((source) => [source.name, source])
+);
 const CATEGORY_SOURCES = {
   Museos: [
     { name: "Museos de Buenos Aires", url: "https://buenosaires.gob.ar/gcaba_historico/cultura/museos" }
@@ -64,9 +75,14 @@ const CATEGORY_COLORS = {
 };
 const SOURCE_HOSTS = {
   baires: "bairessecreta.com",
-  alternativa: "alternativateatral.com.ar"
+  alternativa: "alternativateatral.com.ar",
+  "museos-ba": "buenosaires.gob.ar",
+  recoleta: "centroculturalrecoleta.org",
+  usina: "buenosaires.gob.ar",
+  "complejo-teatral": "complejoteatral.gob.ar",
+  cc25: ["buenosaires.gob.ar", "cc25.org"],
+  lanacion: "lanacion.com.ar"
 };
-const SOURCE_BY_NAME = Object.fromEntries(SOURCES.map((source) => [source.name, source]));
 const CATEGORIES = new Set(Object.keys(CATEGORY_COLORS));
 const AGE_RANGES = new Set(["0-3", "4-7", "8-12"]);
 
@@ -88,8 +104,11 @@ function isAllowedSourceUrl(source, url) {
     if (!source || typeof url !== "string") return false;
     try {
       const hostname = new URL(url).hostname;
-      return hostname === SOURCE_HOSTS[source.id]
-        || hostname.endsWith(`.${SOURCE_HOSTS[source.id]}`);
+      const allowedHosts = SOURCE_HOSTS[source.id];
+      return (Array.isArray(allowedHosts) ? allowedHosts : [allowedHosts]).some(
+        (allowedHost) => hostname === allowedHost
+          || hostname.endsWith(`.${allowedHost}`)
+      );
     } catch {
       return false;
     }
@@ -112,7 +131,10 @@ function eventFromScraperRecord(record) {
 
     const details = Object.values(record.source_details);
     const theater = record.source_details["Alternativa Teatral"];
-    const primary = theater || details.find((detail) => detail.date || detail.venue) || details[0];
+    const primary = theater
+      || details.find((detail) => CATEGORIES.has(detail.category))
+      || details.find((detail) => detail.date || detail.venue)
+      || details[0];
     const description = details
       .map((detail) => detail.description)
       .filter((text) => typeof text === "string" && text.trim())
@@ -130,7 +152,9 @@ function eventFromScraperRecord(record) {
       time: primary?.time || "",
       schedule: primary?.schedule || "",
       age: [],
-      ageLabel: "Infantil · edad no especificada",
+      ageLabel: primary?.content_rating
+        ? `Clasificación: ${primary.content_rating}`
+        : "Infantil · edad no especificada",
       description: description || "Actividad infantil publicada en una fuente cultural.",
       sources,
       importedFromScraper: true

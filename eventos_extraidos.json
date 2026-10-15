@@ -1,0 +1,3345 @@
+{
+  "generated_at": "2026-10-15T12:42:50-03:00",
+  "theater_source": "https://www.alternativateatral.com.ar/obras.asp?cat=9-infantiles",
+  "upcoming_days": null,
+  "catalog_infantile_count": 40,
+  "theater_events": [
+    {
+      "title": "Jazz Cartoons. Por Paris Jazz Club",
+      "normalized_title": "jazz cartoons por paris jazz club",
+      "category": "Teatro",
+      "venue": "ND ATENEO",
+      "neighborhood": "Retiro",
+      "province": "CABA",
+      "address": "Paraguay 918",
+      "latitude": -34.5977427,
+      "longitude": -58.3800988,
+      "date": "2026-10-16",
+      "time": "21:00",
+      "schedule": "VIERNES 21:00 · 2026-10-16",
+      "functions": [
+        {
+          "date": "2026-10-16",
+          "time": "21:00",
+          "weekday": "viernes",
+          "venue": "ND ATENEO",
+          "neighborhood": "Retiro"
+        }
+      ],
+      "genres": [],
+      "url": "https://www.alternativateatral.com.ar/obra68679-jazz-cartoons-por-paris-jazz-club",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "Nicte",
+      "normalized_title": "nicte",
+      "category": "Teatro",
+      "venue": "MUY TEATRO",
+      "neighborhood": "Almagro",
+      "province": "CABA",
+      "address": "Humahuaca 4310",
+      "latitude": -34.601435505941,
+      "longitude": -58.425598053307,
+      "date": "2026-10-17",
+      "time": "15:00",
+      "schedule": "SÁBADO 15:00 · 2026-10-17",
+      "functions": [
+        {
+          "date": "2026-10-17",
+          "time": "15:00",
+          "weekday": "sábado",
+          "venue": "MUY TEATRO",
+          "neighborhood": "Almagro"
+        }
+      ],
+      "genres": [
+        "Teatro"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra91606-nicte",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "ODISEA: Bajo el Mar",
+      "normalized_title": "odisea bajo el mar",
+      "category": "Teatro",
+      "venue": "CENTRO CULTURAL 25 DE MAYO",
+      "neighborhood": "Villa Urquiza",
+      "province": "CABA",
+      "address": "Av Triunvirato 4444",
+      "latitude": -34.5761732,
+      "longitude": -58.4834247,
+      "date": "2026-10-17",
+      "time": "15:00",
+      "schedule": "SÁBADO 15:00 · 2026-10-17",
+      "functions": [
+        {
+          "date": "2026-10-17",
+          "time": "15:00",
+          "weekday": "sábado",
+          "venue": "CENTRO CULTURAL 25 DE MAYO",
+          "neighborhood": "Villa Urquiza"
+        }
+      ],
+      "genres": [
+        "Teatro",
+        "Teatro negro",
+        "Títeres"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra96700-odisea-bajo-el-mar",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "3obras3",
+      "normalized_title": "3obras3",
+      "category": "Teatro",
+      "venue": "MUSEO ARGENTINO DEL TITERE",
+      "neighborhood": "San Telmo",
+      "province": "CABA",
+      "address": "Estados Unidos 802",
+      "latitude": -34.6185914,
+      "longitude": -58.3773064,
+      "date": "2026-10-17",
+      "time": "16:00",
+      "schedule": "SÁBADO 16:00 · 2026-10-17",
+      "functions": [
+        {
+          "date": "2026-10-17",
+          "time": "16:00",
+          "weekday": "sábado",
+          "venue": "MUSEO ARGENTINO DEL TITERE",
+          "neighborhood": "San Telmo"
+        }
+      ],
+      "genres": [
+        "Títeres"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra42355-3obras3",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "Mi amiga la oscuridad",
+      "normalized_title": "mi amiga la oscuridad",
+      "category": "Teatro",
+      "venue": "TEATRO CIEGO",
+      "neighborhood": "Balvanera",
+      "province": "CABA",
+      "address": "Borges 1974",
+      "latitude": -34.6020079,
+      "longitude": -58.4081811,
+      "date": "2026-10-17",
+      "time": "16:00",
+      "schedule": "SÁBADO 16:00 · 2026-10-17",
+      "functions": [
+        {
+          "date": "2026-10-17",
+          "time": "16:00",
+          "weekday": "sábado",
+          "venue": "TEATRO CIEGO",
+          "neighborhood": "Balvanera"
+        }
+      ],
+      "genres": [
+        "Teatro"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra32241-mi-amiga-la-oscuridad",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "Anna y Elsa: un musical entre hielos",
+      "normalized_title": "anna y elsa un musical entre hielos",
+      "category": "Teatro",
+      "venue": "TERRAZA TEATRO BAR",
+      "neighborhood": "San Nicolás",
+      "province": "Buenos Aires",
+      "address": "Av. Corrientes 1660",
+      "latitude": -34.6043327,
+      "longitude": -58.3902592,
+      "date": "2026-10-17",
+      "time": "17:00",
+      "schedule": "SÁBADO 17:00 · 2026-10-17",
+      "functions": [
+        {
+          "date": "2026-10-17",
+          "time": "17:00",
+          "weekday": "sábado",
+          "venue": "TERRAZA TEATRO BAR",
+          "neighborhood": "San Nicolás"
+        },
+        {
+          "date": "2026-10-24",
+          "time": "17:00",
+          "weekday": "sábado",
+          "venue": "TERRAZA TEATRO BAR",
+          "neighborhood": "San Nicolás"
+        },
+        {
+          "date": "2026-10-25",
+          "time": "17:00",
+          "weekday": "domingo",
+          "venue": "TERRAZA TEATRO BAR",
+          "neighborhood": "San Nicolás"
+        }
+      ],
+      "genres": [
+        "Musical"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra80506-anna-y-elsa-un-musical-entre-hielos",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "María Elena",
+      "normalized_title": "maria elena",
+      "category": "Teatro",
+      "venue": "LA GALERA ENCANTADA",
+      "neighborhood": "Palermo",
+      "province": "CABA",
+      "address": "Humboldt 1591",
+      "latitude": -34.5857248,
+      "longitude": -58.4363305,
+      "date": "2026-10-17",
+      "time": "17:00",
+      "schedule": "SÁBADO 17:00 · 2026-10-17",
+      "functions": [
+        {
+          "date": "2026-10-17",
+          "time": "17:00",
+          "weekday": "sábado",
+          "venue": "LA GALERA ENCANTADA",
+          "neighborhood": "Palermo"
+        },
+        {
+          "date": "2026-10-31",
+          "time": "17:00",
+          "weekday": "sábado",
+          "venue": "LA GALERA ENCANTADA",
+          "neighborhood": "Palermo"
+        },
+        {
+          "date": "2026-11-29",
+          "time": "17:00",
+          "weekday": "domingo",
+          "venue": "LA GALERA ENCANTADA",
+          "neighborhood": "Palermo"
+        }
+      ],
+      "genres": [
+        "Teatro"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra10643-maria-elena",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "Mirá que te miro",
+      "normalized_title": "mira que te miro",
+      "category": "Teatro",
+      "venue": "GENTE DE ARTE",
+      "neighborhood": "Avellaneda",
+      "province": "Buenos Aires",
+      "address": "Alsina 234",
+      "latitude": 0,
+      "longitude": 0,
+      "date": "2026-10-17",
+      "time": "20:00",
+      "schedule": "SÁBADO 20:00 · 2026-10-17",
+      "functions": [
+        {
+          "date": "2026-10-17",
+          "time": "20:00",
+          "weekday": "sábado",
+          "venue": "GENTE DE ARTE",
+          "neighborhood": "Avellaneda"
+        }
+      ],
+      "genres": [
+        "Clown",
+        "Teatro",
+        "Comedia"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra73210-mira-que-te-miro",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "Olga Poblete - Ciclo de Artes Circenses",
+      "normalized_title": "olga poblete ciclo de artes circenses",
+      "category": "Teatro",
+      "venue": "EL SÁBATO ESPACIO CULTURAL ECONÓMICAS UBA",
+      "neighborhood": "Balvanera",
+      "province": "CABA",
+      "address": "José Evaristo Uriburu 763",
+      "latitude": -34.6002448,
+      "longitude": -58.3986861,
+      "date": "2026-10-17",
+      "time": "20:00",
+      "schedule": "SÁBADO 20:00 · 2026-10-17",
+      "functions": [
+        {
+          "date": "2026-10-17",
+          "time": "20:00",
+          "weekday": "sábado",
+          "venue": "EL SÁBATO ESPACIO CULTURAL ECONÓMICAS UBA",
+          "neighborhood": "Balvanera"
+        }
+      ],
+      "genres": [
+        "Circo"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra103275-olga-poblete-ciclo-de-artes-circenses",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "Y estoy vivo y Contando: Juan Moreira",
+      "normalized_title": "y estoy vivo y contando juan moreira",
+      "category": "Teatro",
+      "venue": "MUSEO ARGENTINO DEL TITERE",
+      "neighborhood": "San Telmo",
+      "province": "CABA",
+      "address": "Estados Unidos 802",
+      "latitude": -34.6185914,
+      "longitude": -58.3773064,
+      "date": "2026-10-17",
+      "time": "20:00",
+      "schedule": "SÁBADO 20:00 · 2026-10-17",
+      "functions": [
+        {
+          "date": "2026-10-17",
+          "time": "20:00",
+          "weekday": "sábado",
+          "venue": "MUSEO ARGENTINO DEL TITERE",
+          "neighborhood": "San Telmo"
+        }
+      ],
+      "genres": [
+        "Títeres",
+        "Unipersonales"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra11479-y-estoy-vivo-y-contando-juan-moreira",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "Chakana",
+      "normalized_title": "chakana",
+      "category": "Teatro",
+      "venue": "CLUB DE TRAPECISTAS ESTRELLA DEL CENTENARIO",
+      "neighborhood": "Villa Crespo",
+      "province": "CABA",
+      "address": "Ferrari 252",
+      "latitude": -34.6041972,
+      "longitude": -58.439528,
+      "date": "2026-10-17",
+      "time": "21:00",
+      "schedule": "SÁBADO 21:00 · 2026-10-17",
+      "functions": [
+        {
+          "date": "2026-10-17",
+          "time": "21:00",
+          "weekday": "sábado",
+          "venue": "CLUB DE TRAPECISTAS ESTRELLA DEL CENTENARIO",
+          "neighborhood": "Villa Crespo"
+        }
+      ],
+      "genres": [
+        "Teatro",
+        "Circo",
+        "Teatro negro"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra97394-chakana",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "Cinema Aventura",
+      "normalized_title": "cinema aventura",
+      "category": "Teatro",
+      "venue": "NÜN TEATRO BAR",
+      "neighborhood": "Villa Crespo",
+      "province": "CABA",
+      "address": "Juan Ramirez de Velasco 419",
+      "latitude": -34.5990352,
+      "longitude": -58.4360774,
+      "date": "2026-10-18",
+      "time": "16:00",
+      "schedule": "DOMINGO 16:00 · 2026-10-18",
+      "functions": [
+        {
+          "date": "2026-10-18",
+          "time": "16:00",
+          "weekday": "domingo",
+          "venue": "NÜN TEATRO BAR",
+          "neighborhood": "Villa Crespo"
+        }
+      ],
+      "genres": [
+        "Teatro"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra103000-cinema-aventura",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "El maravilloso Mago de Oz",
+      "normalized_title": "el maravilloso mago de oz",
+      "category": "Teatro",
+      "venue": "NUEVO TEATRO GARGANTÚA",
+      "neighborhood": "Palermo",
+      "province": "CABA",
+      "address": "Serrano 459",
+      "latitude": -34.596715859757,
+      "longitude": -58.443037248191,
+      "date": "2026-10-18",
+      "time": "16:00",
+      "schedule": "DOMINGO 16:00 · 2026-10-18",
+      "functions": [
+        {
+          "date": "2026-10-18",
+          "time": "16:00",
+          "weekday": "domingo",
+          "venue": "NUEVO TEATRO GARGANTÚA",
+          "neighborhood": "Palermo"
+        }
+      ],
+      "genres": [
+        "Teatro"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra100365-el-maravilloso-mago-de-oz",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "Alicia, un país de maravillas",
+      "normalized_title": "alicia un pais de maravillas",
+      "category": "Teatro",
+      "venue": "LA GALERA ENCANTADA",
+      "neighborhood": "Palermo",
+      "province": "CABA",
+      "address": "Humboldt 1591",
+      "latitude": -34.5857248,
+      "longitude": -58.4363305,
+      "date": "2026-10-18",
+      "time": "17:00",
+      "schedule": "DOMINGO 17:00 · 2026-10-18",
+      "functions": [
+        {
+          "date": "2026-10-18",
+          "time": "17:00",
+          "weekday": "domingo",
+          "venue": "LA GALERA ENCANTADA",
+          "neighborhood": "Palermo"
+        },
+        {
+          "date": "2026-11-15",
+          "time": "17:00",
+          "weekday": "domingo",
+          "venue": "LA GALERA ENCANTADA",
+          "neighborhood": "Palermo"
+        }
+      ],
+      "genres": [
+        "Teatro"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra14347-alicia-un-pais-de-maravillas",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "¡BASTA PARA MÍ, AQUÍ ME PLANTO!",
+      "normalized_title": "basta para mi aqui me planto",
+      "category": "Teatro",
+      "venue": "EL JUFRÉ TEATRO BAR",
+      "neighborhood": "Villa Crespo",
+      "province": "CABA",
+      "address": "Jufré 444",
+      "latitude": -34.5954422,
+      "longitude": -58.4329392,
+      "date": "2026-10-18",
+      "time": "17:30",
+      "schedule": "DOMINGO 17:30 · 2026-10-18",
+      "functions": [
+        {
+          "date": "2026-10-18",
+          "time": "17:30",
+          "weekday": "domingo",
+          "venue": "EL JUFRÉ TEATRO BAR",
+          "neighborhood": "Villa Crespo"
+        },
+        {
+          "date": "2026-10-25",
+          "time": "17:30",
+          "weekday": "domingo",
+          "venue": "EL JUFRÉ TEATRO BAR",
+          "neighborhood": "Villa Crespo"
+        }
+      ],
+      "genres": [
+        "Teatro"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra102689-basta-para-mi-aqui-me-planto",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "Taller: Beatbox",
+      "normalized_title": "taller beatbox",
+      "category": "Teatro",
+      "venue": "ESPACIO AZUR",
+      "neighborhood": "Almagro",
+      "province": "CABA",
+      "address": "Bulnes 892",
+      "latitude": -34.601046989583,
+      "longitude": -58.417801896532,
+      "date": "2026-10-24",
+      "time": "10:00",
+      "schedule": "SÁBADO 10:00 · 2026-10-24",
+      "functions": [
+        {
+          "date": "2026-10-24",
+          "time": "10:00",
+          "weekday": "sábado",
+          "venue": "ESPACIO AZUR",
+          "neighborhood": "Almagro"
+        }
+      ],
+      "genres": [],
+      "url": "https://www.alternativateatral.com.ar/obra102499-taller-beatbox",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "Petifur Varieté",
+      "normalized_title": "petifur variete",
+      "category": "Teatro",
+      "venue": "MUSEO ARGENTINO DEL TITERE",
+      "neighborhood": "San Telmo",
+      "province": "CABA",
+      "address": "Estados Unidos 802",
+      "latitude": -34.6185914,
+      "longitude": -58.3773064,
+      "date": "2026-10-24",
+      "time": "16:00",
+      "schedule": "SÁBADO 16:00 · 2026-10-24",
+      "functions": [
+        {
+          "date": "2026-10-24",
+          "time": "16:00",
+          "weekday": "sábado",
+          "venue": "MUSEO ARGENTINO DEL TITERE",
+          "neighborhood": "San Telmo"
+        }
+      ],
+      "genres": [
+        "Teatro",
+        "Títeres",
+        "Varieté"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra90452-petifur-variete",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "¡Una fiesta Monstruosa!",
+      "normalized_title": "una fiesta monstruosa",
+      "category": "Teatro",
+      "venue": "EL ALAMBIQUE",
+      "neighborhood": "Villa Pueyrredón",
+      "province": "CABA",
+      "address": "Griveo 2350",
+      "latitude": -34.5808169,
+      "longitude": -58.497404,
+      "date": "2026-10-24",
+      "time": "16:30",
+      "schedule": "SÁBADO 16:30 · 2026-10-24",
+      "functions": [
+        {
+          "date": "2026-10-24",
+          "time": "16:30",
+          "weekday": "sábado",
+          "venue": "EL ALAMBIQUE",
+          "neighborhood": "Villa Pueyrredón"
+        }
+      ],
+      "genres": [
+        "Clown"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra92426-una-fiesta-monstruosa",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "Las aventuras de Tiripín",
+      "normalized_title": "las aventuras de tiripin",
+      "category": "Teatro",
+      "venue": "INBOCCALUPO",
+      "neighborhood": "Belgrano",
+      "province": "CABA",
+      "address": "Virrey Arredondo 2495",
+      "latitude": -34.5681381,
+      "longitude": -58.4517392,
+      "date": "2026-10-24",
+      "time": "17:00",
+      "schedule": "SÁBADO 17:00 · 2026-10-24",
+      "functions": [
+        {
+          "date": "2026-10-24",
+          "time": "17:00",
+          "weekday": "sábado",
+          "venue": "INBOCCALUPO",
+          "neighborhood": "Belgrano"
+        }
+      ],
+      "genres": [
+        "Teatro"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra101233-las-aventuras-de-tiripin",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "Un superamigo imaginario",
+      "normalized_title": "un superamigo imaginario",
+      "category": "Teatro",
+      "venue": "LA GALERA ENCANTADA",
+      "neighborhood": "Palermo",
+      "province": "CABA",
+      "address": "Humboldt 1591",
+      "latitude": -34.5857248,
+      "longitude": -58.4363305,
+      "date": "2026-10-24",
+      "time": "17:00",
+      "schedule": "SÁBADO 17:00 · 2026-10-24",
+      "functions": [
+        {
+          "date": "2026-10-24",
+          "time": "17:00",
+          "weekday": "sábado",
+          "venue": "LA GALERA ENCANTADA",
+          "neighborhood": "Palermo"
+        },
+        {
+          "date": "2026-11-14",
+          "time": "17:00",
+          "weekday": "sábado",
+          "venue": "LA GALERA ENCANTADA",
+          "neighborhood": "Palermo"
+        }
+      ],
+      "genres": [
+        "Teatro"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra99800-un-superamigo-imaginario",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "VayVen",
+      "normalized_title": "vayven",
+      "category": "Teatro",
+      "venue": "TIMBRE 4",
+      "neighborhood": "Boedo",
+      "province": "CABA",
+      "address": "México 3554 / Boedo 640",
+      "latitude": -34.6197689,
+      "longitude": -58.4159602,
+      "date": "2026-10-25",
+      "time": "11:00",
+      "schedule": "DOMINGO 11:00 · 2026-10-25",
+      "functions": [
+        {
+          "date": "2026-10-25",
+          "time": "11:00",
+          "weekday": "domingo",
+          "venue": "TIMBRE 4",
+          "neighborhood": "Boedo"
+        }
+      ],
+      "genres": [
+        "Teatro"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra66202-vayven",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "Club de cine internacional para chicos La linterna mágica",
+      "normalized_title": "club de cine internacional para chicos la linterna magica",
+      "category": "Teatro",
+      "venue": "SALA DE TEATRO ANA FRANK",
+      "neighborhood": "Coghlan",
+      "province": "CABA",
+      "address": "Superí 2639",
+      "latitude": -34.56298716781,
+      "longitude": -58.470776479364,
+      "date": "2026-10-25",
+      "time": "16:00",
+      "schedule": "DOMINGO 16:00 · 2026-10-25",
+      "functions": [
+        {
+          "date": "2026-10-25",
+          "time": "16:00",
+          "weekday": "domingo",
+          "venue": "SALA DE TEATRO ANA FRANK",
+          "neighborhood": "Coghlan"
+        }
+      ],
+      "genres": [],
+      "url": "https://www.alternativateatral.com.ar/obra75438-club-de-cine-internacional-para-chicos-la-linterna-magica",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "Lucía en Kamishibai",
+      "normalized_title": "lucia en kamishibai",
+      "category": "Teatro",
+      "venue": "SALA DEL CAFÉ ARTIGAS",
+      "neighborhood": "Villa Gral.mitre",
+      "province": "CABA",
+      "address": "José Gervasio Artigas 1850",
+      "latitude": -34.610228375154,
+      "longitude": -58.475123217602,
+      "date": "2026-10-25",
+      "time": "16:00",
+      "schedule": "DOMINGO 16:00 · 2026-10-25",
+      "functions": [
+        {
+          "date": "2026-10-25",
+          "time": "16:00",
+          "weekday": "domingo",
+          "venue": "SALA DEL CAFÉ ARTIGAS",
+          "neighborhood": "Villa Gral.mitre"
+        },
+        {
+          "date": "2026-11-22",
+          "time": "16:00",
+          "weekday": "domingo",
+          "venue": "SALA DEL CAFÉ ARTIGAS",
+          "neighborhood": "Villa Gral.mitre"
+        }
+      ],
+      "genres": [
+        "Títeres"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra31597-lucia-en-kamishibai",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "Hansel y Gretel",
+      "normalized_title": "hansel y gretel",
+      "category": "Teatro",
+      "venue": "LA GALERA ENCANTADA",
+      "neighborhood": "Palermo",
+      "province": "CABA",
+      "address": "Humboldt 1591",
+      "latitude": -34.5857248,
+      "longitude": -58.4363305,
+      "date": "2026-10-25",
+      "time": "17:00",
+      "schedule": "DOMINGO 17:00 · 2026-10-25",
+      "functions": [
+        {
+          "date": "2026-10-25",
+          "time": "17:00",
+          "weekday": "domingo",
+          "venue": "LA GALERA ENCANTADA",
+          "neighborhood": "Palermo"
+        },
+        {
+          "date": "2026-11-21",
+          "time": "17:00",
+          "weekday": "sábado",
+          "venue": "LA GALERA ENCANTADA",
+          "neighborhood": "Palermo"
+        }
+      ],
+      "genres": [],
+      "url": "https://www.alternativateatral.com.ar/obra16544-hansel-y-gretel",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "Magia Teatro para Bebés",
+      "normalized_title": "magia teatro para bebes",
+      "category": "Teatro",
+      "venue": "PONCHO TEATRO",
+      "neighborhood": "Villa Crespo",
+      "province": "CABA",
+      "address": "Leopoldo Marechal 1219",
+      "latitude": -34.604347522935,
+      "longitude": -58.440155501373,
+      "date": "2026-10-25",
+      "time": "17:00",
+      "schedule": "DOMINGO 17:00 · 2026-10-25",
+      "functions": [
+        {
+          "date": "2026-10-25",
+          "time": "17:00",
+          "weekday": "domingo",
+          "venue": "PONCHO TEATRO",
+          "neighborhood": "Villa Crespo"
+        }
+      ],
+      "genres": [
+        "Teatro"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra55878-magia-teatro-para-bebes",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "Laberinto Masticable - Jalowin",
+      "normalized_title": "laberinto masticable jalowin",
+      "category": "Teatro",
+      "venue": "EL ALAMBIQUE",
+      "neighborhood": "Villa Pueyrredón",
+      "province": "CABA",
+      "address": "Griveo 2350",
+      "latitude": -34.5808169,
+      "longitude": -58.497404,
+      "date": "2026-10-31",
+      "time": "17:00",
+      "schedule": "SÁBADO 17:00 · 2026-10-31",
+      "functions": [
+        {
+          "date": "2026-10-31",
+          "time": "17:00",
+          "weekday": "sábado",
+          "venue": "EL ALAMBIQUE",
+          "neighborhood": "Villa Pueyrredón"
+        }
+      ],
+      "genres": [
+        "Teatro"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra103411-laberinto-masticable-jalowin",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "El día que cambio la vida del Sr. Odio",
+      "normalized_title": "el dia que cambio la vida del sr odio",
+      "category": "Teatro",
+      "venue": "SALA DEL CAFÉ ARTIGAS",
+      "neighborhood": "Villa Gral.mitre",
+      "province": "CABA",
+      "address": "José Gervasio Artigas 1850",
+      "latitude": -34.610228375154,
+      "longitude": -58.475123217602,
+      "date": "2026-11-01",
+      "time": "16:00",
+      "schedule": "DOMINGO 16:00 · 2026-11-01",
+      "functions": [
+        {
+          "date": "2026-11-01",
+          "time": "16:00",
+          "weekday": "domingo",
+          "venue": "SALA DEL CAFÉ ARTIGAS",
+          "neighborhood": "Villa Gral.mitre"
+        },
+        {
+          "date": "2026-12-06",
+          "time": "16:00",
+          "weekday": "domingo",
+          "venue": "SALA DEL CAFÉ ARTIGAS",
+          "neighborhood": "Villa Gral.mitre"
+        }
+      ],
+      "genres": [
+        "Teatro",
+        "Títeres"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra75949-el-dia-que-cambio-la-vida-del-sr-odio",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "Sembrar la Tierra",
+      "normalized_title": "sembrar la tierra",
+      "category": "Teatro",
+      "venue": "MUSEO ARGENTINO DEL TITERE",
+      "neighborhood": "San Telmo",
+      "province": "CABA",
+      "address": "Estados Unidos 802",
+      "latitude": -34.6185914,
+      "longitude": -58.3773064,
+      "date": "2026-11-01",
+      "time": "16:00",
+      "schedule": "DOMINGO 16:00 · 2026-11-01",
+      "functions": [
+        {
+          "date": "2026-11-01",
+          "time": "16:00",
+          "weekday": "domingo",
+          "venue": "MUSEO ARGENTINO DEL TITERE",
+          "neighborhood": "San Telmo"
+        }
+      ],
+      "genres": [
+        "Títeres"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra101604-sembrar-la-tierra",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "La ratoncita Pérez",
+      "normalized_title": "la ratoncita perez",
+      "category": "Teatro",
+      "venue": "LA GALERA ENCANTADA",
+      "neighborhood": "Palermo",
+      "province": "CABA",
+      "address": "Humboldt 1591",
+      "latitude": -34.5857248,
+      "longitude": -58.4363305,
+      "date": "2026-11-01",
+      "time": "17:00",
+      "schedule": "DOMINGO 17:00 · 2026-11-01",
+      "functions": [
+        {
+          "date": "2026-11-01",
+          "time": "17:00",
+          "weekday": "domingo",
+          "venue": "LA GALERA ENCANTADA",
+          "neighborhood": "Palermo"
+        },
+        {
+          "date": "2026-11-22",
+          "time": "17:00",
+          "weekday": "domingo",
+          "venue": "LA GALERA ENCANTADA",
+          "neighborhood": "Palermo"
+        }
+      ],
+      "genres": [
+        "Teatro"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra94482-la-ratoncita-perez",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "Mununa",
+      "normalized_title": "mununa",
+      "category": "Teatro",
+      "venue": "MUSEO ARGENTINO DEL TITERE",
+      "neighborhood": "San Telmo",
+      "province": "CABA",
+      "address": "Estados Unidos 802",
+      "latitude": -34.6185914,
+      "longitude": -58.3773064,
+      "date": "2026-11-07",
+      "time": "16:00",
+      "schedule": "SÁBADO 16:00 · 2026-11-07",
+      "functions": [
+        {
+          "date": "2026-11-07",
+          "time": "16:00",
+          "weekday": "sábado",
+          "venue": "MUSEO ARGENTINO DEL TITERE",
+          "neighborhood": "San Telmo"
+        },
+        {
+          "date": "2026-11-21",
+          "time": "16:00",
+          "weekday": "sábado",
+          "venue": "MUSEO ARGENTINO DEL TITERE",
+          "neighborhood": "San Telmo"
+        }
+      ],
+      "genres": [
+        "Teatro",
+        "Clown",
+        "Títeres"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra101226-mununa",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "El salpicon",
+      "normalized_title": "el salpicon",
+      "category": "Teatro",
+      "venue": "NÜN TEATRO BAR",
+      "neighborhood": "Villa Crespo",
+      "province": "CABA",
+      "address": "Juan Ramirez de Velasco 419",
+      "latitude": -34.5990352,
+      "longitude": -58.4360774,
+      "date": "2026-11-07",
+      "time": "16:30",
+      "schedule": "SÁBADO 16:30 · 2026-11-07",
+      "functions": [
+        {
+          "date": "2026-11-07",
+          "time": "16:30",
+          "weekday": "sábado",
+          "venue": "NÜN TEATRO BAR",
+          "neighborhood": "Villa Crespo"
+        }
+      ],
+      "genres": [
+        "Musical",
+        "Teatro"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra101678-el-salpicon",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "Los tres chanchitos",
+      "normalized_title": "los tres chanchitos",
+      "category": "Teatro",
+      "venue": "LA GALERA ENCANTADA",
+      "neighborhood": "Palermo",
+      "province": "CABA",
+      "address": "Humboldt 1591",
+      "latitude": -34.5857248,
+      "longitude": -58.4363305,
+      "date": "2026-11-07",
+      "time": "17:00",
+      "schedule": "SÁBADO 17:00 · 2026-11-07",
+      "functions": [
+        {
+          "date": "2026-11-07",
+          "time": "17:00",
+          "weekday": "sábado",
+          "venue": "LA GALERA ENCANTADA",
+          "neighborhood": "Palermo"
+        },
+        {
+          "date": "2026-11-28",
+          "time": "17:00",
+          "weekday": "sábado",
+          "venue": "LA GALERA ENCANTADA",
+          "neighborhood": "Palermo"
+        }
+      ],
+      "genres": [
+        "Teatro"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra20115-los-tres-chanchitos",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "PARIS JAZZ CLUB: Jazz History",
+      "normalized_title": "paris jazz club jazz history",
+      "category": "Teatro",
+      "venue": "BEBOP CLUB",
+      "neighborhood": "Palermo",
+      "province": "CABA",
+      "address": "URIARTE 1658",
+      "latitude": -34.5867806,
+      "longitude": -58.433572,
+      "date": "2026-11-07",
+      "time": "20:00",
+      "schedule": "SÁBADO 20:00 · 2026-11-07",
+      "functions": [
+        {
+          "date": "2026-11-07",
+          "time": "20:00",
+          "weekday": "sábado",
+          "venue": "BEBOP CLUB",
+          "neighborhood": "Palermo"
+        },
+        {
+          "date": "2026-11-22",
+          "time": "20:00",
+          "weekday": "domingo",
+          "venue": "THELONIOUS CLUB",
+          "neighborhood": "Palermo"
+        },
+        {
+          "date": "2026-11-22",
+          "time": "22:00",
+          "weekday": "domingo",
+          "venue": "THELONIOUS CLUB",
+          "neighborhood": "Palermo"
+        }
+      ],
+      "genres": [
+        "Humor"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra88873-paris-jazz-club-jazz-history",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "Navidad: Made in Argentina",
+      "normalized_title": "navidad made in argentina",
+      "category": "Teatro",
+      "venue": "LA ORILLA INFINITA",
+      "neighborhood": "Rosario",
+      "province": "Santa Fe",
+      "address": "Colón 2148",
+      "latitude": 0,
+      "longitude": 0,
+      "date": "2026-11-08",
+      "time": "16:00",
+      "schedule": "DOMINGO 16:00 · 2026-11-08",
+      "functions": [
+        {
+          "date": "2026-11-08",
+          "time": "16:00",
+          "weekday": "domingo",
+          "venue": "LA ORILLA INFINITA",
+          "neighborhood": "Rosario"
+        }
+      ],
+      "genres": [
+        "Teatro",
+        "Musical",
+        "Comedia"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra102659-navidad-made-in-argentina",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "Locas Canciones de María Elena Walsh",
+      "normalized_title": "locas canciones de maria elena walsh",
+      "category": "Teatro",
+      "venue": "LA GALERA ENCANTADA",
+      "neighborhood": "Palermo",
+      "province": "CABA",
+      "address": "Humboldt 1591",
+      "latitude": -34.5857248,
+      "longitude": -58.4363305,
+      "date": "2026-11-08",
+      "time": "17:00",
+      "schedule": "DOMINGO 17:00 · 2026-11-08",
+      "functions": [
+        {
+          "date": "2026-11-08",
+          "time": "17:00",
+          "weekday": "domingo",
+          "venue": "LA GALERA ENCANTADA",
+          "neighborhood": "Palermo"
+        }
+      ],
+      "genres": [
+        "Teatro"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra101251-locas-canciones-de-maria-elena-walsh",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "Tatán",
+      "normalized_title": "tatan",
+      "category": "Teatro",
+      "venue": "TIMBRE 4",
+      "neighborhood": "Boedo",
+      "province": "CABA",
+      "address": "México 3554 / Boedo 640",
+      "latitude": -34.6197689,
+      "longitude": -58.4159602,
+      "date": "2026-11-15",
+      "time": "11:00",
+      "schedule": "DOMINGO 11:00 · 2026-11-15",
+      "functions": [
+        {
+          "date": "2026-11-15",
+          "time": "11:00",
+          "weekday": "domingo",
+          "venue": "TIMBRE 4",
+          "neighborhood": "Boedo"
+        }
+      ],
+      "genres": [
+        "Teatro"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra42986-tatan",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "Valor Vereda: Soy valiente",
+      "normalized_title": "valor vereda soy valiente",
+      "category": "Teatro",
+      "venue": "EL ALAMBIQUE",
+      "neighborhood": "Villa Pueyrredón",
+      "province": "CABA",
+      "address": "Griveo 2350",
+      "latitude": -34.5808169,
+      "longitude": -58.497404,
+      "date": "2026-11-15",
+      "time": "11:30",
+      "schedule": "DOMINGO 11:30 · 2026-11-15",
+      "functions": [
+        {
+          "date": "2026-11-15",
+          "time": "11:30",
+          "weekday": "domingo",
+          "venue": "EL ALAMBIQUE",
+          "neighborhood": "Villa Pueyrredón"
+        }
+      ],
+      "genres": [
+        "Teatro"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra41211-valor-vereda-soy-valiente",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "Los cielos de Manuel",
+      "normalized_title": "los cielos de manuel",
+      "category": "Teatro",
+      "venue": "EL ARCHIBRAZO",
+      "neighborhood": "Almagro",
+      "province": "CABA",
+      "address": "Mario Bravo 441",
+      "latitude": -34.6049102,
+      "longitude": -58.4169365,
+      "date": "2026-11-15",
+      "time": "16:30",
+      "schedule": "DOMINGO 16:30 · 2026-11-15",
+      "functions": [
+        {
+          "date": "2026-11-15",
+          "time": "16:30",
+          "weekday": "domingo",
+          "venue": "EL ARCHIBRAZO",
+          "neighborhood": "Almagro"
+        }
+      ],
+      "genres": [
+        "Teatro"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra100952-los-cielos-de-manuel",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "LES PAYASES II: ¿Quién inventó el tiempo?",
+      "normalized_title": "les payases ii quien invento el tiempo",
+      "category": "Teatro",
+      "venue": "BELISARIO CLUB DE CULTURA",
+      "neighborhood": "San Nicolas",
+      "province": "CABA",
+      "address": "Av. Corrientes 1624",
+      "latitude": -34.6042587,
+      "longitude": -58.389729,
+      "date": "2026-11-15",
+      "time": "18:00",
+      "schedule": "DOMINGO 18:00 · 2026-11-15",
+      "functions": [
+        {
+          "date": "2026-11-15",
+          "time": "18:00",
+          "weekday": "domingo",
+          "venue": "BELISARIO CLUB DE CULTURA",
+          "neighborhood": "San Nicolas"
+        }
+      ],
+      "genres": [
+        "Teatro"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra98218-les-payases-ii-quien-invento-el-tiempo",
+      "source": "Alternativa Teatral"
+    },
+    {
+      "title": "Migue y Lucy, una historia de rock",
+      "normalized_title": "migue y lucy una historia de rock",
+      "category": "Teatro",
+      "venue": "EL MÉTODO KAIRÓS TEATRO",
+      "neighborhood": "Palermo",
+      "province": "CABA",
+      "address": "El Salvador 4530",
+      "latitude": -34.5906627,
+      "longitude": -58.4252457,
+      "date": "2026-11-20",
+      "time": "19:30",
+      "schedule": "VIERNES 19:30 · 2026-11-20",
+      "functions": [
+        {
+          "date": "2026-11-20",
+          "time": "19:30",
+          "weekday": "viernes",
+          "venue": "EL MÉTODO KAIRÓS TEATRO",
+          "neighborhood": "Palermo"
+        }
+      ],
+      "genres": [
+        "Teatro"
+      ],
+      "url": "https://www.alternativateatral.com.ar/obra101459-migue-y-lucy-una-historia-de-rock",
+      "source": "Alternativa Teatral"
+    }
+  ],
+  "cross_validation": {
+    "method": "coincidencia exacta de títulos normalizados",
+    "publishing_rule": "unión de eventos infantiles; la coincidencia entre fuentes no es requisito para incluirlos",
+    "source_counts": {
+      "baires_secreta_infantil_candidates": 1,
+      "linda_ba_infantil_candidates": 24,
+      "alternativa_infantiles_in_range": 40
+    },
+    "title_distribution": {
+      "events_in_one_source": 53,
+      "events_in_multiple_sources": 0,
+      "events_in_all_sources": 0
+    },
+    "titles_in_multiple_sources_but_not_all": 53,
+    "titles_found_in_all_sources": 0
+  },
+  "events": [
+    {
+      "title": "1, 2, 3… Sol",
+      "normalized_title": "1 2 3 sol",
+      "sources": [
+        "LINDA BA"
+      ],
+      "source_details": {
+        "LINDA BA": {
+          "title": "1, 2, 3… Sol",
+          "normalized_title": "1 2 3 sol",
+          "category": "Infantil",
+          "venue": "Centro Cultural Recoleta",
+          "neighborhood": "Recoleta",
+          "address": "Junín 1930",
+          "latitude": -34.5862881,
+          "longitude": -58.39152887,
+          "date": "2026-10-17",
+          "time": "16:00",
+          "schedule": "2026-10-17 · 16:00",
+          "functions": [
+            {
+              "date": "2026-10-17",
+              "time": "16:00"
+            },
+            {
+              "date": "2026-10-24",
+              "time": "16:00"
+            },
+            {
+              "date": "2026-11-07",
+              "time": "16:00"
+            },
+            {
+              "date": "2026-11-14",
+              "time": "16:00"
+            }
+          ],
+          "genres": [
+            "Arte y cultura"
+          ],
+          "description": "Niños y niñas piensan sobre la muerte y la fantasía transforma la realidad creando otro mundo regido por nuevas leyes y sensaciones.",
+          "url": "https://linda.buenosaires.gob.ar/descubrir/1-2-3-sol",
+          "source": "LINDA BA"
+        }
+      }
+    },
+    {
+      "title": "3obras3",
+      "normalized_title": "3obras3",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "3obras3",
+          "normalized_title": "3obras3",
+          "category": "Teatro",
+          "venue": "MUSEO ARGENTINO DEL TITERE",
+          "neighborhood": "San Telmo",
+          "province": "CABA",
+          "address": "Estados Unidos 802",
+          "latitude": -34.6185914,
+          "longitude": -58.3773064,
+          "date": "2026-10-17",
+          "time": "16:00",
+          "schedule": "SÁBADO 16:00 · 2026-10-17",
+          "functions": [
+            {
+              "date": "2026-10-17",
+              "time": "16:00",
+              "weekday": "sábado",
+              "venue": "MUSEO ARGENTINO DEL TITERE",
+              "neighborhood": "San Telmo"
+            }
+          ],
+          "genres": [
+            "Títeres"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra42355-3obras3",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "Alerta Espacial: noticias bajo la lupa",
+      "normalized_title": "alerta espacial noticias bajo la lupa",
+      "sources": [
+        "LINDA BA"
+      ],
+      "source_details": {
+        "LINDA BA": {
+          "title": "Alerta Espacial: noticias bajo la lupa",
+          "normalized_title": "alerta espacial noticias bajo la lupa",
+          "category": "Infantil",
+          "venue": "Planetario Galileo Galilei",
+          "neighborhood": "Palermo",
+          "address": "Av. Sarmiento s/n, C1425 Cdad. Autónoma de Buenos Aires",
+          "latitude": -34.579375,
+          "longitude": -58.419183,
+          "date": "2026-10-17",
+          "time": "14:30",
+          "schedule": "2026-10-17 · 14:30",
+          "functions": [
+            {
+              "date": "2026-10-17",
+              "time": "14:30"
+            },
+            {
+              "date": "2026-10-18",
+              "time": "14:30"
+            }
+          ],
+          "genres": [
+            "Entretenimiento"
+          ],
+          "description": "Espectáculo para niños y adolescentes en el Planetario. ¿Un asteroide podría chocar con la Tierra? ¿Los planetas realmente se alinean? ¿Qué hay detrás de las impactantes imágenes de agujeros negros que recorren el mundo?",
+          "url": "https://linda.buenosaires.gob.ar/descubrir/alerta-espacial-noticias-bajo-la-lupa",
+          "source": "LINDA BA"
+        }
+      }
+    },
+    {
+      "title": "Alicia, un país de maravillas",
+      "normalized_title": "alicia un pais de maravillas",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "Alicia, un país de maravillas",
+          "normalized_title": "alicia un pais de maravillas",
+          "category": "Teatro",
+          "venue": "LA GALERA ENCANTADA",
+          "neighborhood": "Palermo",
+          "province": "CABA",
+          "address": "Humboldt 1591",
+          "latitude": -34.5857248,
+          "longitude": -58.4363305,
+          "date": "2026-10-18",
+          "time": "17:00",
+          "schedule": "DOMINGO 17:00 · 2026-10-18",
+          "functions": [
+            {
+              "date": "2026-10-18",
+              "time": "17:00",
+              "weekday": "domingo",
+              "venue": "LA GALERA ENCANTADA",
+              "neighborhood": "Palermo"
+            },
+            {
+              "date": "2026-11-15",
+              "time": "17:00",
+              "weekday": "domingo",
+              "venue": "LA GALERA ENCANTADA",
+              "neighborhood": "Palermo"
+            }
+          ],
+          "genres": [
+            "Teatro"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra14347-alicia-un-pais-de-maravillas",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "Anna y Elsa: un musical entre hielos",
+      "normalized_title": "anna y elsa un musical entre hielos",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "Anna y Elsa: un musical entre hielos",
+          "normalized_title": "anna y elsa un musical entre hielos",
+          "category": "Teatro",
+          "venue": "TERRAZA TEATRO BAR",
+          "neighborhood": "San Nicolás",
+          "province": "Buenos Aires",
+          "address": "Av. Corrientes 1660",
+          "latitude": -34.6043327,
+          "longitude": -58.3902592,
+          "date": "2026-10-17",
+          "time": "17:00",
+          "schedule": "SÁBADO 17:00 · 2026-10-17",
+          "functions": [
+            {
+              "date": "2026-10-17",
+              "time": "17:00",
+              "weekday": "sábado",
+              "venue": "TERRAZA TEATRO BAR",
+              "neighborhood": "San Nicolás"
+            },
+            {
+              "date": "2026-10-24",
+              "time": "17:00",
+              "weekday": "sábado",
+              "venue": "TERRAZA TEATRO BAR",
+              "neighborhood": "San Nicolás"
+            },
+            {
+              "date": "2026-10-25",
+              "time": "17:00",
+              "weekday": "domingo",
+              "venue": "TERRAZA TEATRO BAR",
+              "neighborhood": "San Nicolás"
+            }
+          ],
+          "genres": [
+            "Musical"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra80506-anna-y-elsa-un-musical-entre-hielos",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "¡BASTA PARA MÍ, AQUÍ ME PLANTO!",
+      "normalized_title": "basta para mi aqui me planto",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "¡BASTA PARA MÍ, AQUÍ ME PLANTO!",
+          "normalized_title": "basta para mi aqui me planto",
+          "category": "Teatro",
+          "venue": "EL JUFRÉ TEATRO BAR",
+          "neighborhood": "Villa Crespo",
+          "province": "CABA",
+          "address": "Jufré 444",
+          "latitude": -34.5954422,
+          "longitude": -58.4329392,
+          "date": "2026-10-18",
+          "time": "17:30",
+          "schedule": "DOMINGO 17:30 · 2026-10-18",
+          "functions": [
+            {
+              "date": "2026-10-18",
+              "time": "17:30",
+              "weekday": "domingo",
+              "venue": "EL JUFRÉ TEATRO BAR",
+              "neighborhood": "Villa Crespo"
+            },
+            {
+              "date": "2026-10-25",
+              "time": "17:30",
+              "weekday": "domingo",
+              "venue": "EL JUFRÉ TEATRO BAR",
+              "neighborhood": "Villa Crespo"
+            }
+          ],
+          "genres": [
+            "Teatro"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra102689-basta-para-mi-aqui-me-planto",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "Caleidoscopio",
+      "normalized_title": "caleidoscopio",
+      "sources": [
+        "LINDA BA"
+      ],
+      "source_details": {
+        "LINDA BA": {
+          "title": "Caleidoscopio",
+          "normalized_title": "caleidoscopio",
+          "category": "Infantil",
+          "venue": "Museo Moderno",
+          "neighborhood": "San Telmo",
+          "address": "Av. San Juan 350",
+          "latitude": -34.62191438,
+          "longitude": -58.37052119,
+          "date": "2026-10-17",
+          "time": "16:00",
+          "schedule": "2026-10-17 · 16:00",
+          "functions": [
+            {
+              "date": "2026-10-17",
+              "time": "16:00"
+            },
+            {
+              "date": "2026-10-24",
+              "time": "16:00"
+            },
+            {
+              "date": "2026-10-31",
+              "time": "16:00"
+            }
+          ],
+          "genres": [
+            "Arte y cultura"
+          ],
+          "description": "Taller anual de arte para familias en el Museo Moderno.",
+          "url": "https://linda.buenosaires.gob.ar/descubrir/caleidoscopio",
+          "source": "LINDA BA"
+        }
+      }
+    },
+    {
+      "title": "Catálogo familiar de flores y plantas",
+      "normalized_title": "catalogo familiar de flores y plantas",
+      "sources": [
+        "LINDA BA"
+      ],
+      "source_details": {
+        "LINDA BA": {
+          "title": "Catálogo familiar de flores y plantas",
+          "normalized_title": "catalogo familiar de flores y plantas",
+          "category": "Infantil",
+          "venue": "Museo Larreta",
+          "neighborhood": "Belgrano",
+          "address": "Avenida Juramento 2291, C1428DNK Buenos Aires AR, Argentina",
+          "latitude": -34.56110797,
+          "longitude": -58.45529268,
+          "date": "2026-10-22",
+          "time": "16:30",
+          "schedule": "2026-10-22 · 16:30",
+          "functions": [
+            {
+              "date": "2026-10-22",
+              "time": "16:30"
+            },
+            {
+              "date": "2026-11-12",
+              "time": "16:30"
+            }
+          ],
+          "genres": [
+            "Arte y cultura"
+          ],
+          "description": "Un encuentro afectivo con las especies del jardín hispanoárabe del Museo de Arte Español Enrique Larreta.",
+          "url": "https://linda.buenosaires.gob.ar/descubrir/catalogo-familiar-de-flores-y-plantas-0",
+          "source": "LINDA BA"
+        }
+      }
+    },
+    {
+      "title": "Chakana",
+      "normalized_title": "chakana",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "Chakana",
+          "normalized_title": "chakana",
+          "category": "Teatro",
+          "venue": "CLUB DE TRAPECISTAS ESTRELLA DEL CENTENARIO",
+          "neighborhood": "Villa Crespo",
+          "province": "CABA",
+          "address": "Ferrari 252",
+          "latitude": -34.6041972,
+          "longitude": -58.439528,
+          "date": "2026-10-17",
+          "time": "21:00",
+          "schedule": "SÁBADO 21:00 · 2026-10-17",
+          "functions": [
+            {
+              "date": "2026-10-17",
+              "time": "21:00",
+              "weekday": "sábado",
+              "venue": "CLUB DE TRAPECISTAS ESTRELLA DEL CENTENARIO",
+              "neighborhood": "Villa Crespo"
+            }
+          ],
+          "genres": [
+            "Teatro",
+            "Circo",
+            "Teatro negro"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra97394-chakana",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "Cinema Aventura",
+      "normalized_title": "cinema aventura",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "Cinema Aventura",
+          "normalized_title": "cinema aventura",
+          "category": "Teatro",
+          "venue": "NÜN TEATRO BAR",
+          "neighborhood": "Villa Crespo",
+          "province": "CABA",
+          "address": "Juan Ramirez de Velasco 419",
+          "latitude": -34.5990352,
+          "longitude": -58.4360774,
+          "date": "2026-10-18",
+          "time": "16:00",
+          "schedule": "DOMINGO 16:00 · 2026-10-18",
+          "functions": [
+            {
+              "date": "2026-10-18",
+              "time": "16:00",
+              "weekday": "domingo",
+              "venue": "NÜN TEATRO BAR",
+              "neighborhood": "Villa Crespo"
+            }
+          ],
+          "genres": [
+            "Teatro"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra103000-cinema-aventura",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "Club de cine internacional para chicos La linterna mágica",
+      "normalized_title": "club de cine internacional para chicos la linterna magica",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "Club de cine internacional para chicos La linterna mágica",
+          "normalized_title": "club de cine internacional para chicos la linterna magica",
+          "category": "Teatro",
+          "venue": "SALA DE TEATRO ANA FRANK",
+          "neighborhood": "Coghlan",
+          "province": "CABA",
+          "address": "Superí 2639",
+          "latitude": -34.56298716781,
+          "longitude": -58.470776479364,
+          "date": "2026-10-25",
+          "time": "16:00",
+          "schedule": "DOMINGO 16:00 · 2026-10-25",
+          "functions": [
+            {
+              "date": "2026-10-25",
+              "time": "16:00",
+              "weekday": "domingo",
+              "venue": "SALA DE TEATRO ANA FRANK",
+              "neighborhood": "Coghlan"
+            }
+          ],
+          "genres": [],
+          "url": "https://www.alternativateatral.com.ar/obra75438-club-de-cine-internacional-para-chicos-la-linterna-magica",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "Concierto entre almohadones",
+      "normalized_title": "concierto entre almohadones",
+      "sources": [
+        "LINDA BA"
+      ],
+      "source_details": {
+        "LINDA BA": {
+          "title": "Concierto entre almohadones",
+          "normalized_title": "concierto entre almohadones",
+          "category": "Música",
+          "venue": "Teatro Colón",
+          "neighborhood": "San Nicolas",
+          "address": "Tucumán 1171, C1049AAW Cdad. Autónoma de Buenos Aires",
+          "latitude": -34.601354,
+          "longitude": -58.383413,
+          "date": "2026-10-25",
+          "time": "11:00",
+          "schedule": "2026-10-25 · 11:00",
+          "functions": [
+            {
+              "date": "2026-10-25",
+              "time": "11:00"
+            },
+            {
+              "date": "2026-11-15",
+              "time": "11:00"
+            },
+            {
+              "date": "2026-11-29",
+              "time": "11:00"
+            },
+            {
+              "date": "2026-12-13",
+              "time": "11:00"
+            }
+          ],
+          "genres": [
+            "Música y Shows",
+            "Arte y cultura"
+          ],
+          "description": "\"Concierto entre almohadones: Cartas que cantan, aventuras líricas en el altillo\". Espectáculo musical para toda la familia en el Teatro Colón (edad sugerida a partir de los 5 años).",
+          "url": "https://linda.buenosaires.gob.ar/descubrir/concierto-entre-almohadones",
+          "source": "LINDA BA"
+        }
+      }
+    },
+    {
+      "title": "El día que cambio la vida del Sr. Odio",
+      "normalized_title": "el dia que cambio la vida del sr odio",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "El día que cambio la vida del Sr. Odio",
+          "normalized_title": "el dia que cambio la vida del sr odio",
+          "category": "Teatro",
+          "venue": "SALA DEL CAFÉ ARTIGAS",
+          "neighborhood": "Villa Gral.mitre",
+          "province": "CABA",
+          "address": "José Gervasio Artigas 1850",
+          "latitude": -34.610228375154,
+          "longitude": -58.475123217602,
+          "date": "2026-11-01",
+          "time": "16:00",
+          "schedule": "DOMINGO 16:00 · 2026-11-01",
+          "functions": [
+            {
+              "date": "2026-11-01",
+              "time": "16:00",
+              "weekday": "domingo",
+              "venue": "SALA DEL CAFÉ ARTIGAS",
+              "neighborhood": "Villa Gral.mitre"
+            },
+            {
+              "date": "2026-12-06",
+              "time": "16:00",
+              "weekday": "domingo",
+              "venue": "SALA DEL CAFÉ ARTIGAS",
+              "neighborhood": "Villa Gral.mitre"
+            }
+          ],
+          "genres": [
+            "Teatro",
+            "Títeres"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra75949-el-dia-que-cambio-la-vida-del-sr-odio",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "El maravilloso Mago de Oz",
+      "normalized_title": "el maravilloso mago de oz",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "El maravilloso Mago de Oz",
+          "normalized_title": "el maravilloso mago de oz",
+          "category": "Teatro",
+          "venue": "NUEVO TEATRO GARGANTÚA",
+          "neighborhood": "Palermo",
+          "province": "CABA",
+          "address": "Serrano 459",
+          "latitude": -34.596715859757,
+          "longitude": -58.443037248191,
+          "date": "2026-10-18",
+          "time": "16:00",
+          "schedule": "DOMINGO 16:00 · 2026-10-18",
+          "functions": [
+            {
+              "date": "2026-10-18",
+              "time": "16:00",
+              "weekday": "domingo",
+              "venue": "NUEVO TEATRO GARGANTÚA",
+              "neighborhood": "Palermo"
+            }
+          ],
+          "genres": [
+            "Teatro"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra100365-el-maravilloso-mago-de-oz",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "El salpicon",
+      "normalized_title": "el salpicon",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "El salpicon",
+          "normalized_title": "el salpicon",
+          "category": "Teatro",
+          "venue": "NÜN TEATRO BAR",
+          "neighborhood": "Villa Crespo",
+          "province": "CABA",
+          "address": "Juan Ramirez de Velasco 419",
+          "latitude": -34.5990352,
+          "longitude": -58.4360774,
+          "date": "2026-11-07",
+          "time": "16:30",
+          "schedule": "SÁBADO 16:30 · 2026-11-07",
+          "functions": [
+            {
+              "date": "2026-11-07",
+              "time": "16:30",
+              "weekday": "sábado",
+              "venue": "NÜN TEATRO BAR",
+              "neighborhood": "Villa Crespo"
+            }
+          ],
+          "genres": [
+            "Musical",
+            "Teatro"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra101678-el-salpicon",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "Ensayo infinito",
+      "normalized_title": "ensayo infinito",
+      "sources": [
+        "LINDA BA"
+      ],
+      "source_details": {
+        "LINDA BA": {
+          "title": "Ensayo infinito",
+          "normalized_title": "ensayo infinito",
+          "category": "Infantil",
+          "venue": "Museo Moderno",
+          "neighborhood": "San Telmo",
+          "address": "Av. San Juan 350",
+          "latitude": -34.62191438,
+          "longitude": -58.37052119,
+          "date": "2026-10-17",
+          "time": "17:30",
+          "schedule": "2026-10-17 · 17:30",
+          "functions": [
+            {
+              "date": "2026-10-17",
+              "time": "17:30"
+            },
+            {
+              "date": "2026-10-24",
+              "time": "17:30"
+            },
+            {
+              "date": "2026-10-31",
+              "time": "17:30"
+            }
+          ],
+          "genres": [
+            "Arte y cultura"
+          ],
+          "description": "Taller anual de experimentación artística para adolescentes.",
+          "url": "https://linda.buenosaires.gob.ar/descubrir/ensayo-infinito",
+          "source": "LINDA BA"
+        }
+      }
+    },
+    {
+      "title": "Feria Valor BA | Parque Centenario",
+      "normalized_title": "feria valor ba parque centenario",
+      "sources": [
+        "LINDA BA"
+      ],
+      "source_details": {
+        "LINDA BA": {
+          "title": "Feria Valor BA | Parque Centenario",
+          "normalized_title": "feria valor ba parque centenario",
+          "category": "Infantil",
+          "venue": "Parque Centenario",
+          "neighborhood": "Caballito",
+          "address": "Av. Diaz Velez y Finochietto",
+          "latitude": -34.608365,
+          "longitude": -58.436055,
+          "date": "2026-10-17",
+          "time": "11:00",
+          "schedule": "2026-10-17 · 11:00",
+          "functions": [
+            {
+              "date": "2026-10-17",
+              "time": "11:00"
+            }
+          ],
+          "genres": [
+            "Ferias y exposiciones",
+            "Gastronomía"
+          ],
+          "description": "Una feria itinerante de economía social llega al Parque Centenario con productos artesanales, emprendimientos locales y consumo consciente para disfrutar en familia un sábado al aire libre en Caballito.",
+          "url": "https://linda.buenosaires.gob.ar/descubrir/feria-valor-ba-parque-centenario",
+          "source": "LINDA BA"
+        }
+      }
+    },
+    {
+      "title": "Hansel y Gretel",
+      "normalized_title": "hansel y gretel",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "Hansel y Gretel",
+          "normalized_title": "hansel y gretel",
+          "category": "Teatro",
+          "venue": "LA GALERA ENCANTADA",
+          "neighborhood": "Palermo",
+          "province": "CABA",
+          "address": "Humboldt 1591",
+          "latitude": -34.5857248,
+          "longitude": -58.4363305,
+          "date": "2026-10-25",
+          "time": "17:00",
+          "schedule": "DOMINGO 17:00 · 2026-10-25",
+          "functions": [
+            {
+              "date": "2026-10-25",
+              "time": "17:00",
+              "weekday": "domingo",
+              "venue": "LA GALERA ENCANTADA",
+              "neighborhood": "Palermo"
+            },
+            {
+              "date": "2026-11-21",
+              "time": "17:00",
+              "weekday": "sábado",
+              "venue": "LA GALERA ENCANTADA",
+              "neighborhood": "Palermo"
+            }
+          ],
+          "genres": [],
+          "url": "https://www.alternativateatral.com.ar/obra16544-hansel-y-gretel",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "Historias de Circo: Visita guiada lúdica para toda la familia",
+      "normalized_title": "historias de circo visita guiada ludica para toda la familia",
+      "sources": [
+        "LINDA BA"
+      ],
+      "source_details": {
+        "LINDA BA": {
+          "title": "Historias de Circo: Visita guiada lúdica para toda la familia",
+          "normalized_title": "historias de circo visita guiada ludica para toda la familia",
+          "category": "Infantil",
+          "venue": "Usina del Arte",
+          "neighborhood": "La Boca",
+          "address": "Agustín R. Caffarena 1",
+          "latitude": -34.62888027,
+          "longitude": -58.35631387,
+          "date": "2026-10-18",
+          "time": "15:30",
+          "schedule": "2026-10-18 · 15:30",
+          "functions": [
+            {
+              "date": "2026-10-18",
+              "time": "15:30"
+            }
+          ],
+          "genres": [
+            "​Recorridos y visitas guiadas"
+          ],
+          "description": "Una visita guiada lúdica donde chicos y chicas desde los 6 años se convierten en protagonistas de su propia función de Circo y el cuál promete un final espectacular.",
+          "url": "https://linda.buenosaires.gob.ar/descubrir/historias-de-circo-visita-guiada-ludica-para-toda-la-familia",
+          "source": "LINDA BA"
+        }
+      }
+    },
+    {
+      "title": "Jazz Cartoons. Por Paris Jazz Club",
+      "normalized_title": "jazz cartoons por paris jazz club",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "Jazz Cartoons. Por Paris Jazz Club",
+          "normalized_title": "jazz cartoons por paris jazz club",
+          "category": "Teatro",
+          "venue": "ND ATENEO",
+          "neighborhood": "Retiro",
+          "province": "CABA",
+          "address": "Paraguay 918",
+          "latitude": -34.5977427,
+          "longitude": -58.3800988,
+          "date": "2026-10-16",
+          "time": "21:00",
+          "schedule": "VIERNES 21:00 · 2026-10-16",
+          "functions": [
+            {
+              "date": "2026-10-16",
+              "time": "21:00",
+              "weekday": "viernes",
+              "venue": "ND ATENEO",
+              "neighborhood": "Retiro"
+            }
+          ],
+          "genres": [],
+          "url": "https://www.alternativateatral.com.ar/obra68679-jazz-cartoons-por-paris-jazz-club",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "La ratoncita Pérez",
+      "normalized_title": "la ratoncita perez",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "La ratoncita Pérez",
+          "normalized_title": "la ratoncita perez",
+          "category": "Teatro",
+          "venue": "LA GALERA ENCANTADA",
+          "neighborhood": "Palermo",
+          "province": "CABA",
+          "address": "Humboldt 1591",
+          "latitude": -34.5857248,
+          "longitude": -58.4363305,
+          "date": "2026-11-01",
+          "time": "17:00",
+          "schedule": "DOMINGO 17:00 · 2026-11-01",
+          "functions": [
+            {
+              "date": "2026-11-01",
+              "time": "17:00",
+              "weekday": "domingo",
+              "venue": "LA GALERA ENCANTADA",
+              "neighborhood": "Palermo"
+            },
+            {
+              "date": "2026-11-22",
+              "time": "17:00",
+              "weekday": "domingo",
+              "venue": "LA GALERA ENCANTADA",
+              "neighborhood": "Palermo"
+            }
+          ],
+          "genres": [
+            "Teatro"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra94482-la-ratoncita-perez",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "Laberinto Masticable - Jalowin",
+      "normalized_title": "laberinto masticable jalowin",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "Laberinto Masticable - Jalowin",
+          "normalized_title": "laberinto masticable jalowin",
+          "category": "Teatro",
+          "venue": "EL ALAMBIQUE",
+          "neighborhood": "Villa Pueyrredón",
+          "province": "CABA",
+          "address": "Griveo 2350",
+          "latitude": -34.5808169,
+          "longitude": -58.497404,
+          "date": "2026-10-31",
+          "time": "17:00",
+          "schedule": "SÁBADO 17:00 · 2026-10-31",
+          "functions": [
+            {
+              "date": "2026-10-31",
+              "time": "17:00",
+              "weekday": "sábado",
+              "venue": "EL ALAMBIQUE",
+              "neighborhood": "Villa Pueyrredón"
+            }
+          ],
+          "genres": [
+            "Teatro"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra103411-laberinto-masticable-jalowin",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "Las aventuras de Tiripín",
+      "normalized_title": "las aventuras de tiripin",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "Las aventuras de Tiripín",
+          "normalized_title": "las aventuras de tiripin",
+          "category": "Teatro",
+          "venue": "INBOCCALUPO",
+          "neighborhood": "Belgrano",
+          "province": "CABA",
+          "address": "Virrey Arredondo 2495",
+          "latitude": -34.5681381,
+          "longitude": -58.4517392,
+          "date": "2026-10-24",
+          "time": "17:00",
+          "schedule": "SÁBADO 17:00 · 2026-10-24",
+          "functions": [
+            {
+              "date": "2026-10-24",
+              "time": "17:00",
+              "weekday": "sábado",
+              "venue": "INBOCCALUPO",
+              "neighborhood": "Belgrano"
+            }
+          ],
+          "genres": [
+            "Teatro"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra101233-las-aventuras-de-tiripin",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "LES PAYASES II: ¿Quién inventó el tiempo?",
+      "normalized_title": "les payases ii quien invento el tiempo",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "LES PAYASES II: ¿Quién inventó el tiempo?",
+          "normalized_title": "les payases ii quien invento el tiempo",
+          "category": "Teatro",
+          "venue": "BELISARIO CLUB DE CULTURA",
+          "neighborhood": "San Nicolas",
+          "province": "CABA",
+          "address": "Av. Corrientes 1624",
+          "latitude": -34.6042587,
+          "longitude": -58.389729,
+          "date": "2026-11-15",
+          "time": "18:00",
+          "schedule": "DOMINGO 18:00 · 2026-11-15",
+          "functions": [
+            {
+              "date": "2026-11-15",
+              "time": "18:00",
+              "weekday": "domingo",
+              "venue": "BELISARIO CLUB DE CULTURA",
+              "neighborhood": "San Nicolas"
+            }
+          ],
+          "genres": [
+            "Teatro"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra98218-les-payases-ii-quien-invento-el-tiempo",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "Locas Canciones de María Elena Walsh",
+      "normalized_title": "locas canciones de maria elena walsh",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "Locas Canciones de María Elena Walsh",
+          "normalized_title": "locas canciones de maria elena walsh",
+          "category": "Teatro",
+          "venue": "LA GALERA ENCANTADA",
+          "neighborhood": "Palermo",
+          "province": "CABA",
+          "address": "Humboldt 1591",
+          "latitude": -34.5857248,
+          "longitude": -58.4363305,
+          "date": "2026-11-08",
+          "time": "17:00",
+          "schedule": "DOMINGO 17:00 · 2026-11-08",
+          "functions": [
+            {
+              "date": "2026-11-08",
+              "time": "17:00",
+              "weekday": "domingo",
+              "venue": "LA GALERA ENCANTADA",
+              "neighborhood": "Palermo"
+            }
+          ],
+          "genres": [
+            "Teatro"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra101251-locas-canciones-de-maria-elena-walsh",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "Los cielos de Manuel",
+      "normalized_title": "los cielos de manuel",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "Los cielos de Manuel",
+          "normalized_title": "los cielos de manuel",
+          "category": "Teatro",
+          "venue": "EL ARCHIBRAZO",
+          "neighborhood": "Almagro",
+          "province": "CABA",
+          "address": "Mario Bravo 441",
+          "latitude": -34.6049102,
+          "longitude": -58.4169365,
+          "date": "2026-11-15",
+          "time": "16:30",
+          "schedule": "DOMINGO 16:30 · 2026-11-15",
+          "functions": [
+            {
+              "date": "2026-11-15",
+              "time": "16:30",
+              "weekday": "domingo",
+              "venue": "EL ARCHIBRAZO",
+              "neighborhood": "Almagro"
+            }
+          ],
+          "genres": [
+            "Teatro"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra100952-los-cielos-de-manuel",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "Los tres chanchitos",
+      "normalized_title": "los tres chanchitos",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "Los tres chanchitos",
+          "normalized_title": "los tres chanchitos",
+          "category": "Teatro",
+          "venue": "LA GALERA ENCANTADA",
+          "neighborhood": "Palermo",
+          "province": "CABA",
+          "address": "Humboldt 1591",
+          "latitude": -34.5857248,
+          "longitude": -58.4363305,
+          "date": "2026-11-07",
+          "time": "17:00",
+          "schedule": "SÁBADO 17:00 · 2026-11-07",
+          "functions": [
+            {
+              "date": "2026-11-07",
+              "time": "17:00",
+              "weekday": "sábado",
+              "venue": "LA GALERA ENCANTADA",
+              "neighborhood": "Palermo"
+            },
+            {
+              "date": "2026-11-28",
+              "time": "17:00",
+              "weekday": "sábado",
+              "venue": "LA GALERA ENCANTADA",
+              "neighborhood": "Palermo"
+            }
+          ],
+          "genres": [
+            "Teatro"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra20115-los-tres-chanchitos",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "Lucía en Kamishibai",
+      "normalized_title": "lucia en kamishibai",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "Lucía en Kamishibai",
+          "normalized_title": "lucia en kamishibai",
+          "category": "Teatro",
+          "venue": "SALA DEL CAFÉ ARTIGAS",
+          "neighborhood": "Villa Gral.mitre",
+          "province": "CABA",
+          "address": "José Gervasio Artigas 1850",
+          "latitude": -34.610228375154,
+          "longitude": -58.475123217602,
+          "date": "2026-10-25",
+          "time": "16:00",
+          "schedule": "DOMINGO 16:00 · 2026-10-25",
+          "functions": [
+            {
+              "date": "2026-10-25",
+              "time": "16:00",
+              "weekday": "domingo",
+              "venue": "SALA DEL CAFÉ ARTIGAS",
+              "neighborhood": "Villa Gral.mitre"
+            },
+            {
+              "date": "2026-11-22",
+              "time": "16:00",
+              "weekday": "domingo",
+              "venue": "SALA DEL CAFÉ ARTIGAS",
+              "neighborhood": "Villa Gral.mitre"
+            }
+          ],
+          "genres": [
+            "Títeres"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra31597-lucia-en-kamishibai",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "Magia Teatro para Bebés",
+      "normalized_title": "magia teatro para bebes",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "Magia Teatro para Bebés",
+          "normalized_title": "magia teatro para bebes",
+          "category": "Teatro",
+          "venue": "PONCHO TEATRO",
+          "neighborhood": "Villa Crespo",
+          "province": "CABA",
+          "address": "Leopoldo Marechal 1219",
+          "latitude": -34.604347522935,
+          "longitude": -58.440155501373,
+          "date": "2026-10-25",
+          "time": "17:00",
+          "schedule": "DOMINGO 17:00 · 2026-10-25",
+          "functions": [
+            {
+              "date": "2026-10-25",
+              "time": "17:00",
+              "weekday": "domingo",
+              "venue": "PONCHO TEATRO",
+              "neighborhood": "Villa Crespo"
+            }
+          ],
+          "genres": [
+            "Teatro"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra55878-magia-teatro-para-bebes",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "María Elena",
+      "normalized_title": "maria elena",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "María Elena",
+          "normalized_title": "maria elena",
+          "category": "Teatro",
+          "venue": "LA GALERA ENCANTADA",
+          "neighborhood": "Palermo",
+          "province": "CABA",
+          "address": "Humboldt 1591",
+          "latitude": -34.5857248,
+          "longitude": -58.4363305,
+          "date": "2026-10-17",
+          "time": "17:00",
+          "schedule": "SÁBADO 17:00 · 2026-10-17",
+          "functions": [
+            {
+              "date": "2026-10-17",
+              "time": "17:00",
+              "weekday": "sábado",
+              "venue": "LA GALERA ENCANTADA",
+              "neighborhood": "Palermo"
+            },
+            {
+              "date": "2026-10-31",
+              "time": "17:00",
+              "weekday": "sábado",
+              "venue": "LA GALERA ENCANTADA",
+              "neighborhood": "Palermo"
+            },
+            {
+              "date": "2026-11-29",
+              "time": "17:00",
+              "weekday": "domingo",
+              "venue": "LA GALERA ENCANTADA",
+              "neighborhood": "Palermo"
+            }
+          ],
+          "genres": [
+            "Teatro"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra10643-maria-elena",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "Mi amiga la oscuridad",
+      "normalized_title": "mi amiga la oscuridad",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "Mi amiga la oscuridad",
+          "normalized_title": "mi amiga la oscuridad",
+          "category": "Teatro",
+          "venue": "TEATRO CIEGO",
+          "neighborhood": "Balvanera",
+          "province": "CABA",
+          "address": "Borges 1974",
+          "latitude": -34.6020079,
+          "longitude": -58.4081811,
+          "date": "2026-10-17",
+          "time": "16:00",
+          "schedule": "SÁBADO 16:00 · 2026-10-17",
+          "functions": [
+            {
+              "date": "2026-10-17",
+              "time": "16:00",
+              "weekday": "sábado",
+              "venue": "TEATRO CIEGO",
+              "neighborhood": "Balvanera"
+            }
+          ],
+          "genres": [
+            "Teatro"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra32241-mi-amiga-la-oscuridad",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "Migue y Lucy, una historia de rock",
+      "normalized_title": "migue y lucy una historia de rock",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "Migue y Lucy, una historia de rock",
+          "normalized_title": "migue y lucy una historia de rock",
+          "category": "Teatro",
+          "venue": "EL MÉTODO KAIRÓS TEATRO",
+          "neighborhood": "Palermo",
+          "province": "CABA",
+          "address": "El Salvador 4530",
+          "latitude": -34.5906627,
+          "longitude": -58.4252457,
+          "date": "2026-11-20",
+          "time": "19:30",
+          "schedule": "VIERNES 19:30 · 2026-11-20",
+          "functions": [
+            {
+              "date": "2026-11-20",
+              "time": "19:30",
+              "weekday": "viernes",
+              "venue": "EL MÉTODO KAIRÓS TEATRO",
+              "neighborhood": "Palermo"
+            }
+          ],
+          "genres": [
+            "Teatro"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra101459-migue-y-lucy-una-historia-de-rock",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "Mirá que te miro",
+      "normalized_title": "mira que te miro",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "Mirá que te miro",
+          "normalized_title": "mira que te miro",
+          "category": "Teatro",
+          "venue": "GENTE DE ARTE",
+          "neighborhood": "Avellaneda",
+          "province": "Buenos Aires",
+          "address": "Alsina 234",
+          "latitude": 0,
+          "longitude": 0,
+          "date": "2026-10-17",
+          "time": "20:00",
+          "schedule": "SÁBADO 20:00 · 2026-10-17",
+          "functions": [
+            {
+              "date": "2026-10-17",
+              "time": "20:00",
+              "weekday": "sábado",
+              "venue": "GENTE DE ARTE",
+              "neighborhood": "Avellaneda"
+            }
+          ],
+          "genres": [
+            "Clown",
+            "Teatro",
+            "Comedia"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra73210-mira-que-te-miro",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "Mununa",
+      "normalized_title": "mununa",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "Mununa",
+          "normalized_title": "mununa",
+          "category": "Teatro",
+          "venue": "MUSEO ARGENTINO DEL TITERE",
+          "neighborhood": "San Telmo",
+          "province": "CABA",
+          "address": "Estados Unidos 802",
+          "latitude": -34.6185914,
+          "longitude": -58.3773064,
+          "date": "2026-11-07",
+          "time": "16:00",
+          "schedule": "SÁBADO 16:00 · 2026-11-07",
+          "functions": [
+            {
+              "date": "2026-11-07",
+              "time": "16:00",
+              "weekday": "sábado",
+              "venue": "MUSEO ARGENTINO DEL TITERE",
+              "neighborhood": "San Telmo"
+            },
+            {
+              "date": "2026-11-21",
+              "time": "16:00",
+              "weekday": "sábado",
+              "venue": "MUSEO ARGENTINO DEL TITERE",
+              "neighborhood": "San Telmo"
+            }
+          ],
+          "genres": [
+            "Teatro",
+            "Clown",
+            "Títeres"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra101226-mununa",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "Navidad: Made in Argentina",
+      "normalized_title": "navidad made in argentina",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "Navidad: Made in Argentina",
+          "normalized_title": "navidad made in argentina",
+          "category": "Teatro",
+          "venue": "LA ORILLA INFINITA",
+          "neighborhood": "Rosario",
+          "province": "Santa Fe",
+          "address": "Colón 2148",
+          "latitude": 0,
+          "longitude": 0,
+          "date": "2026-11-08",
+          "time": "16:00",
+          "schedule": "DOMINGO 16:00 · 2026-11-08",
+          "functions": [
+            {
+              "date": "2026-11-08",
+              "time": "16:00",
+              "weekday": "domingo",
+              "venue": "LA ORILLA INFINITA",
+              "neighborhood": "Rosario"
+            }
+          ],
+          "genres": [
+            "Teatro",
+            "Musical",
+            "Comedia"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra102659-navidad-made-in-argentina",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "Nicte",
+      "normalized_title": "nicte",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "Nicte",
+          "normalized_title": "nicte",
+          "category": "Teatro",
+          "venue": "MUY TEATRO",
+          "neighborhood": "Almagro",
+          "province": "CABA",
+          "address": "Humahuaca 4310",
+          "latitude": -34.601435505941,
+          "longitude": -58.425598053307,
+          "date": "2026-10-17",
+          "time": "15:00",
+          "schedule": "SÁBADO 15:00 · 2026-10-17",
+          "functions": [
+            {
+              "date": "2026-10-17",
+              "time": "15:00",
+              "weekday": "sábado",
+              "venue": "MUY TEATRO",
+              "neighborhood": "Almagro"
+            }
+          ],
+          "genres": [
+            "Teatro"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra91606-nicte",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "ODISEA: Bajo el Mar",
+      "normalized_title": "odisea bajo el mar",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "ODISEA: Bajo el Mar",
+          "normalized_title": "odisea bajo el mar",
+          "category": "Teatro",
+          "venue": "CENTRO CULTURAL 25 DE MAYO",
+          "neighborhood": "Villa Urquiza",
+          "province": "CABA",
+          "address": "Av Triunvirato 4444",
+          "latitude": -34.5761732,
+          "longitude": -58.4834247,
+          "date": "2026-10-17",
+          "time": "15:00",
+          "schedule": "SÁBADO 15:00 · 2026-10-17",
+          "functions": [
+            {
+              "date": "2026-10-17",
+              "time": "15:00",
+              "weekday": "sábado",
+              "venue": "CENTRO CULTURAL 25 DE MAYO",
+              "neighborhood": "Villa Urquiza"
+            }
+          ],
+          "genres": [
+            "Teatro",
+            "Teatro negro",
+            "Títeres"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra96700-odisea-bajo-el-mar",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "Olga Poblete - Ciclo de Artes Circenses",
+      "normalized_title": "olga poblete ciclo de artes circenses",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "Olga Poblete - Ciclo de Artes Circenses",
+          "normalized_title": "olga poblete ciclo de artes circenses",
+          "category": "Teatro",
+          "venue": "EL SÁBATO ESPACIO CULTURAL ECONÓMICAS UBA",
+          "neighborhood": "Balvanera",
+          "province": "CABA",
+          "address": "José Evaristo Uriburu 763",
+          "latitude": -34.6002448,
+          "longitude": -58.3986861,
+          "date": "2026-10-17",
+          "time": "20:00",
+          "schedule": "SÁBADO 20:00 · 2026-10-17",
+          "functions": [
+            {
+              "date": "2026-10-17",
+              "time": "20:00",
+              "weekday": "sábado",
+              "venue": "EL SÁBATO ESPACIO CULTURAL ECONÓMICAS UBA",
+              "neighborhood": "Balvanera"
+            }
+          ],
+          "genres": [
+            "Circo"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra103275-olga-poblete-ciclo-de-artes-circenses",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "PARIS JAZZ CLUB: Jazz History",
+      "normalized_title": "paris jazz club jazz history",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "PARIS JAZZ CLUB: Jazz History",
+          "normalized_title": "paris jazz club jazz history",
+          "category": "Teatro",
+          "venue": "BEBOP CLUB",
+          "neighborhood": "Palermo",
+          "province": "CABA",
+          "address": "URIARTE 1658",
+          "latitude": -34.5867806,
+          "longitude": -58.433572,
+          "date": "2026-11-07",
+          "time": "20:00",
+          "schedule": "SÁBADO 20:00 · 2026-11-07",
+          "functions": [
+            {
+              "date": "2026-11-07",
+              "time": "20:00",
+              "weekday": "sábado",
+              "venue": "BEBOP CLUB",
+              "neighborhood": "Palermo"
+            },
+            {
+              "date": "2026-11-22",
+              "time": "20:00",
+              "weekday": "domingo",
+              "venue": "THELONIOUS CLUB",
+              "neighborhood": "Palermo"
+            },
+            {
+              "date": "2026-11-22",
+              "time": "22:00",
+              "weekday": "domingo",
+              "venue": "THELONIOUS CLUB",
+              "neighborhood": "Palermo"
+            }
+          ],
+          "genres": [
+            "Humor"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra88873-paris-jazz-club-jazz-history",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "Petifur Varieté",
+      "normalized_title": "petifur variete",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "Petifur Varieté",
+          "normalized_title": "petifur variete",
+          "category": "Teatro",
+          "venue": "MUSEO ARGENTINO DEL TITERE",
+          "neighborhood": "San Telmo",
+          "province": "CABA",
+          "address": "Estados Unidos 802",
+          "latitude": -34.6185914,
+          "longitude": -58.3773064,
+          "date": "2026-10-24",
+          "time": "16:00",
+          "schedule": "SÁBADO 16:00 · 2026-10-24",
+          "functions": [
+            {
+              "date": "2026-10-24",
+              "time": "16:00",
+              "weekday": "sábado",
+              "venue": "MUSEO ARGENTINO DEL TITERE",
+              "neighborhood": "San Telmo"
+            }
+          ],
+          "genres": [
+            "Teatro",
+            "Títeres",
+            "Varieté"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra90452-petifur-variete",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "Qué hacer con niños en Buenos Aires: 18 experiencias para chicos de todas las edades",
+      "normalized_title": "que hacer con ninos en buenos aires 18 experiencias para chicos de todas las edades",
+      "sources": [
+        "Baires Secreta"
+      ],
+      "source_details": {
+        "Baires Secreta": {
+          "title": "Qué hacer con niños en Buenos Aires: 18 experiencias para chicos de todas las edades",
+          "normalized_title": "que hacer con ninos en buenos aires 18 experiencias para chicos de todas las edades",
+          "description": "Si estás en Buenos Aires y no sabés qué hacer con niños, o ya se te acabaron las ideas para entretener a los chicos de tu familia, necesitás conocer experiencias nuevas, diferentes y divertidas. Hay much...",
+          "url": "https://bairessecreta.com/que-hacer-con-ninos-buenos-aires/",
+          "source": "Baires Secreta"
+        }
+      }
+    },
+    {
+      "title": "Sembrar la Tierra",
+      "normalized_title": "sembrar la tierra",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "Sembrar la Tierra",
+          "normalized_title": "sembrar la tierra",
+          "category": "Teatro",
+          "venue": "MUSEO ARGENTINO DEL TITERE",
+          "neighborhood": "San Telmo",
+          "province": "CABA",
+          "address": "Estados Unidos 802",
+          "latitude": -34.6185914,
+          "longitude": -58.3773064,
+          "date": "2026-11-01",
+          "time": "16:00",
+          "schedule": "DOMINGO 16:00 · 2026-11-01",
+          "functions": [
+            {
+              "date": "2026-11-01",
+              "time": "16:00",
+              "weekday": "domingo",
+              "venue": "MUSEO ARGENTINO DEL TITERE",
+              "neighborhood": "San Telmo"
+            }
+          ],
+          "genres": [
+            "Títeres"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra101604-sembrar-la-tierra",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "Taller: Beatbox",
+      "normalized_title": "taller beatbox",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "Taller: Beatbox",
+          "normalized_title": "taller beatbox",
+          "category": "Teatro",
+          "venue": "ESPACIO AZUR",
+          "neighborhood": "Almagro",
+          "province": "CABA",
+          "address": "Bulnes 892",
+          "latitude": -34.601046989583,
+          "longitude": -58.417801896532,
+          "date": "2026-10-24",
+          "time": "10:00",
+          "schedule": "SÁBADO 10:00 · 2026-10-24",
+          "functions": [
+            {
+              "date": "2026-10-24",
+              "time": "10:00",
+              "weekday": "sábado",
+              "venue": "ESPACIO AZUR",
+              "neighborhood": "Almagro"
+            }
+          ],
+          "genres": [],
+          "url": "https://www.alternativateatral.com.ar/obra102499-taller-beatbox",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "Tatán",
+      "normalized_title": "tatan",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "Tatán",
+          "normalized_title": "tatan",
+          "category": "Teatro",
+          "venue": "TIMBRE 4",
+          "neighborhood": "Boedo",
+          "province": "CABA",
+          "address": "México 3554 / Boedo 640",
+          "latitude": -34.6197689,
+          "longitude": -58.4159602,
+          "date": "2026-11-15",
+          "time": "11:00",
+          "schedule": "DOMINGO 11:00 · 2026-11-15",
+          "functions": [
+            {
+              "date": "2026-11-15",
+              "time": "11:00",
+              "weekday": "domingo",
+              "venue": "TIMBRE 4",
+              "neighborhood": "Boedo"
+            }
+          ],
+          "genres": [
+            "Teatro"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra42986-tatan",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "Te quiero, desde el mar hasta el cielo",
+      "normalized_title": "te quiero desde el mar hasta el cielo",
+      "sources": [
+        "LINDA BA"
+      ],
+      "source_details": {
+        "LINDA BA": {
+          "title": "Te quiero, desde el mar hasta el cielo",
+          "normalized_title": "te quiero desde el mar hasta el cielo",
+          "category": "Cine",
+          "venue": "Planetario Galileo Galilei",
+          "neighborhood": "Palermo",
+          "address": "Av. Sarmiento s/n, C1425 Cdad. Autónoma de Buenos Aires",
+          "latitude": -34.579375,
+          "longitude": -58.419183,
+          "date": "2026-10-17",
+          "time": "13:00",
+          "schedule": "2026-10-17 · 13:00",
+          "functions": [
+            {
+              "date": "2026-10-17",
+              "time": "13:00"
+            },
+            {
+              "date": "2026-10-18",
+              "time": "13:00"
+            }
+          ],
+          "genres": [
+            "Cine"
+          ],
+          "description": "Espectáculo de divulgación científica para niños y niñas en el Planetario. Este documental infantil revela los lazos invisibles que conectan la inmensidad del universo con las profundidades del océano.",
+          "url": "https://linda.buenosaires.gob.ar/descubrir/te-quiero-desde-el-mar-hasta-el-cielo",
+          "source": "LINDA BA"
+        }
+      }
+    },
+    {
+      "title": "Top 5 del Universo: el espectáculo que invita a viajar por el espacio",
+      "normalized_title": "top 5 del universo el espectaculo que invita a viajar por el espacio",
+      "sources": [
+        "LINDA BA"
+      ],
+      "source_details": {
+        "LINDA BA": {
+          "title": "Top 5 del Universo: el espectáculo que invita a viajar por el espacio",
+          "normalized_title": "top 5 del universo el espectaculo que invita a viajar por el espacio",
+          "category": "Infantil",
+          "venue": "Planetario Galileo Galilei",
+          "neighborhood": "Palermo",
+          "address": "Av. Sarmiento s/n, C1425",
+          "latitude": -34.579375,
+          "longitude": -58.419183,
+          "date": "2026-10-24",
+          "time": "17:30",
+          "schedule": "2026-10-24 · 17:30",
+          "functions": [
+            {
+              "date": "2026-10-24",
+              "time": "17:30"
+            },
+            {
+              "date": "2026-10-25",
+              "time": "17:30"
+            }
+          ],
+          "genres": [
+            "Entretenimiento"
+          ],
+          "description": "Una experiencia inmersiva para chicos curiosos (y adultos que también)",
+          "url": "https://linda.buenosaires.gob.ar/descubrir/top-5-del-universo-el-espectaculo-que-invita-viajar-por-el-espacio",
+          "source": "LINDA BA"
+        }
+      }
+    },
+    {
+      "title": "Un plan para jugar en familia: llega el Ludo-Espacio",
+      "normalized_title": "un plan para jugar en familia llega el ludo espacio",
+      "sources": [
+        "LINDA BA"
+      ],
+      "source_details": {
+        "LINDA BA": {
+          "title": "Un plan para jugar en familia: llega el Ludo-Espacio",
+          "normalized_title": "un plan para jugar en familia llega el ludo espacio",
+          "category": "Infantil",
+          "venue": "Usina del Arte",
+          "neighborhood": "La Boca",
+          "address": "Agustín R. Caffarena 1",
+          "latitude": -34.62888027,
+          "longitude": -58.35631387,
+          "date": "2026-10-16",
+          "time": "16:00",
+          "schedule": "2026-10-16 · 16:00",
+          "functions": [
+            {
+              "date": "2026-10-16",
+              "time": "16:00"
+            },
+            {
+              "date": "2026-10-17",
+              "time": "14:00"
+            },
+            {
+              "date": "2026-10-18",
+              "time": "14:00"
+            }
+          ],
+          "genres": [
+            "Arte y cultura"
+          ],
+          "description": "Un rincón pensado para las infancias con juegos didácticos y propuestas para compartir.",
+          "url": "https://linda.buenosaires.gob.ar/descubrir/un-plan-para-jugar-en-familia-llega-el-ludo-espacio",
+          "source": "LINDA BA"
+        }
+      }
+    },
+    {
+      "title": "Un superamigo imaginario",
+      "normalized_title": "un superamigo imaginario",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "Un superamigo imaginario",
+          "normalized_title": "un superamigo imaginario",
+          "category": "Teatro",
+          "venue": "LA GALERA ENCANTADA",
+          "neighborhood": "Palermo",
+          "province": "CABA",
+          "address": "Humboldt 1591",
+          "latitude": -34.5857248,
+          "longitude": -58.4363305,
+          "date": "2026-10-24",
+          "time": "17:00",
+          "schedule": "SÁBADO 17:00 · 2026-10-24",
+          "functions": [
+            {
+              "date": "2026-10-24",
+              "time": "17:00",
+              "weekday": "sábado",
+              "venue": "LA GALERA ENCANTADA",
+              "neighborhood": "Palermo"
+            },
+            {
+              "date": "2026-11-14",
+              "time": "17:00",
+              "weekday": "sábado",
+              "venue": "LA GALERA ENCANTADA",
+              "neighborhood": "Palermo"
+            }
+          ],
+          "genres": [
+            "Teatro"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra99800-un-superamigo-imaginario",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "¡Una fiesta Monstruosa!",
+      "normalized_title": "una fiesta monstruosa",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "¡Una fiesta Monstruosa!",
+          "normalized_title": "una fiesta monstruosa",
+          "category": "Teatro",
+          "venue": "EL ALAMBIQUE",
+          "neighborhood": "Villa Pueyrredón",
+          "province": "CABA",
+          "address": "Griveo 2350",
+          "latitude": -34.5808169,
+          "longitude": -58.497404,
+          "date": "2026-10-24",
+          "time": "16:30",
+          "schedule": "SÁBADO 16:30 · 2026-10-24",
+          "functions": [
+            {
+              "date": "2026-10-24",
+              "time": "16:30",
+              "weekday": "sábado",
+              "venue": "EL ALAMBIQUE",
+              "neighborhood": "Villa Pueyrredón"
+            }
+          ],
+          "genres": [
+            "Clown"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra92426-una-fiesta-monstruosa",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "Valor Vereda: Soy valiente",
+      "normalized_title": "valor vereda soy valiente",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "Valor Vereda: Soy valiente",
+          "normalized_title": "valor vereda soy valiente",
+          "category": "Teatro",
+          "venue": "EL ALAMBIQUE",
+          "neighborhood": "Villa Pueyrredón",
+          "province": "CABA",
+          "address": "Griveo 2350",
+          "latitude": -34.5808169,
+          "longitude": -58.497404,
+          "date": "2026-11-15",
+          "time": "11:30",
+          "schedule": "DOMINGO 11:30 · 2026-11-15",
+          "functions": [
+            {
+              "date": "2026-11-15",
+              "time": "11:30",
+              "weekday": "domingo",
+              "venue": "EL ALAMBIQUE",
+              "neighborhood": "Villa Pueyrredón"
+            }
+          ],
+          "genres": [
+            "Teatro"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra41211-valor-vereda-soy-valiente",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "VayVen",
+      "normalized_title": "vayven",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "VayVen",
+          "normalized_title": "vayven",
+          "category": "Teatro",
+          "venue": "TIMBRE 4",
+          "neighborhood": "Boedo",
+          "province": "CABA",
+          "address": "México 3554 / Boedo 640",
+          "latitude": -34.6197689,
+          "longitude": -58.4159602,
+          "date": "2026-10-25",
+          "time": "11:00",
+          "schedule": "DOMINGO 11:00 · 2026-10-25",
+          "functions": [
+            {
+              "date": "2026-10-25",
+              "time": "11:00",
+              "weekday": "domingo",
+              "venue": "TIMBRE 4",
+              "neighborhood": "Boedo"
+            }
+          ],
+          "genres": [
+            "Teatro"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra66202-vayven",
+          "source": "Alternativa Teatral"
+        }
+      }
+    },
+    {
+      "title": "“Veo Veo”: experiencia inmersiva para infancias en el Planetario",
+      "normalized_title": "veo veo experiencia inmersiva para infancias en el planetario",
+      "sources": [
+        "LINDA BA"
+      ],
+      "source_details": {
+        "LINDA BA": {
+          "title": "“Veo Veo”: experiencia inmersiva para infancias en el Planetario",
+          "normalized_title": "veo veo experiencia inmersiva para infancias en el planetario",
+          "category": "Infantil",
+          "venue": "Planetario Galileo Galilei",
+          "neighborhood": "Palermo",
+          "address": "Av. Sarmiento s/n, C1425 Cdad. Autónoma de Buenos Aires",
+          "latitude": -34.579375,
+          "longitude": -58.419183,
+          "date": "2026-10-17",
+          "time": "16:00",
+          "schedule": "2026-10-17 · 16:00",
+          "functions": [
+            {
+              "date": "2026-10-17",
+              "time": "16:00"
+            },
+            {
+              "date": "2026-10-18",
+              "time": "16:00"
+            }
+          ],
+          "genres": [
+            "Entretenimiento"
+          ],
+          "description": "Un espectáculo sensorial para niñas y niños de 3 a 6 años que introduce conceptos del universo a través del juego, el color y la estética inmersiva.",
+          "url": "https://linda.buenosaires.gob.ar/descubrir/veo-veo-experiencia-inmersiva-para-infancias-en-el-planetario",
+          "source": "LINDA BA"
+        }
+      }
+    },
+    {
+      "title": "Y estoy vivo y Contando: Juan Moreira",
+      "normalized_title": "y estoy vivo y contando juan moreira",
+      "sources": [
+        "Alternativa Teatral"
+      ],
+      "source_details": {
+        "Alternativa Teatral": {
+          "title": "Y estoy vivo y Contando: Juan Moreira",
+          "normalized_title": "y estoy vivo y contando juan moreira",
+          "category": "Teatro",
+          "venue": "MUSEO ARGENTINO DEL TITERE",
+          "neighborhood": "San Telmo",
+          "province": "CABA",
+          "address": "Estados Unidos 802",
+          "latitude": -34.6185914,
+          "longitude": -58.3773064,
+          "date": "2026-10-17",
+          "time": "20:00",
+          "schedule": "SÁBADO 20:00 · 2026-10-17",
+          "functions": [
+            {
+              "date": "2026-10-17",
+              "time": "20:00",
+              "weekday": "sábado",
+              "venue": "MUSEO ARGENTINO DEL TITERE",
+              "neighborhood": "San Telmo"
+            }
+          ],
+          "genres": [
+            "Títeres",
+            "Unipersonales"
+          ],
+          "url": "https://www.alternativateatral.com.ar/obra11479-y-estoy-vivo-y-contando-juan-moreira",
+          "source": "Alternativa Teatral"
+        }
+      }
+    }
+  ],
+  "errors": []
+}

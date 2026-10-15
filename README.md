@@ -12,6 +12,8 @@ py -m http.server 8000
 
 Después abrí `http://localhost:8000` en el navegador. No abras `index.html` directamente: con `file://` el navegador bloquea la lectura del JSON y la página muestra la agenda estática de respaldo. El mapa usa Leaflet y teselas de OpenStreetMap, por lo que también necesita conexión a internet.
 
+El `package.json` identifica el proyecto como un sitio estático y ofrece un comando `npm run build` sin dependencias. En el hosting, configurá como directorio de publicación la raíz del repositorio; `index.html`, `script.js`, `style.css` y `eventos_extraidos.json` deben quedar juntos. El JSON generado se versiona para que también llegue al hosting.
+
 ## Extracción y validación de cartelera
 
 `scraper.py` requiere Python 3.10 o posterior y usa únicamente su biblioteca estándar. Alternativa carga la cartelera desde un endpoint JSONP público; LINDA BA se consulta desde su API pública paginada y Baires Secreta desde su búsqueda de contenido infantil. El scraper extrae títulos con señales explícitas de público infantil/familiar, conserva solo funciones futuras de LINDA y Alternativa, y une los eventos detectados en **cualquiera** de las fuentes; no exige que el mismo título aparezca en todas. Consultá las fuentes y guardá el informe como JSON:
@@ -28,7 +30,7 @@ python scraper.py --output cartelera.json --timeout 30 --days 7 \
   --linda-url "https://linda.buenosaires.gob.ar/agenda"
 ```
 
-El arreglo `events` del JSON contiene la unión deduplicada por título normalizado. Cada evento conserva `sources` y `source_details`, incluidos enlaces, fechas, horarios y datos de ubicación publicados por las fuentes. Los conteos de títulos presentes en varias fuentes o en las tres se informan únicamente como validación; nunca excluyen eventos de la unión. Alternativa y LINDA BA incluyen funciones futuras sin límite predeterminado; podés limitar ambas con `--days 7`. Los errores HTTP, de red y de lectura quedan en el informe y producen un código de salida distinto de cero. El archivo está ignorado por Git: para publicar el sitio en hosting estático, asegurate de incluir `eventos_extraidos.json` junto a `index.html`; si falta, la página muestra la agenda estática de respaldo.
+El arreglo `events` del JSON contiene la unión deduplicada por título normalizado. Cada evento conserva `sources` y `source_details`, incluidos enlaces, fechas, horarios y datos de ubicación publicados por las fuentes. Los conteos de títulos presentes en varias fuentes o en las tres se informan únicamente como validación; nunca excluyen eventos de la unión. Alternativa y LINDA BA incluyen funciones futuras sin límite predeterminado; podés limitar ambas con `--days 7`. Los errores HTTP, de red y de lectura quedan en el informe y producen un código de salida distinto de cero. Versioná `eventos_extraidos.json` junto a `index.html` para publicarlo; si falta, la página muestra la agenda estática de respaldo.
 
 ## Curaduría y carga de actividades
 

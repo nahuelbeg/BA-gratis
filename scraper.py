@@ -1,6 +1,5 @@
-mejora del scraper!/usr/bin/env python3
+usr/bin/env python3
 """Extrae la cartelera infantil de Alternativa y compara títulos entre fuentes."""
-
 from __future__ import annotations
 
 import argparse

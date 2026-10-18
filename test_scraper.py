@@ -45,6 +45,61 @@ class CulturalSourceTests(unittest.TestCase):
         self.assertTrue(found_date)
         self.assertEqual(event_date, "2026-10-22")
 
+    def test_excludes_alternativa_events_outside_buenos_aires_area(self):
+        payload = {
+            "espectaculos": {
+                "rosario": {
+                    "titulo": "Navidad: Made in Argentina",
+                    "url": "/obra102659-navidad-made-in-argentina",
+                    "clasificaciones": {"9": {"descripcion": "Infantiles"}},
+                    "lugares": {
+                        "la-orilla-infinita": {
+                            "nombre": "LA ORILLA INFINITA",
+                            "zona": "Rosario",
+                            "provincia": "Santa Fe",
+                            "direccion": "Colón 2148",
+                            "funciones": {
+                                "2026-11-08": {
+                                    "proxima_fecha": "2026-11-08 16:00",
+                                    "dia": "domingo",
+                                }
+                            },
+                        }
+                    },
+                },
+                "buenos-aires": {
+                    "titulo": "Teatro para toda la familia",
+                    "url": "/obra123-teatro-para-toda-la-familia",
+                    "clasificaciones": {"9": {"descripcion": "Infantiles"}},
+                    "lugares": {
+                        "teatro-porteno": {
+                            "nombre": "TEATRO PORTEÑO",
+                            "zona": "Almagro",
+                            "provincia": "CABA",
+                            "direccion": "Humahuaca 100",
+                            "funciones": {
+                                "2026-11-08": {
+                                    "proxima_fecha": "2026-11-08 17:00",
+                                    "dia": "domingo",
+                                }
+                            },
+                        }
+                    },
+                },
+            }
+        }
+
+        events, infantile_count = scraper.extraer_cartelera_alternativa(
+            payload,
+            dias=None,
+            hoy=date(2026, 10, 15),
+        )
+
+        self.assertEqual(infantile_count, 2)
+        self.assertEqual([event["title"] for event in events], [
+            "Teatro para toda la familia"
+        ])
+
     def test_rejects_cards_with_only_past_event_dates(self):
         html = """
         <div class="event-card">

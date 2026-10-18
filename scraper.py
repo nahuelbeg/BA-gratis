@@ -688,6 +688,13 @@ def extraer_cartelera_alternativa(
         for venue in venues.values():
             if not isinstance(venue, dict):
                 continue
+            province = venue.get("provincia")
+            if (
+                isinstance(province, str)
+                and province.strip()
+                and normalizar_texto(province) not in {"caba", "buenos aires"}
+            ):
+                continue
             functions = venue.get("funciones")
             if not isinstance(functions, dict):
                 continue

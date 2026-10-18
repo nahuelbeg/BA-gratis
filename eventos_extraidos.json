@@ -1077,36 +1077,6 @@
       "source": "Alternativa Teatral"
     },
     {
-      "title": "Navidad: Made in Argentina",
-      "normalized_title": "navidad made in argentina",
-      "category": "Teatro",
-      "venue": "LA ORILLA INFINITA",
-      "neighborhood": "Rosario",
-      "province": "Santa Fe",
-      "address": "Colón 2148",
-      "latitude": 0,
-      "longitude": 0,
-      "date": "2026-11-08",
-      "time": "16:00",
-      "schedule": "DOMINGO 16:00 · 2026-11-08",
-      "functions": [
-        {
-          "date": "2026-11-08",
-          "time": "16:00",
-          "weekday": "domingo",
-          "venue": "LA ORILLA INFINITA",
-          "neighborhood": "Rosario"
-        }
-      ],
-      "genres": [
-        "Teatro",
-        "Musical",
-        "Comedia"
-      ],
-      "url": "https://www.alternativateatral.com.ar/obra102659-navidad-made-in-argentina",
-      "source": "Alternativa Teatral"
-    },
-    {
       "title": "Locas Canciones de María Elena Walsh",
       "normalized_title": "locas canciones de maria elena walsh",
       "category": "Teatro",
@@ -2625,45 +2595,6 @@
             "Títeres"
           ],
           "url": "https://www.alternativateatral.com.ar/obra101226-mununa",
-          "source": "Alternativa Teatral"
-        }
-      }
-    },
-    {
-      "title": "Navidad: Made in Argentina",
-      "normalized_title": "navidad made in argentina",
-      "sources": [
-        "Alternativa Teatral"
-      ],
-      "source_details": {
-        "Alternativa Teatral": {
-          "title": "Navidad: Made in Argentina",
-          "normalized_title": "navidad made in argentina",
-          "category": "Teatro",
-          "venue": "LA ORILLA INFINITA",
-          "neighborhood": "Rosario",
-          "province": "Santa Fe",
-          "address": "Colón 2148",
-          "latitude": 0,
-          "longitude": 0,
-          "date": "2026-11-08",
-          "time": "16:00",
-          "schedule": "DOMINGO 16:00 · 2026-11-08",
-          "functions": [
-            {
-              "date": "2026-11-08",
-              "time": "16:00",
-              "weekday": "domingo",
-              "venue": "LA ORILLA INFINITA",
-              "neighborhood": "Rosario"
-            }
-          ],
-          "genres": [
-            "Teatro",
-            "Musical",
-            "Comedia"
-          ],
-          "url": "https://www.alternativateatral.com.ar/obra102659-navidad-made-in-argentina",
           "source": "Alternativa Teatral"
         }
       }

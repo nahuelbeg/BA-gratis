@@ -36,6 +36,39 @@ const CATEGORY_SOURCES = {
   ]
 };
 
+const MUSEUMS = [
+  {
+    title: "Buenos Aires Museo",
+    label: "Exhibición permanente",
+    description: "Un recorrido interactivo por la historia de Buenos Aires, desde sus orígenes hasta la ciudad actual y sus expresiones culturales.",
+    details: [
+      ["Qué vas a encontrar", "Objetos, dispositivos tecnológicos e historias de la ciudad"],
+      ["Propuesta", "Un viaje por las transformaciones porteñas y la ciudad del futuro"]
+    ],
+    url: "https://buenosaires.gob.ar/gcaba_historico/cultura/museos/buenos-aires-museo/exposicion-permanente"
+  },
+  {
+    title: "Museo del Cine Pablo Ducrós Hicken",
+    label: "Recorridos guiados",
+    description: "Descubrí la historia del cine argentino a través de cámaras, aparatos y objetos de la colección de Pablo Ducrós Hicken.",
+    details: [
+      ["Cuándo", "Soñar, soñar...: mié. y vie. 17 h · Wilenski: sáb. 18 h"],
+      ["A tener en cuenta", "Actividad incluida con la entrada, cupo limitado y sin inscripción previa"]
+    ],
+    url: "https://buenosaires.gob.ar/gcaba_historico/cultura/museos/museodelcine/educacion/recorridos-guiados/publico-general"
+  },
+  {
+    title: "Museo de la Imaginación y el Juego",
+    label: "Un plan para jugar",
+    description: "Un espacio para explorar la imaginación y el juego en familia.",
+    details: [
+      ["Entrada menores", "Miércoles: $0 residentes / $10.000 no residentes"],
+      ["Jueves a domingos y feriados", "$5.000 residentes / $15.000 no residentes"]
+    ],
+    url: "https://buenosaires.gob.ar/gcaba_historico/culturamuseos/museo-de-la-imaginacion-y-el-juego"
+  }
+];
+
 const FALLBACK_EVENTS = [
   { title: "Jazz Cartoons. Por Paris Jazz Club", category: "Teatro", genre: "Jazz", venue: "ND ATENEO", neighborhood: "Retiro", date: "2026-10-16", schedule: "VIE 21:00 · el 16/10", sourcePath: "obra68679-jazz-cartoons-por-paris-jazz-club" },
   { title: "Nicte", category: "Teatro", genre: "Teatro", venue: "MUY TEATRO", neighborhood: "Almagro", date: "2026-10-17", schedule: "SÁB 15:00 · hasta el 24/10", sourcePath: "obra91606-nicte" },
@@ -369,7 +402,34 @@ function renderEventCard(event) {
     </article>`;
 }
 
+function renderMuseumCard(museum) {
+  return `
+    <article class="event-card">
+      <div class="event-card-body">
+        <div class="event-meta">
+          <span class="event-category"><span aria-hidden="true">✳</span> Museos</span>
+          <span class="event-age">${escapeHtml(museum.label)}</span>
+        </div>
+        <h3>${escapeHtml(museum.title)}</h3>
+        <p class="event-description">${escapeHtml(museum.description)}</p>
+        <dl class="event-details museum-details">
+          ${museum.details.map(([label, value]) => `
+            <div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>
+          `).join("")}
+        </dl>
+      </div>
+      <div class="event-card-footer">
+        <div class="card-sources"><a href="${escapeHtml(museum.url)}" target="_blank" rel="noopener noreferrer">Sitio oficial</a></div>
+        <a class="directions-link" href="${escapeHtml(museum.url)}" target="_blank" rel="noopener noreferrer">Más información ↗</a>
+      </div>
+    </article>`;
+}
+
 function renderCategories(events) {
+  if (state.category === "Museos") {
+    categoryEvents.innerHTML = MUSEUMS.map(renderMuseumCard).join("");
+    return;
+  }
   if (!events.length) {
     renderEmptyState(
       categoryEvents,
@@ -470,7 +530,8 @@ function renderMap(events) {
 
 function render() {
   const events = getVisibleEvents();
-  resultsCount.textContent = `${events.length} ${events.length === 1 ? "actividad" : "actividades"}`;
+  const categoryCount = state.category === "Museos" ? MUSEUMS.length : events.length;
+  resultsCount.textContent = `${categoryCount} ${categoryCount === 1 ? "actividad" : "actividades"}`;
   renderCategorySources();
   renderCategories(events);
   renderAgenda(events);

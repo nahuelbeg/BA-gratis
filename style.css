@@ -264,6 +264,7 @@ h1 span { color: var(--green); }
 .event-details div { display: flex; gap: 8px; }
 .event-details dt { width: 15px; color: var(--green); }
 .event-details dd { margin: 0; }
+.museum-details dt { width: 90px; flex: 0 0 90px; color: var(--muted); font-size: 9px; font-weight: 700; }
 .event-card-footer { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 17px; border-top: 1px solid #f0eee8; }
 .card-sources { display: flex; min-width: 0; flex-wrap: wrap; gap: 5px; }
 .card-sources a { color: var(--green); font-size: 9px; font-weight: 700; text-decoration: none; }
